@@ -1,0 +1,85 @@
+2025-08-13 12:03:44,148 - MOTHistoryImport - INFO - Logging initialized. Log file: Logs\mot_history_import_20250813_120344.log
+2025-08-13 12:03:44,148 - MOTHistoryImport - INFO - Configuration loaded: {'database': {'server': 'MLNOESQLUAT01', 'database': 'Engineering', 'trusted_connection': True}, 'files': {'log_directory': 'Logs'}, 'processing': {'batch_size': 100, 'request_timeout': 30, 'max_retries': 3}, 'logging': {'log_level': 'DEBUG'}, 'security': {'client_id_from_env': True, 'client_secret_from_env': True, 'api_key_from_env': True, 'db_password_from_env': False}}
+2025-08-13 12:03:44,196 - MOTHistoryImport - INFO - JSON data logging initialized. File: Logs\mot_history_data_20250813_120344.json
+2025-08-13 12:03:44,212 - MOTHistoryImport - INFO - Using config rate limit: 15 RPS
+2025-08-13 12:03:44,212 - MOTHistoryImport - INFO - Starting Database connection to MLNOESQLUAT01.Engineering with 15-minute retry window
+2025-08-13 12:03:44,212 - MOTHistoryImport - INFO - Establishing database connection...
+2025-08-13 12:03:44,386 - MOTHistoryImport - INFO - Database connection established successfully
+2025-08-13 12:03:44,402 - MOTHistoryImport - DEBUG - Retrieved APIId 2 for service 'GOV MOT History Service'
+2025-08-13 12:03:44,402 - MOTHistoryImport - DEBUG - Retrieved rate limit 1 seconds for APIId 2
+2025-08-13 12:03:44,402 - MOTHistoryImport - INFO - Updated rate limit from 15.000 to 1.000 RPS (1s interval)
+2025-08-13 12:03:44,418 - MOTHistoryImport - INFO - API logging initialized - APIId: 2, Rate Limit: 1s
+2025-08-13 12:03:44,418 - MOTHistoryImport - DEBUG - API logging enabled for MOTAPIClient with APIId: 2
+2025-08-13 12:03:44,418 - MOTHistoryImport - INFO - Starting MOT History Data Import (Bulk Mode)
+2025-08-13 12:03:44,418 - MOTHistoryImport - INFO - Starting Database connection to MLNOESQLUAT01.Engineering with 15-minute retry window
+2025-08-13 12:03:44,418 - MOTHistoryImport - INFO - Establishing database connection...
+2025-08-13 12:03:44,481 - MOTHistoryImport - INFO - Database connection established successfully
+2025-08-13 12:03:44,481 - MOTHistoryImport - INFO - Truncating table: StageMOTVehicles
+2025-08-13 12:03:44,513 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTVehicles
+2025-08-13 12:03:44,513 - MOTHistoryImport - INFO - Truncating table: StageMOTTests
+2025-08-13 12:03:44,529 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTTests
+2025-08-13 12:03:44,529 - MOTHistoryImport - INFO - Truncating table: StageMOTDefects
+2025-08-13 12:03:44,545 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTDefects
+2025-08-13 12:03:44,545 - MOTHistoryImport - INFO - Truncating table: StageMOTVehiclesNotFound
+2025-08-13 12:03:44,561 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTVehiclesNotFound
+2025-08-13 12:03:44,561 - MOTHistoryImport - INFO - Reading vehicle registrations from source database: MLNOESQLEXP01
+2025-08-13 12:03:44,561 - MOTHistoryImport - INFO - Starting Source database connection to MLNOESQLEXP01.ML-Equinox with 15-minute retry window
+2025-08-13 12:03:44,561 - MOTHistoryImport - INFO - Establishing source database connection to MLNOESQLEXP01
+2025-08-13 12:03:44,738 - MOTHistoryImport - INFO - Read 6 vehicle registrations from source database (MLNOESQLEXP01)
+2025-08-13 12:03:44,743 - MOTHistoryImport - INFO - Added 3 test registrations: YX111FH, SK111KZ, SK111PP
+2025-08-13 12:03:44,752 - MOTHistoryImport - INFO - Processing batch 1/1 (6 registrations)
+2025-08-13 12:03:44,754 - MOTHistoryImport - INFO - Requesting new OAuth2 token...
+2025-08-13 12:03:44,778 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): login.microsoftonline.com:443
+2025-08-13 12:03:45,025 - urllib3.connectionpool - DEBUG - https://login.microsoftonline.com:443 "POST /a455b827-244f-4c97-b5b4-ce5d13b4d00c/oauth2/v2.0/token HTTP/1.1" 200 1448
+2025-08-13 12:03:45,026 - MOTHistoryImport - INFO - OAuth2 token obtained successfully
+2025-08-13 12:03:45,026 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): history.mot.api.gov.uk:443
+2025-08-13 12:03:46,155 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BKZ HTTP/1.1" 200 None
+2025-08-13 12:03:47,382 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WGX HTTP/1.1" 200 None
+2025-08-13 12:03:48,152 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OEZ HTTP/1.1" 200 None
+2025-08-13 12:03:48,597 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX111FH HTTP/1.1" 404 None
+2025-08-13 12:03:48,613 - MOTHistoryImport - WARNING - Registration not found in MOT API: YX111FH
+2025-08-13 12:03:49,599 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK111KZ HTTP/1.1" 404 None
+2025-08-13 12:03:49,599 - MOTHistoryImport - WARNING - Registration not found in MOT API: SK111KZ
+2025-08-13 12:03:50,413 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK111PP HTTP/1.1" 404 None
+2025-08-13 12:03:50,429 - MOTHistoryImport - WARNING - Registration not found in MOT API: SK111PP
+2025-08-13 12:03:50,524 - MOTHistoryImport - INFO - Bulk inserting 3 vehicle records...
+2025-08-13 12:03:50,556 - MOTHistoryImport - INFO - Successfully bulk inserted 3 vehicle records
+2025-08-13 12:03:50,556 - MOTHistoryImport - INFO - Bulk inserting 1 test records...
+2025-08-13 12:03:50,604 - MOTHistoryImport - INFO - Successfully exported 1 records to CSV_Exports\StageMOTTests_20250813_120350.csv
+2025-08-13 12:03:50,620 - MOTHistoryImport - INFO - Successfully processed 1 test records (0 duplicates skipped)
+2025-08-13 12:03:50,636 - MOTHistoryImport - INFO - Bulk inserting 3 not found registrations...
+2025-08-13 12:03:50,652 - MOTHistoryImport - INFO - Successfully bulk inserted 3 not found registrations
+2025-08-13 12:03:50,652 - MOTHistoryImport - INFO - Bulk batch committed: 3 successful, 3 failed, 3 vehicles, 1 tests, 0 defects, 3 not found
+2025-08-13 12:03:50,652 - MOTHistoryImport - INFO - Progress: 100.0% (6/6)
+2025-08-13 12:03:50,652 - MOTHistoryImport - INFO - Running merge procedures after all batches...
+2025-08-13 12:03:50,668 - MOTHistoryImport - INFO - Running spFactMOTVehicles_Merge...
+2025-08-13 12:03:50,700 - MOTHistoryImport - INFO - spFactMOTVehicles_Merge completed successfully
+2025-08-13 12:03:50,700 - MOTHistoryImport - INFO - Running spFactMOTTests_Merge...
+2025-08-13 12:03:50,731 - MOTHistoryImport - INFO - spFactMOTTests_Merge completed successfully
+2025-08-13 12:03:50,731 - MOTHistoryImport - INFO - Running spFactMOTDefects_Merge...
+2025-08-13 12:03:50,762 - MOTHistoryImport - INFO - spFactMOTDefects_Merge completed successfully
+2025-08-13 12:03:50,762 - MOTHistoryImport - INFO - Running spFactMOTVehiclesNotFound_Merge...
+2025-08-13 12:03:50,789 - MOTHistoryImport - INFO - spFactMOTVehiclesNotFound_Merge completed successfully
+2025-08-13 12:03:50,794 - MOTHistoryImport - INFO - All merge stored procedures completed successfully
+2025-08-13 12:03:50,794 - MOTHistoryImport - INFO - ==================================================
+2025-08-13 12:03:50,794 - MOTHistoryImport - INFO - MOT HISTORY DATA IMPORT COMPLETED
+2025-08-13 12:03:50,794 - MOTHistoryImport - INFO - ==================================================
+2025-08-13 12:03:50,794 - MOTHistoryImport - INFO - Total registrations processed: 6
+2025-08-13 12:03:50,794 - MOTHistoryImport - INFO - Successful imports: 3
+2025-08-13 12:03:50,810 - MOTHistoryImport - INFO - Failed imports: 3
+2025-08-13 12:03:50,810 - MOTHistoryImport - INFO - Registrations not found: 3
+2025-08-13 12:03:50,810 - MOTHistoryImport - INFO - Vehicles inserted: 3
+2025-08-13 12:03:50,810 - MOTHistoryImport - INFO - Tests inserted: 1
+2025-08-13 12:03:50,810 - MOTHistoryImport - INFO - Defects inserted: 0
+2025-08-13 12:03:50,810 - MOTHistoryImport - ERROR - Import process failed: 'notfound_inserted'
+2025-08-13 12:03:50,833 - MOTHistoryImport - ERROR - Traceback: Traceback (most recent call last):
+  File "Y:\Engineering\GOV API Data\MOT History\Python Files\GOV_API_MOTHistory_Import.py", line 2438, in run_import
+    self.log_final_statistics()
+  File "Y:\Engineering\GOV API Data\MOT History\Python Files\GOV_API_MOTHistory_Import.py", line 2564, in log_final_statistics
+    self.logger.info(f"Not Found inserted: {self.stats['notfound_inserted']}")
+KeyError: 'notfound_inserted'
+
+2025-08-13 12:03:50,999 - MOTHistoryImport - INFO - Email sent successfully to cdunbar@metroline.co.uk
+2025-08-13 12:03:50,999 - MOTHistoryImport - INFO - Failure notification email sent
+2025-08-13 12:03:51,015 - MOTHistoryImport - INFO - FAILURE notification email sent
+2025-08-13 12:03:51,015 - MOTHistoryImport - INFO - Database connection closed

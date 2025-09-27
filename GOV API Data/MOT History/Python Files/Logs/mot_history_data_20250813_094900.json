@@ -1,0 +1,1315 @@
+{
+  "log_type": "MOT_History_Data_Log",
+  "created_at": "2025-08-13T09:49:00.271025",
+  "configuration": {
+    "database": {
+      "server": "MLNOESQLUAT01",
+      "database": "Engineering",
+      "trusted_connection": true
+    },
+    "files": {
+      "log_directory": "Logs"
+    },
+    "processing": {
+      "batch_size": 100,
+      "request_timeout": 30,
+      "max_retries": 3
+    },
+    "logging": {
+      "log_level": "DEBUG"
+    },
+    "security": {
+      "client_id_from_env": true,
+      "client_secret_from_env": true,
+      "api_key_from_env": true,
+      "db_password_from_env": false
+    }
+  },
+  "data_entries": [
+    {
+      "timestamp": "2025-08-13T09:49:01.913068",
+      "registration": "LK09EOA",
+      "processing_status": "success",
+      "vehicle_data": {
+        "registration": "LK09EOA",
+        "make": "ALEXANDER/DENNIS",
+        "model": "ENVIRO 200",
+        "firstUsedDate": "2009-08-13",
+        "fuelType": "Diesel",
+        "primaryColour": "Red",
+        "registrationDate": "2009-08-13",
+        "manufactureDate": "2009-08-13",
+        "engineSize": "4500",
+        "hasOutstandingRecall": "Unknown"
+      },
+      "mot_tests": [
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X53Z75692",
+          "completedDate": "2025-01-16T09:49:47.000Z",
+          "expiryDate": "2026-01-15",
+          "odometerValue": "344193",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X17W33586",
+          "completedDate": "2023-12-20T12:39:26.000Z",
+          "expiryDate": "2024-12-19",
+          "odometerValue": "306215",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [
+            {
+              "dangerous": false,
+              "text": "Any oil leak which can deposit Oil seepage from engine  (44.1)",
+              "type": "ADVISORY"
+            }
+          ],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W81F87372",
+          "completedDate": "2022-12-01T09:38:53.000Z",
+          "expiryDate": "2023-11-30",
+          "odometerValue": "258295",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W48P51479",
+          "completedDate": "2021-11-26T12:57:54.000Z",
+          "expiryDate": "2022-11-25",
+          "odometerValue": "210119",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "D13D12429",
+          "completedDate": "2019-09-25T08:37:00.000Z",
+          "expiryDate": "2021-11-24",
+          "odometerValue": "231397",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "E36A58056",
+          "completedDate": "2018-10-19T11:16:14.000Z",
+          "expiryDate": "2019-11-24",
+          "odometerValue": "86942",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "NN3509K",
+          "completedDate": "2017-10-27T14:41:30.000Z",
+          "expiryDate": "2018-11-24",
+          "odometerValue": "69668",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [
+            {
+              "dangerous": false,
+              "text": "  (44.None)",
+              "type": null
+            }
+          ],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        }
+      ],
+      "statistics": {
+        "tests_count": 7,
+        "defects_count": 2,
+        "vehicle_inserted": true,
+        "tests_inserted": 7,
+        "defects_inserted": 2
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2025-08-13T09:49:02.738788",
+      "registration": "LK10BZD",
+      "processing_status": "success",
+      "vehicle_data": {
+        "registration": "LK10BZD",
+        "make": "ALEXANDER/DENNIS",
+        "model": "ENVIRO 200",
+        "firstUsedDate": "2010-07-02",
+        "fuelType": "Diesel",
+        "primaryColour": "Red",
+        "registrationDate": "2010-07-02",
+        "manufactureDate": "2010-07-02",
+        "engineSize": "4500",
+        "hasOutstandingRecall": "Unknown"
+      },
+      "mot_tests": [
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X63K95983",
+          "completedDate": "2025-04-22T08:15:31.000Z",
+          "expiryDate": "2026-04-21",
+          "odometerValue": "447728",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X28G23977",
+          "completedDate": "2024-04-15T08:24:00.000Z",
+          "expiryDate": "2025-04-14",
+          "odometerValue": "412921",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W88S60989",
+          "completedDate": "2023-03-03T09:35:19.000Z",
+          "expiryDate": "2024-03-23",
+          "odometerValue": "408359",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W56T85594",
+          "completedDate": "2022-03-07T13:10:51.000Z",
+          "expiryDate": "2023-03-23",
+          "odometerValue": "376905",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W05F76776",
+          "completedDate": "2020-03-13T16:00:00.000Z",
+          "expiryDate": "2022-03-23",
+          "odometerValue": "0",
+          "odometerUnit": null,
+          "odometerResultType": "NO_ODOMETER",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W05F76776",
+          "completedDate": "2020-03-13T12:38:25.000Z",
+          "expiryDate": "2022-03-23",
+          "odometerValue": "312777",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "F06A86455",
+          "completedDate": "2019-03-04T10:03:39.000Z",
+          "expiryDate": "2020-03-23",
+          "odometerValue": "277273",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [
+            {
+              "dangerous": false,
+              "text": "  (05)",
+              "type": null
+            }
+          ],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "NL5288O",
+          "completedDate": "2018-03-12T09:38:31.000Z",
+          "expiryDate": "2019-03-23",
+          "odometerValue": "244323",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        }
+      ],
+      "statistics": {
+        "tests_count": 8,
+        "defects_count": 1,
+        "vehicle_inserted": true,
+        "tests_inserted": 8,
+        "defects_inserted": 1
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2025-08-13T09:49:03.579445",
+      "registration": "LK10BZE",
+      "processing_status": "success",
+      "vehicle_data": {
+        "registration": "LK10BZE",
+        "make": "ALEXANDER/DENNIS",
+        "model": "ENVIRO 200",
+        "firstUsedDate": "2010-07-02",
+        "fuelType": "Diesel",
+        "primaryColour": "Red",
+        "registrationDate": "2010-07-02",
+        "manufactureDate": "2010-07-02",
+        "engineSize": "4500",
+        "hasOutstandingRecall": "Unknown"
+      },
+      "mot_tests": [
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X49R66805",
+          "completedDate": "2024-11-20T08:39:01.000Z",
+          "expiryDate": "2025-12-01",
+          "odometerValue": "472677",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X11X89592",
+          "completedDate": "2023-10-23T08:33:05.000Z",
+          "expiryDate": "2024-12-01",
+          "odometerValue": "430979",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W81C09367",
+          "completedDate": "2022-11-30T09:17:15.000Z",
+          "expiryDate": "2023-12-01",
+          "odometerValue": "405024",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W45Z49908",
+          "completedDate": "2021-11-02T09:27:13.000Z",
+          "expiryDate": "2022-12-01",
+          "odometerValue": "370702",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "G12D01324",
+          "completedDate": "2019-11-11T11:05:19.000Z",
+          "expiryDate": "2021-12-01",
+          "odometerValue": "308230",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "A41A74129",
+          "completedDate": "2018-11-07T10:01:13.000Z",
+          "expiryDate": "2019-12-01",
+          "odometerValue": "269780",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "NK8432H",
+          "completedDate": "2017-10-20T10:21:54.000Z",
+          "expiryDate": "2018-12-01",
+          "odometerValue": "235579",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        }
+      ],
+      "statistics": {
+        "tests_count": 7,
+        "defects_count": 0,
+        "vehicle_inserted": true,
+        "tests_inserted": 7,
+        "defects_inserted": 0
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2025-08-13T09:49:04.375046",
+      "registration": "LK10BZF",
+      "processing_status": "success",
+      "vehicle_data": {
+        "registration": "LK10BZF",
+        "make": "ALEXANDER/DENNIS",
+        "model": "ENVIRO 200",
+        "firstUsedDate": "2010-07-14",
+        "fuelType": "Diesel",
+        "primaryColour": "Red",
+        "registrationDate": "2010-07-14",
+        "manufactureDate": "2010-07-14",
+        "engineSize": "4500",
+        "hasOutstandingRecall": "Unknown"
+      },
+      "mot_tests": [
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X56M83885",
+          "completedDate": "2025-02-11T08:47:13.000Z",
+          "expiryDate": "2026-02-10",
+          "odometerValue": "23376",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X21L53964",
+          "completedDate": "2024-02-06T10:21:18.000Z",
+          "expiryDate": "2025-02-08",
+          "odometerValue": "457748",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W85L55684",
+          "completedDate": "2023-01-27T13:27:55.000Z",
+          "expiryDate": "2024-02-08",
+          "odometerValue": "418499",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W54I10252",
+          "completedDate": "2022-02-09T09:11:39.000Z",
+          "expiryDate": "2023-02-08",
+          "odometerValue": "385461",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W01S24261",
+          "completedDate": "2020-01-20T08:37:53.000Z",
+          "expiryDate": "2022-02-07",
+          "odometerValue": "334494",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "F06A65248",
+          "completedDate": "2019-01-21T14:25:30.000Z",
+          "expiryDate": "2020-02-07",
+          "odometerValue": "297644",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "MN2242C",
+          "completedDate": "2018-01-12T11:33:31.000Z",
+          "expiryDate": "2019-02-07",
+          "odometerValue": "261922",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        }
+      ],
+      "statistics": {
+        "tests_count": 7,
+        "defects_count": 0,
+        "vehicle_inserted": true,
+        "tests_inserted": 7,
+        "defects_inserted": 0
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2025-08-13T09:49:05.647026",
+      "registration": "LK10BZG",
+      "processing_status": "success",
+      "vehicle_data": {
+        "registration": "LK10BZG",
+        "make": "ALEXANDER/DENNIS",
+        "model": "ENVIRO 200",
+        "firstUsedDate": "2010-07-28",
+        "fuelType": "Diesel",
+        "primaryColour": "Red",
+        "registrationDate": "2010-07-28",
+        "manufactureDate": "2010-07-28",
+        "engineSize": "4500",
+        "hasOutstandingRecall": "Unknown"
+      },
+      "mot_tests": [
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X58E57690",
+          "completedDate": "2025-02-27T10:14:29.000Z",
+          "expiryDate": "2026-02-28",
+          "odometerValue": "112013",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X23M90966",
+          "completedDate": "2024-02-27T09:55:52.000Z",
+          "expiryDate": "2025-02-28",
+          "odometerValue": "491673",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [
+            {
+              "dangerous": false,
+              "text": "Fuel tank: Need attention- underside Fuel tank and union fitting area wet, but at the time of test no leak found. (45.1)",
+              "type": "ADVISORY"
+            },
+            {
+              "dangerous": false,
+              "text": "Interior surfaces: Need attention- interior surface and floor  slightly dirty. (21.11)",
+              "type": "ADVISORY"
+            }
+          ],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W86N92179",
+          "completedDate": "2023-02-09T08:39:21.000Z",
+          "expiryDate": "2024-02-28",
+          "odometerValue": "455721",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W55P93885",
+          "completedDate": "2022-02-23T09:28:24.000Z",
+          "expiryDate": "2023-02-28",
+          "odometerValue": "337522",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W02W68385",
+          "completedDate": "2020-02-14T16:00:00.000Z",
+          "expiryDate": "2022-02-28",
+          "odometerValue": "0",
+          "odometerUnit": null,
+          "odometerResultType": "NO_ODOMETER",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W02W68385",
+          "completedDate": "2020-02-14T10:44:56.000Z",
+          "expiryDate": "2022-02-28",
+          "odometerValue": "267775",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "I79A39579",
+          "completedDate": "2019-02-18T13:04:57.000Z",
+          "expiryDate": "2020-02-28",
+          "odometerValue": "230816",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [
+            {
+              "dangerous": false,
+              "text": "  (44)",
+              "type": null
+            }
+          ],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "NL5263H",
+          "completedDate": "2018-02-07T14:59:07.000Z",
+          "expiryDate": "2019-02-28",
+          "odometerValue": "195303",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        }
+      ],
+      "statistics": {
+        "tests_count": 8,
+        "defects_count": 3,
+        "vehicle_inserted": true,
+        "tests_inserted": 8,
+        "defects_inserted": 3
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2025-08-13T09:49:06.254019",
+      "registration": "LK10BZH",
+      "processing_status": "success",
+      "vehicle_data": {
+        "registration": "LK10BZH",
+        "make": "ALEXANDER/DENNIS",
+        "model": "ENVIRO 200",
+        "firstUsedDate": "2010-07-28",
+        "fuelType": "Diesel",
+        "primaryColour": "Red",
+        "registrationDate": "2010-07-28",
+        "manufactureDate": "2010-07-28",
+        "engineSize": "4500",
+        "hasOutstandingRecall": "Unknown"
+      },
+      "mot_tests": [
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X34Z36692",
+          "completedDate": "2024-06-25T08:26:59.000Z",
+          "expiryDate": "2025-06-27",
+          "odometerValue": "253032",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W98K75998",
+          "completedDate": "2023-06-19T09:53:06.000Z",
+          "expiryDate": "2024-06-27",
+          "odometerValue": "360140",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W63N56479",
+          "completedDate": "2022-05-25T07:45:02.000Z",
+          "expiryDate": "2023-06-27",
+          "odometerValue": "325059",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W31Q89182",
+          "completedDate": "2021-06-03T07:41:28.000Z",
+          "expiryDate": "2022-06-27",
+          "odometerValue": "358815",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [
+            {
+              "dangerous": false,
+              "text": "Any oil leak which can deposit Coolant leak deposit <75mm /5mins (44.1)",
+              "type": "ADVISORY"
+            }
+          ],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "E36C61240",
+          "completedDate": "2019-06-28T11:15:35.000Z",
+          "expiryDate": "2021-06-27",
+          "odometerValue": "321523",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "E53A87150",
+          "completedDate": "2019-02-07T14:13:55.000Z",
+          "expiryDate": "2020-02-15",
+          "odometerValue": "309021",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [
+            {
+              "dangerous": false,
+              "text": "  (05)",
+              "type": null
+            }
+          ],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "NN6397S",
+          "completedDate": "2018-01-24T11:33:20.000Z",
+          "expiryDate": "2019-02-15",
+          "odometerValue": "273505",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        }
+      ],
+      "statistics": {
+        "tests_count": 7,
+        "defects_count": 2,
+        "vehicle_inserted": true,
+        "tests_inserted": 7,
+        "defects_inserted": 2
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2025-08-13T09:49:07.281013",
+      "registration": "LK10BZJ",
+      "processing_status": "success",
+      "vehicle_data": {
+        "registration": "LK10BZJ",
+        "make": "ALEXANDER/DENNIS",
+        "model": "ENVIRO 200",
+        "firstUsedDate": "2010-07-28",
+        "fuelType": "Diesel",
+        "primaryColour": "Red",
+        "registrationDate": "2010-07-28",
+        "manufactureDate": "2010-07-28",
+        "engineSize": "4500",
+        "hasOutstandingRecall": "Unknown"
+      },
+      "mot_tests": [
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X66W39102",
+          "completedDate": "2025-05-27T10:08:35.000Z",
+          "expiryDate": "2026-06-30",
+          "odometerValue": "112169",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X34E77678",
+          "completedDate": "2024-06-17T07:55:02.000Z",
+          "expiryDate": "2025-06-30",
+          "odometerValue": "388004",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W96Y16498",
+          "completedDate": "2023-06-02T09:26:22.000Z",
+          "expiryDate": "2024-06-30",
+          "odometerValue": "346667",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W64O13066",
+          "completedDate": "2022-06-08T09:18:23.000Z",
+          "expiryDate": "2023-06-30",
+          "odometerValue": "312423",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [
+            {
+              "dangerous": false,
+              "text": "All suspension types - A suspension component or its attachment point: O/S Axle 2 top air bag pedestal - corroded. (48.1)",
+              "type": "ADVISORY"
+            }
+          ],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W32P20656",
+          "completedDate": "2021-06-15T12:13:08.000Z",
+          "expiryDate": "2022-06-30",
+          "odometerValue": "278507",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [
+            {
+              "dangerous": false,
+              "text": "Brake pipes and flexible hoses: Axle 1 offside intermittant noise suspect possible air leak (59.2)",
+              "type": "ADVISORY"
+            }
+          ],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "E36C57257",
+          "completedDate": "2019-06-19T14:00:11.000Z",
+          "expiryDate": "2021-06-30",
+          "odometerValue": "219224",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "MY6710R",
+          "completedDate": "2018-05-14T08:41:09.000Z",
+          "expiryDate": "2019-06-30",
+          "odometerValue": "180484",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        }
+      ],
+      "statistics": {
+        "tests_count": 7,
+        "defects_count": 2,
+        "vehicle_inserted": true,
+        "tests_inserted": 7,
+        "defects_inserted": 2
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2025-08-13T09:49:08.086693",
+      "registration": "LK10BZL",
+      "processing_status": "success",
+      "vehicle_data": {
+        "registration": "LK10BZL",
+        "make": "ALEXANDER/DENNIS",
+        "model": "ENVIRO 200",
+        "firstUsedDate": "2010-07-14",
+        "fuelType": "Diesel",
+        "primaryColour": "Red",
+        "registrationDate": "2010-07-14",
+        "manufactureDate": "2010-07-14",
+        "engineSize": "4500",
+        "hasOutstandingRecall": "Unknown"
+      },
+      "mot_tests": [
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X61R77079",
+          "completedDate": "2025-04-02T08:29:46.000Z",
+          "expiryDate": "2026-04-01",
+          "odometerValue": "296540",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X25O68995",
+          "completedDate": "2024-03-18T08:48:20.000Z",
+          "expiryDate": "2025-03-17",
+          "odometerValue": "259699",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W87N05990",
+          "completedDate": "2023-02-20T10:38:15.000Z",
+          "expiryDate": "2024-03-13",
+          "odometerValue": "220579",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W56F43065",
+          "completedDate": "2022-03-01T12:00:32.000Z",
+          "expiryDate": "2023-03-13",
+          "odometerValue": "189642",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W04L39683",
+          "completedDate": "2020-03-05T16:00:00.000Z",
+          "expiryDate": "2022-03-13",
+          "odometerValue": "0",
+          "odometerUnit": null,
+          "odometerResultType": "NO_ODOMETER",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W04L39683",
+          "completedDate": "2020-03-05T11:27:06.000Z",
+          "expiryDate": "2022-03-13",
+          "odometerValue": "125058",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "E36C10838",
+          "completedDate": "2019-02-26T15:01:11.000Z",
+          "expiryDate": "2020-03-13",
+          "odometerValue": "88601",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "NM0712C",
+          "completedDate": "2018-03-08T14:07:48.000Z",
+          "expiryDate": "2019-03-13",
+          "odometerValue": "55924",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        }
+      ],
+      "statistics": {
+        "tests_count": 8,
+        "defects_count": 0,
+        "vehicle_inserted": true,
+        "tests_inserted": 8,
+        "defects_inserted": 0
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2025-08-13T09:49:08.873871",
+      "registration": "LK10BZM",
+      "processing_status": "success",
+      "vehicle_data": {
+        "registration": "LK10BZM",
+        "make": "ALEXANDER/DENNIS",
+        "model": "ENVIRO 200",
+        "firstUsedDate": "2010-08-11",
+        "fuelType": "Diesel",
+        "primaryColour": "Red",
+        "registrationDate": "2010-08-11",
+        "manufactureDate": "2010-08-11",
+        "engineSize": "4500",
+        "hasOutstandingRecall": "Unknown"
+      },
+      "mot_tests": [
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X56R69098",
+          "completedDate": "2025-02-12T11:45:06.000Z",
+          "expiryDate": "2026-03-13",
+          "odometerValue": "472335",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X25G88484",
+          "completedDate": "2024-03-14T10:39:16.000Z",
+          "expiryDate": "2025-03-13",
+          "odometerValue": "439145",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W88T90791",
+          "completedDate": "2023-03-03T12:12:38.000Z",
+          "expiryDate": "2024-03-10",
+          "odometerValue": "397681",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W57G21667",
+          "completedDate": "2022-03-11T10:01:43.000Z",
+          "expiryDate": "2023-03-10",
+          "odometerValue": "419962",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [
+            {
+              "dangerous": false,
+              "text": "Any main or cross member: CORROSION (41.1)",
+              "type": "ADVISORY"
+            }
+          ],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "E36D54451",
+          "completedDate": "2020-02-10T13:56:56.000Z",
+          "expiryDate": "2022-03-09",
+          "odometerValue": "282595",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "I75A38261",
+          "completedDate": "2019-02-27T12:42:21.000Z",
+          "expiryDate": "2020-03-09",
+          "odometerValue": "248521",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "NP3061F",
+          "completedDate": "2018-02-23T11:33:09.000Z",
+          "expiryDate": "2019-03-09",
+          "odometerValue": "212811",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        }
+      ],
+      "statistics": {
+        "tests_count": 7,
+        "defects_count": 1,
+        "vehicle_inserted": true,
+        "tests_inserted": 7,
+        "defects_inserted": 1
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2025-08-13T09:49:09.700268",
+      "registration": "LK10BZN",
+      "processing_status": "success",
+      "vehicle_data": {
+        "registration": "LK10BZN",
+        "make": "ALEXANDER/DENNIS",
+        "model": "ENVIRO 200",
+        "firstUsedDate": "2010-08-11",
+        "fuelType": "Diesel",
+        "primaryColour": "Red",
+        "registrationDate": "2010-08-11",
+        "manufactureDate": "2010-08-11",
+        "engineSize": "4500",
+        "hasOutstandingRecall": "Unknown"
+      },
+      "mot_tests": [
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X60Z51367",
+          "completedDate": "2025-03-26T11:53:32.000Z",
+          "expiryDate": "2026-03-25",
+          "odometerValue": "524531",
+          "odometerUnit": "KM",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "X25X43078",
+          "completedDate": "2024-03-20T10:28:40.000Z",
+          "expiryDate": "2025-03-20",
+          "odometerValue": "148730",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W90I09573",
+          "completedDate": "2023-03-21T11:47:43.000Z",
+          "expiryDate": "2024-03-20",
+          "odometerValue": "111753",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "Metroline CELF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "W56T37999",
+          "completedDate": "2022-03-07T11:49:07.000Z",
+          "expiryDate": "2023-03-19",
+          "odometerValue": "74991",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "A72D97654",
+          "completedDate": "2020-03-09T12:01:51.000Z",
+          "expiryDate": "2022-03-19",
+          "odometerValue": "299156",
+          "odometerUnit": "MI",
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "D71C26643",
+          "completedDate": "2019-03-01T09:37:42.000Z",
+          "expiryDate": "2020-03-19",
+          "odometerValue": "261014",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        },
+        {
+          "registrationAtTimeOfTest": null,
+          "motTestNumber": "NC30487",
+          "completedDate": "2018-03-13T12:46:12.000Z",
+          "expiryDate": "2019-03-19",
+          "odometerValue": "228646",
+          "odometerUnit": null,
+          "odometerResultType": "READ",
+          "testResult": "PASSED",
+          "dataSource": "CVS",
+          "defects": [],
+          "location": "METROLINE TRAVEL LTD - ATF"
+        }
+      ],
+      "statistics": {
+        "tests_count": 7,
+        "defects_count": 0,
+        "vehicle_inserted": true,
+        "tests_inserted": 7,
+        "defects_inserted": 0
+      },
+      "errors": []
+    }
+  ],
+  "last_updated": "2025-08-13T09:49:09.784261"
+}

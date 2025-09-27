@@ -1,0 +1,175 @@
+2025-07-23 15:15:11,211 - MOTHistoryImport - INFO - Logging initialized. Log file: Logs\mot_history_import_20250723_151511.log
+2025-07-23 15:15:11,211 - MOTHistoryImport - INFO - Configuration loaded: {'database': {'server': 'MLNOESQLUAT01', 'database': 'Engineering', 'trusted_connection': True}, 'files': {'input_csv_file': 'vehicle_registrations_new.csv', 'log_directory': 'Logs'}, 'processing': {'batch_size': 100, 'request_timeout': 30, 'max_retries': 3}, 'logging': {'log_level': 'INFO'}}
+2025-07-23 15:15:11,254 - MOTHistoryImport - INFO - JSON data logging initialized. File: Logs\mot_history_data_20250723_151511.json
+2025-07-23 15:15:11,262 - MOTHistoryImport - INFO - Starting MOT History Data Import
+2025-07-23 15:15:11,264 - MOTHistoryImport - INFO - Establishing database connection...
+2025-07-23 15:15:11,383 - MOTHistoryImport - INFO - Database connection established successfully
+2025-07-23 15:15:11,386 - MOTHistoryImport - INFO - Truncating table: StageMOTVehicles
+2025-07-23 15:15:11,396 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTVehicles
+2025-07-23 15:15:11,399 - MOTHistoryImport - INFO - Truncating table: StageMOTTests
+2025-07-23 15:15:11,399 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTTests
+2025-07-23 15:15:11,412 - MOTHistoryImport - INFO - Truncating table: StageMOTDefects
+2025-07-23 15:15:11,412 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTDefects
+2025-07-23 15:15:11,412 - MOTHistoryImport - INFO - Truncating table: StageMOTVehiclesNotFound
+2025-07-23 15:15:11,434 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTVehiclesNotFound
+2025-07-23 15:15:11,434 - MOTHistoryImport - INFO - Reading vehicle registrations from SQL Server view
+2025-07-23 15:15:11,434 - MOTHistoryImport - INFO - Establishing database connection...
+2025-07-23 15:15:11,485 - MOTHistoryImport - INFO - Database connection established successfully
+2025-07-23 15:15:11,578 - MOTHistoryImport - INFO - Read 2260 vehicle registrations from SQL Server
+2025-07-23 15:15:11,578 - MOTHistoryImport - INFO - Processing batch 1/23 (100 registrations)
+2025-07-23 15:15:11,578 - MOTHistoryImport - INFO - Requesting new OAuth2 token...
+2025-07-23 15:15:11,864 - MOTHistoryImport - INFO - OAuth2 token obtained successfully
+2025-07-23 15:15:22,285 - MOTHistoryImport - INFO - Current API rate: 1.07 RPS (Total requests: 10)
+2025-07-23 15:15:33,650 - MOTHistoryImport - INFO - Current API rate: 0.97 RPS (Total requests: 20)
+2025-07-23 15:15:45,735 - MOTHistoryImport - INFO - Current API rate: 0.92 RPS (Total requests: 30)
+2025-07-23 15:15:58,711 - MOTHistoryImport - INFO - Current API rate: 0.87 RPS (Total requests: 40)
+2025-07-23 15:16:10,747 - MOTHistoryImport - INFO - Current API rate: 0.87 RPS (Total requests: 50)
+2025-07-23 15:16:22,724 - MOTHistoryImport - INFO - Current API rate: 0.84 RPS (Total requests: 60)
+2025-07-23 15:16:35,790 - MOTHistoryImport - INFO - Current API rate: 0.82 RPS (Total requests: 70)
+2025-07-23 15:16:51,102 - MOTHistoryImport - INFO - Current API rate: 0.78 RPS (Total requests: 80)
+2025-07-23 15:17:06,329 - MOTHistoryImport - INFO - Current API rate: 0.75 RPS (Total requests: 90)
+2025-07-23 15:17:23,241 - MOTHistoryImport - INFO - Current API rate: 0.67 RPS (Total requests: 100)
+2025-07-23 15:17:23,861 - MOTHistoryImport - INFO - Batch committed: 100 successful, 0 failed
+2025-07-23 15:17:23,861 - MOTHistoryImport - INFO - Running spFactMOTVehicles_Merge...
+2025-07-23 15:17:23,892 - MOTHistoryImport - INFO - spFactMOTVehicles_Merge completed successfully
+2025-07-23 15:17:23,892 - MOTHistoryImport - INFO - Running spFactMOTTests_Merge...
+2025-07-23 15:17:23,967 - MOTHistoryImport - INFO - spFactMOTTests_Merge completed successfully
+2025-07-23 15:17:23,970 - MOTHistoryImport - INFO - Running spFactMOTDefects_Merge...
+2025-07-23 15:17:23,996 - MOTHistoryImport - INFO - spFactMOTDefects_Merge completed successfully
+2025-07-23 15:17:24,002 - MOTHistoryImport - INFO - All merge stored procedures executed after batch.
+2025-07-23 15:17:24,004 - MOTHistoryImport - INFO - Progress: 4.4% (100/2260)
+2025-07-23 15:17:24,007 - MOTHistoryImport - INFO - Processing batch 2/23 (100 registrations)
+2025-07-23 15:17:38,372 - MOTHistoryImport - INFO - Current API rate: 0.65 RPS (Total requests: 110)
+2025-07-23 15:17:54,146 - MOTHistoryImport - INFO - Current API rate: 0.65 RPS (Total requests: 120)
+2025-07-23 15:18:14,320 - MOTHistoryImport - INFO - Current API rate: 0.62 RPS (Total requests: 130)
+2025-07-23 15:18:35,862 - MOTHistoryImport - INFO - Current API rate: 0.55 RPS (Total requests: 140)
+2025-07-23 15:18:52,840 - MOTHistoryImport - INFO - Current API rate: 0.53 RPS (Total requests: 150)
+2025-07-23 15:19:09,561 - MOTHistoryImport - INFO - Current API rate: 0.56 RPS (Total requests: 160)
+2025-07-23 15:19:17,391 - MOTHistoryImport - WARNING - Truncating long value for key 'fuelType': Hybrid Electric (Clean)... (length: 23 -> 20)
+2025-07-23 15:19:19,296 - MOTHistoryImport - WARNING - Truncating long value for key 'fuelType': Hybrid Electric (Clean)... (length: 23 -> 20)
+2025-07-23 15:19:27,954 - MOTHistoryImport - INFO - Current API rate: 0.59 RPS (Total requests: 170)
+2025-07-23 15:19:45,772 - MOTHistoryImport - INFO - Current API rate: 0.59 RPS (Total requests: 180)
+2025-07-23 15:20:04,131 - MOTHistoryImport - INFO - Current API rate: 0.57 RPS (Total requests: 190)
+2025-07-23 15:20:26,794 - MOTHistoryImport - INFO - Current API rate: 0.53 RPS (Total requests: 200)
+2025-07-23 15:20:27,798 - MOTHistoryImport - INFO - Batch committed: 100 successful, 0 failed
+2025-07-23 15:20:27,814 - MOTHistoryImport - INFO - Running spFactMOTVehicles_Merge...
+2025-07-23 15:20:27,852 - MOTHistoryImport - INFO - spFactMOTVehicles_Merge completed successfully
+2025-07-23 15:20:27,853 - MOTHistoryImport - INFO - Running spFactMOTTests_Merge...
+2025-07-23 15:20:27,956 - MOTHistoryImport - INFO - spFactMOTTests_Merge completed successfully
+2025-07-23 15:20:27,959 - MOTHistoryImport - INFO - Running spFactMOTDefects_Merge...
+2025-07-23 15:20:27,987 - MOTHistoryImport - INFO - spFactMOTDefects_Merge completed successfully
+2025-07-23 15:20:27,998 - MOTHistoryImport - INFO - All merge stored procedures executed after batch.
+2025-07-23 15:20:28,001 - MOTHistoryImport - INFO - Progress: 8.8% (200/2260)
+2025-07-23 15:20:28,001 - MOTHistoryImport - INFO - Processing batch 3/23 (100 registrations)
+2025-07-23 15:20:45,954 - MOTHistoryImport - INFO - Current API rate: 0.51 RPS (Total requests: 210)
+2025-07-23 15:21:05,889 - MOTHistoryImport - INFO - Current API rate: 0.51 RPS (Total requests: 220)
+2025-07-23 15:21:25,623 - MOTHistoryImport - INFO - Current API rate: 0.53 RPS (Total requests: 230)
+2025-07-23 15:21:46,373 - MOTHistoryImport - INFO - Current API rate: 0.51 RPS (Total requests: 240)
+2025-07-23 15:22:06,933 - MOTHistoryImport - INFO - Current API rate: 0.51 RPS (Total requests: 250)
+2025-07-23 15:22:28,632 - MOTHistoryImport - INFO - Current API rate: 0.49 RPS (Total requests: 260)
+2025-07-23 15:22:48,448 - MOTHistoryImport - INFO - Current API rate: 0.50 RPS (Total requests: 270)
+2025-07-23 15:23:09,974 - MOTHistoryImport - INFO - Current API rate: 0.49 RPS (Total requests: 280)
+2025-07-23 15:23:30,153 - MOTHistoryImport - INFO - Current API rate: 0.51 RPS (Total requests: 290)
+2025-07-23 15:23:51,300 - MOTHistoryImport - INFO - Current API rate: 0.50 RPS (Total requests: 300)
+2025-07-23 15:23:52,674 - MOTHistoryImport - INFO - Batch committed: 100 successful, 0 failed
+2025-07-23 15:23:52,687 - MOTHistoryImport - INFO - Running spFactMOTVehicles_Merge...
+2025-07-23 15:23:52,719 - MOTHistoryImport - INFO - spFactMOTVehicles_Merge completed successfully
+2025-07-23 15:23:52,723 - MOTHistoryImport - INFO - Running spFactMOTTests_Merge...
+2025-07-23 15:23:52,760 - MOTHistoryImport - INFO - spFactMOTTests_Merge completed successfully
+2025-07-23 15:23:52,760 - MOTHistoryImport - INFO - Running spFactMOTDefects_Merge...
+2025-07-23 15:23:52,792 - MOTHistoryImport - INFO - spFactMOTDefects_Merge completed successfully
+2025-07-23 15:23:52,808 - MOTHistoryImport - INFO - All merge stored procedures executed after batch.
+2025-07-23 15:23:52,809 - MOTHistoryImport - INFO - Progress: 13.3% (300/2260)
+2025-07-23 15:23:52,814 - MOTHistoryImport - INFO - Processing batch 4/23 (100 registrations)
+2025-07-23 15:24:13,784 - MOTHistoryImport - INFO - Current API rate: 0.49 RPS (Total requests: 310)
+2025-07-23 15:24:36,129 - MOTHistoryImport - INFO - Current API rate: 0.46 RPS (Total requests: 320)
+2025-07-23 15:24:59,140 - MOTHistoryImport - INFO - Current API rate: 0.47 RPS (Total requests: 330)
+2025-07-23 15:25:22,714 - MOTHistoryImport - INFO - Current API rate: 0.45 RPS (Total requests: 340)
+2025-07-23 15:25:48,207 - MOTHistoryImport - INFO - Current API rate: 0.43 RPS (Total requests: 350)
+2025-07-23 15:26:17,489 - MOTHistoryImport - INFO - Current API rate: 0.39 RPS (Total requests: 360)
+2025-07-23 15:26:43,621 - MOTHistoryImport - INFO - Current API rate: 0.38 RPS (Total requests: 370)
+2025-07-23 15:27:08,958 - MOTHistoryImport - INFO - Current API rate: 0.41 RPS (Total requests: 380)
+2025-07-23 15:27:42,522 - MOTHistoryImport - INFO - Current API rate: 0.36 RPS (Total requests: 390)
+2025-07-23 15:28:07,719 - MOTHistoryImport - INFO - Current API rate: 0.36 RPS (Total requests: 400)
+2025-07-23 15:28:09,666 - MOTHistoryImport - INFO - Batch committed: 100 successful, 0 failed
+2025-07-23 15:28:09,670 - MOTHistoryImport - INFO - Running spFactMOTVehicles_Merge...
+2025-07-23 15:28:09,681 - MOTHistoryImport - INFO - spFactMOTVehicles_Merge completed successfully
+2025-07-23 15:28:09,684 - MOTHistoryImport - INFO - Running spFactMOTTests_Merge...
+2025-07-23 15:28:09,783 - MOTHistoryImport - INFO - spFactMOTTests_Merge completed successfully
+2025-07-23 15:28:09,786 - MOTHistoryImport - INFO - Running spFactMOTDefects_Merge...
+2025-07-23 15:28:09,807 - MOTHistoryImport - INFO - spFactMOTDefects_Merge completed successfully
+2025-07-23 15:28:09,816 - MOTHistoryImport - INFO - All merge stored procedures executed after batch.
+2025-07-23 15:28:09,819 - MOTHistoryImport - INFO - Progress: 17.7% (400/2260)
+2025-07-23 15:28:09,828 - MOTHistoryImport - INFO - Processing batch 5/23 (100 registrations)
+2025-07-23 15:28:33,929 - MOTHistoryImport - INFO - Current API rate: 0.40 RPS (Total requests: 410)
+2025-07-23 15:29:00,527 - MOTHistoryImport - INFO - Current API rate: 0.40 RPS (Total requests: 420)
+2025-07-23 15:29:26,683 - MOTHistoryImport - INFO - Current API rate: 0.40 RPS (Total requests: 430)
+2025-07-23 15:29:54,502 - MOTHistoryImport - INFO - Current API rate: 0.39 RPS (Total requests: 440)
+2025-07-23 15:30:05,950 - MOTHistoryImport - WARNING - Registration not found in MOT API: LTZ1016
+2025-07-23 15:30:05,967 - MOTHistoryImport - INFO - Inserting not found registration: LTZ1016
+2025-07-23 15:30:05,979 - MOTHistoryImport - INFO - Registration LTZ1016 logged as not found
+2025-07-23 15:30:07,983 - MOTHistoryImport - WARNING - Registration not found in MOT API: LTZ1011
+2025-07-23 15:30:07,983 - MOTHistoryImport - INFO - Inserting not found registration: LTZ1011
+2025-07-23 15:30:08,000 - MOTHistoryImport - INFO - Registration LTZ1011 logged as not found
+2025-07-23 15:30:30,379 - MOTHistoryImport - INFO - Current API rate: 0.33 RPS (Total requests: 450)
+2025-07-23 15:31:00,748 - MOTHistoryImport - INFO - Current API rate: 0.31 RPS (Total requests: 460)
+2025-07-23 15:31:30,070 - MOTHistoryImport - INFO - Current API rate: 0.35 RPS (Total requests: 470)
+2025-07-23 15:31:59,984 - MOTHistoryImport - INFO - Current API rate: 0.35 RPS (Total requests: 480)
+2025-07-23 15:32:30,122 - MOTHistoryImport - INFO - Current API rate: 0.35 RPS (Total requests: 490)
+2025-07-23 15:32:57,112 - MOTHistoryImport - INFO - Batch committed: 98 successful, 2 failed
+2025-07-23 15:32:57,114 - MOTHistoryImport - INFO - Running spFactMOTVehicles_Merge...
+2025-07-23 15:32:57,125 - MOTHistoryImport - INFO - spFactMOTVehicles_Merge completed successfully
+2025-07-23 15:32:57,128 - MOTHistoryImport - INFO - Running spFactMOTTests_Merge...
+2025-07-23 15:32:57,172 - MOTHistoryImport - INFO - spFactMOTTests_Merge completed successfully
+2025-07-23 15:32:57,176 - MOTHistoryImport - INFO - Running spFactMOTDefects_Merge...
+2025-07-23 15:32:57,193 - MOTHistoryImport - INFO - spFactMOTDefects_Merge completed successfully
+2025-07-23 15:32:57,199 - MOTHistoryImport - INFO - All merge stored procedures executed after batch.
+2025-07-23 15:32:57,202 - MOTHistoryImport - INFO - Progress: 22.1% (500/2260)
+2025-07-23 15:32:57,204 - MOTHistoryImport - INFO - Processing batch 6/23 (100 registrations)
+2025-07-23 15:33:00,986 - MOTHistoryImport - INFO - Current API rate: 0.35 RPS (Total requests: 500)
+2025-07-23 15:33:31,935 - MOTHistoryImport - INFO - Current API rate: 0.34 RPS (Total requests: 510)
+2025-07-23 15:34:02,244 - MOTHistoryImport - INFO - Current API rate: 0.34 RPS (Total requests: 520)
+2025-07-23 15:34:33,499 - MOTHistoryImport - INFO - Current API rate: 0.34 RPS (Total requests: 530)
+2025-07-23 15:35:09,747 - MOTHistoryImport - INFO - Current API rate: 0.31 RPS (Total requests: 540)
+2025-07-23 15:35:40,684 - MOTHistoryImport - INFO - Current API rate: 0.34 RPS (Total requests: 550)
+2025-07-23 15:36:16,227 - MOTHistoryImport - INFO - Current API rate: 0.31 RPS (Total requests: 560)
+2025-07-23 15:36:48,788 - MOTHistoryImport - INFO - Current API rate: 0.32 RPS (Total requests: 570)
+2025-07-23 15:37:23,911 - MOTHistoryImport - INFO - Current API rate: 0.31 RPS (Total requests: 580)
+2025-07-23 15:37:55,427 - MOTHistoryImport - INFO - Current API rate: 0.32 RPS (Total requests: 590)
+2025-07-23 15:38:26,455 - MOTHistoryImport - INFO - Batch committed: 100 successful, 0 failed
+2025-07-23 15:38:26,455 - MOTHistoryImport - INFO - Running spFactMOTVehicles_Merge...
+2025-07-23 15:38:26,471 - MOTHistoryImport - INFO - spFactMOTVehicles_Merge completed successfully
+2025-07-23 15:38:26,471 - MOTHistoryImport - INFO - Running spFactMOTTests_Merge...
+2025-07-23 15:38:26,585 - MOTHistoryImport - INFO - spFactMOTTests_Merge completed successfully
+2025-07-23 15:38:26,585 - MOTHistoryImport - INFO - Running spFactMOTDefects_Merge...
+2025-07-23 15:38:26,615 - MOTHistoryImport - INFO - spFactMOTDefects_Merge completed successfully
+2025-07-23 15:38:26,631 - MOTHistoryImport - INFO - All merge stored procedures executed after batch.
+2025-07-23 15:38:26,631 - MOTHistoryImport - INFO - Progress: 26.5% (600/2260)
+2025-07-23 15:38:26,631 - MOTHistoryImport - INFO - Processing batch 7/23 (100 registrations)
+2025-07-23 15:38:30,993 - MOTHistoryImport - INFO - Current API rate: 0.32 RPS (Total requests: 600)
+2025-07-23 15:39:05,642 - MOTHistoryImport - INFO - Current API rate: 0.31 RPS (Total requests: 610)
+2025-07-23 15:39:39,333 - MOTHistoryImport - INFO - Current API rate: 0.31 RPS (Total requests: 620)
+2025-07-23 15:40:15,194 - MOTHistoryImport - INFO - Current API rate: 0.30 RPS (Total requests: 630)
+2025-07-23 15:40:50,305 - MOTHistoryImport - INFO - Current API rate: 0.30 RPS (Total requests: 640)
+2025-07-23 15:41:24,181 - MOTHistoryImport - INFO - Current API rate: 0.31 RPS (Total requests: 650)
+2025-07-23 15:42:05,807 - MOTHistoryImport - INFO - Current API rate: 0.28 RPS (Total requests: 660)
+2025-07-23 15:42:44,275 - MOTHistoryImport - INFO - Current API rate: 0.28 RPS (Total requests: 670)
+2025-07-23 15:43:36,548 - MOTHistoryImport - INFO - Current API rate: 0.21 RPS (Total requests: 680)
+2025-07-23 15:44:18,436 - MOTHistoryImport - INFO - Current API rate: 0.27 RPS (Total requests: 690)
+2025-07-23 15:44:51,394 - MOTHistoryImport - INFO - Batch committed: 100 successful, 0 failed
+2025-07-23 15:44:51,397 - MOTHistoryImport - INFO - Running spFactMOTVehicles_Merge...
+2025-07-23 15:44:51,424 - MOTHistoryImport - INFO - spFactMOTVehicles_Merge completed successfully
+2025-07-23 15:44:51,424 - MOTHistoryImport - INFO - Running spFactMOTTests_Merge...
+2025-07-23 15:44:51,485 - MOTHistoryImport - INFO - spFactMOTTests_Merge completed successfully
+2025-07-23 15:44:51,488 - MOTHistoryImport - INFO - Running spFactMOTDefects_Merge...
+2025-07-23 15:44:51,523 - MOTHistoryImport - INFO - spFactMOTDefects_Merge completed successfully
+2025-07-23 15:44:51,530 - MOTHistoryImport - INFO - All merge stored procedures executed after batch.
+2025-07-23 15:44:51,533 - MOTHistoryImport - INFO - Progress: 31.0% (700/2260)
+2025-07-23 15:44:51,535 - MOTHistoryImport - INFO - Processing batch 8/23 (100 registrations)
+2025-07-23 15:44:56,107 - MOTHistoryImport - INFO - Current API rate: 0.27 RPS (Total requests: 700)
+2025-07-23 15:45:36,402 - MOTHistoryImport - INFO - Current API rate: 0.27 RPS (Total requests: 710)
+2025-07-23 15:46:17,184 - MOTHistoryImport - INFO - Current API rate: 0.27 RPS (Total requests: 720)
+2025-07-23 15:46:58,754 - MOTHistoryImport - INFO - Current API rate: 0.26 RPS (Total requests: 730)
+2025-07-23 15:47:46,142 - MOTHistoryImport - INFO - Current API rate: 0.23 RPS (Total requests: 740)
+2025-07-23 15:48:35,551 - MOTHistoryImport - INFO - Current API rate: 0.22 RPS (Total requests: 750)
+2025-07-23 15:49:01,162 - MOTHistoryImport - INFO - Database connection closed

@@ -1,0 +1,83 @@
+{
+  "_security_notice": "PRODUCTION DEPLOYMENT NOTICE: Credentials are provided via environment variables",
+  "_environment_variables": {
+    "MOT_CLIENT_ID": "Required - OAuth2 client identifier (set via environment variable)",
+    "MOT_CLIENT_SECRET": "Required - OAuth2 client secret (set via environment variable)", 
+    "MOT_API_KEY": "Required - DVSA API key (set via environment variable)"
+  },
+  "api_credentials": {
+    "client_id": "OVERRIDE_WITH_ENV_VAR_MOT_CLIENT_ID",
+    "client_secret": "OVERRIDE_WITH_ENV_VAR_MOT_CLIENT_SECRET",
+    "api_key": "OVERRIDE_WITH_ENV_VAR_MOT_API_KEY",
+    "scope_url": "https://tapi.dvsa.gov.uk/.default",
+    "token_url": "https://login.microsoftonline.com/a455b827-244f-4c97-b5b4-ce5d13b4d00c/oauth2/v2.0/token",
+    "mot_api_base_url": "https://history.mot.api.gov.uk/v1/trade/vehicles/registration"
+  },
+  "database": {
+    "database": "Engineering",
+    "trusted_connection": true,
+    "username": "",
+    "password": "",
+    "connection_timeout": 30,
+    "command_timeout": 300,
+    "connection_max_retry_duration_minutes": 15,
+    "connection_retry_interval_seconds": 30
+  },
+  "current_environment": "prod",
+  "environments": {
+    "prod": {"server": "MLNOESQLEXP01"},
+    "uat": {"server": "MLNOESQLUAT01"},
+    "dev": {"server": "MLNOESQLUAT01"}
+  },
+  "files": {
+    "input_csv_file": "vehicle_registrations_new.csv",
+    "log_directory": "Logs",
+    "backup_directory": "backups",
+    "archive_directory": "archive"
+  },
+  "processing": {
+    "batch_size": 100,
+    "max_workers": 4,
+    "request_timeout": 30,
+    "max_retries": 3,
+    "retry_backoff_factor": 1.0,
+    "rate_limit_delay": 0.0,
+    "enable_data_validation": true,
+    "skip_existing_registrations": false,
+    "dvsa_rate_limits": {
+      "requests_per_second": 15,
+      "burst_limit": 10,
+      "daily_quota": 500000,
+      "enable_dynamic_throttling": false,
+      "backoff_multiplier": 2.0,
+      "max_backoff_seconds": 300
+    }
+  },
+  "logging": {
+    "log_level": "INFO",
+    "max_log_files": 30,
+    "log_file_max_size_mb": 100,
+    "enable_console_logging": true,
+    "enable_database_logging": true,
+    "log_format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  "maintenance": {
+    "auto_cleanup_enabled": true,
+    "cleanup_days_to_keep": 30,
+    "backup_before_cleanup": true,
+    "health_check_interval_hours": 24
+  },
+  "email": {
+    "enable_email_notifications": true,
+    "notification_email": "BISupport@metroline.co.uk",
+    "notify_on_success": true,
+    "notify_on_failure": true
+  },
+  "performance": {
+    "enable_metrics": true,
+    "metrics_file": "metrics.json",
+    "monitor_memory_usage": true,
+    "max_memory_usage_mb": 2048,
+    "enable_profiling": false
+  }
+}

@@ -1,0 +1,5 @@
+2025-08-19 16:29:47,896 - INFO - Log file: Logs\mileage_import_20250819_162947.log
+2025-08-19 16:29:52,660 - INFO - Successfully read Excel file: Mileage.xlsx
+2025-08-19 16:29:52,660 - INFO - Data shape: (12045, 54)
+2025-08-19 16:29:52,678 - INFO - Starting data transformation...
+2025-08-19 16:29:52,697 - INFO - Data transformation completed. Shape: (2, 51)

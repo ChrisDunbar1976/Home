@@ -1,0 +1,6 @@
+2025-08-06 14:35:43,335 - MOTHistoryImport - INFO - Logging initialized. Log file: Logs\mot_history_import_20250806_143543.log
+2025-08-06 14:35:43,335 - MOTHistoryImport - INFO - Configuration loaded: {'database': {'server': 'MLNOESQLUAT01', 'database': 'Engineering', 'trusted_connection': True}, 'files': {'log_directory': 'Logs'}, 'processing': {'batch_size': 100, 'request_timeout': 30, 'max_retries': 3}, 'logging': {'log_level': 'INFO'}}
+2025-08-06 14:35:43,373 - MOTHistoryImport - INFO - JSON data logging initialized. File: Logs\mot_history_data_20250806_143543.json
+2025-08-06 14:35:43,376 - MOTHistoryImport - INFO - Establishing database connection...
+2025-08-06 14:35:43,572 - MOTHistoryImport - INFO - Database connection established successfully
+2025-08-06 14:35:43,622 - MOTHistoryImport - INFO - Database connection closed

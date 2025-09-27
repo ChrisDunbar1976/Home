@@ -1,0 +1,24 @@
+{
+  "log_type": "MOT_History_Data_Log",
+  "created_at": "2025-08-06T13:52:45.639117",
+  "configuration": {
+    "database": {
+      "server": "MLNOESQLUAT01",
+      "database": "Engineering",
+      "trusted_connection": true
+    },
+    "files": {
+      "input_csv_file": "vehicle_registrations_new.csv",
+      "log_directory": "Logs"
+    },
+    "processing": {
+      "batch_size": 100,
+      "request_timeout": 30,
+      "max_retries": 3
+    },
+    "logging": {
+      "log_level": "INFO"
+    }
+  },
+  "data_entries": []
+}

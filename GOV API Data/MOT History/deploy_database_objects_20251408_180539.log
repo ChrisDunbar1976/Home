@@ -1,0 +1,20 @@
+MOT History Database Objects Deployment Log 
+Started: 14/08/2025 18:05:40.68 
+Server: MLNOESQLEXP01 
+Database: Engineering 
+ 
+Processing: SR-46219 01 Create Table MOTErrorLog - CD.sql 
+SUCCESS: SR-46219 01 Create Table MOTErrorLog - CD.sql executed successfully 
+ 
+Processing: SR-46219 02 Create Table StageMOTVehicles - CD.sql 
+SUCCESS: SR-46219 02 Create Table StageMOTVehicles - CD.sql executed successfully 
+ 
+Processing: SR-46219 03 Create Table StageMOTTests - CD.sql 
+SUCCESS: SR-46219 03 Create Table StageMOTTests - CD.sql executed successfully 
+ 
+Processing: SR-46219 04 Create Table StageMOTDefects - CD.sql 
+SUCCESS: SR-46219 04 Create Table StageMOTDefects - CD.sql executed successfully 
+ 
+Processing: SR-46219 05 Create Table StageMOTVehiclesNotFound - CD.sql 
+SUCCESS: SR-46219 05 Create Table StageMOTVehiclesNotFound - CD.sql executed successfully 
+ 

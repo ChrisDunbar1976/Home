@@ -1,0 +1,66 @@
+2025-08-19 15:29:02,768 - INFO - Successfully read Excel file: Mileage.xlsx
+2025-08-19 15:29:02,768 - INFO - Data shape: (11875, 54)
+2025-08-19 15:29:02,768 - INFO - Starting data transformation...
+2025-08-19 15:29:02,823 - INFO - Data transformation completed. Shape: (11875, 51)
+2025-08-19 15:29:02,839 - INFO - Removed 0 rows with null Curt No
+2025-08-19 15:29:02,840 - WARNING - Route validation against vactiveroute table not implemented - skipping filter
+2025-08-19 15:29:02,840 - WARNING - DimRoute garage code filtering not implemented - skipping filter
+2025-08-19 15:29:02,846 - INFO - Removed 129 cancelled curtailments
+2025-08-19 15:29:02,850 - INFO - Removed 0 rows with excessive mileage
+2025-08-19 15:29:16,141 - INFO - Successfully read Excel file: Mileage.xlsx
+2025-08-19 15:29:16,141 - INFO - Data shape: (11875, 54)
+2025-08-19 15:29:16,141 - INFO - Starting data transformation...
+2025-08-19 15:29:16,188 - INFO - Data transformation completed. Shape: (11875, 51)
+2025-08-19 15:29:16,203 - INFO - Removed 0 rows with null Curt No
+2025-08-19 15:29:16,203 - WARNING - Route validation against vactiveroute table not implemented - skipping filter
+2025-08-19 15:29:16,203 - WARNING - DimRoute garage code filtering not implemented - skipping filter
+2025-08-19 15:29:16,209 - INFO - Removed 129 cancelled curtailments
+2025-08-19 15:29:16,212 - INFO - Removed 0 rows with excessive mileage
+2025-08-19 15:48:10,335 - INFO - Starting mileage data import process...
+2025-08-19 15:48:10,693 - INFO - Successfully connected to MLNOESQLUAT01/Mileage
+2025-08-19 15:48:10,693 - INFO - Starting transaction...
+2025-08-19 15:48:15,190 - INFO - Successfully read Excel file: Mileage.xlsx
+2025-08-19 15:48:15,190 - INFO - Data shape: (11875, 54)
+2025-08-19 15:48:15,190 - INFO - Starting data transformation...
+2025-08-19 15:48:15,241 - INFO - Data transformation completed. Shape: (11875, 51)
+2025-08-19 15:48:15,257 - INFO - Removed 0 rows with null Curt No
+2025-08-19 15:48:15,257 - WARNING - Route validation against vactiveroute table not implemented - skipping filter
+2025-08-19 15:48:15,257 - WARNING - DimRoute garage code filtering not implemented - skipping filter
+2025-08-19 15:48:15,257 - INFO - Removed 129 cancelled curtailments
+2025-08-19 15:48:15,269 - INFO - Removed 0 rows with excessive mileage
+2025-08-19 15:48:15,304 - INFO - Staging table truncated successfully
+2025-08-19 15:48:15,458 - ERROR - Failed to insert data into staging table: ('42000', '[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The incoming tabular data stream (TDS) remote procedure call (RPC) protocol stream is incorrect. Parameter 20 (""): The supplied value is not a valid instance of data type float. Check the source data for invalid values. An example of an invalid value is data of numeric type with scale greater than precision. (8023) (SQLParamData)')
+2025-08-19 15:48:15,458 - ERROR - Transaction rolled back due to error
+2025-08-19 15:48:15,532 - ERROR - Import process failed: ('42000', '[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The incoming tabular data stream (TDS) remote procedure call (RPC) protocol stream is incorrect. Parameter 20 (""): The supplied value is not a valid instance of data type float. Check the source data for invalid values. An example of an invalid value is data of numeric type with scale greater than precision. (8023) (SQLParamData)')
+2025-08-19 15:48:15,584 - INFO - Database connection closed
+2025-08-19 15:48:32,952 - INFO - Successfully read Excel file: Mileage.xlsx
+2025-08-19 15:48:32,952 - INFO - Data shape: (11875, 54)
+2025-08-19 15:48:32,952 - INFO - Starting data transformation...
+2025-08-19 15:48:32,992 - INFO - Data transformation completed. Shape: (11875, 51)
+2025-08-19 15:49:16,937 - INFO - Starting mileage data import process...
+2025-08-19 15:49:17,283 - INFO - Successfully connected to MLNOESQLUAT01/Mileage
+2025-08-19 15:49:17,283 - INFO - Starting transaction...
+2025-08-19 15:49:21,701 - INFO - Successfully read Excel file: Mileage.xlsx
+2025-08-19 15:49:21,701 - INFO - Data shape: (11875, 54)
+2025-08-19 15:49:21,701 - INFO - Starting data transformation...
+2025-08-19 15:49:21,734 - INFO - Data transformation completed. Shape: (11875, 51)
+2025-08-19 15:49:21,752 - INFO - Removed 0 rows with null Curt No
+2025-08-19 15:49:21,752 - WARNING - Route validation against vactiveroute table not implemented - skipping filter
+2025-08-19 15:49:21,752 - WARNING - DimRoute garage code filtering not implemented - skipping filter
+2025-08-19 15:49:21,752 - INFO - Removed 129 cancelled curtailments
+2025-08-19 15:49:21,752 - INFO - Removed 0 rows with excessive mileage
+2025-08-19 15:49:21,782 - INFO - Staging table truncated successfully
+2025-08-19 16:02:23,654 - INFO - Starting mileage data import process...
+2025-08-19 16:02:23,990 - INFO - Successfully connected to MLNOESQLUAT01/Mileage
+2025-08-19 16:02:23,990 - INFO - Starting transaction...
+2025-08-19 16:02:33,858 - INFO - Successfully read Excel file: Mileage.xlsx
+2025-08-19 16:02:33,858 - INFO - Data shape: (12045, 54)
+2025-08-19 16:02:33,858 - INFO - Starting data transformation...
+2025-08-19 16:02:33,994 - INFO - Data transformation completed. Shape: (12045, 51)
+2025-08-19 16:02:34,024 - INFO - Removed 0 rows with null Curt No
+2025-08-19 16:02:34,024 - WARNING - Route validation against vactiveroute table not implemented - skipping filter
+2025-08-19 16:02:34,024 - WARNING - DimRoute garage code filtering not implemented - skipping filter
+2025-08-19 16:02:34,040 - INFO - Removed 129 cancelled curtailments
+2025-08-19 16:02:34,058 - INFO - Removed 0 rows with excessive mileage
+2025-08-19 16:02:34,074 - INFO - Staging table truncated successfully
+2025-08-19 16:04:46,375 - INFO - Database connection closed

@@ -1,0 +1,41 @@
+
+Add on to the Equinox Fleet List
+
+Measures - First Time Pass Rate
+
+Pass Rates
+
+Failure Rates
+
+Helicopter view
+
+Graph with January - December on X axis
+
+Number of MOT Expiry vehicles per month
+
+Visual for Planning. Beak down by months and then weeks.
+
+Forecasting of MOT expiry
+
+Possible to build a Gantt chart? Can show overlap.
+
+Broken down by depot level rather than global level.
+
+From a global perspective, pure raw numbers (how many MOTs done, how many remain).
+
+Patterns of advisories on tyres.
+
+Advisories also provide the check number, and the check number represents the categories they fall in of defect type.
+
+Show visuals of any discrepancies between Equinox and the GOV API data. MOT Date, Test Result, Tax Status etc
+
+Kilometres of CO2 output - show a trend (ideally of the level going down).
+
+
+Development Structure
+	--Refinement of requirements
+
+	--DB views
+
+	--Power BI Model Change
+

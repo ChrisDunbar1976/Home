@@ -1,0 +1,29 @@
+{
+    "database": {
+        "database": "Mileage",
+        "trusted_connection": true,
+        "connection_timeout": 30,
+        "command_timeout": 300
+    },
+    "current_environment": "uat",
+    "environments": {
+        "prod": {"server": "MLNOESQLEXP01"},
+        "uat": {"server": "MLNOESQLUAT01"},
+        "dev": {"server": "MLNOESQLUAT01"}
+    },
+    "processing": {
+        "chunk_size": 1000,
+        "intermediate_commit": 5000,
+        "excel_sheet_name": "Database Data"
+    },
+    "email": {
+        "enable_email_notifications": true,
+        "notification_email": "cdunbar@metroline.co.uk",
+        "notify_on_success": true,
+        "notify_on_failure": true
+    },
+    "logging": {
+        "log_level": "INFO",
+        "log_directory": "Logs"
+    }
+}

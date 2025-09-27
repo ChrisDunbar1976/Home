@@ -1,0 +1,16 @@
+{
+    "api_key_note": "API key must be set in VES_API_KEY environment variable",
+    "url": "https://driver-vehicle-licensing.api.gov.uk/vehicle-enquiry/v1/vehicles", 
+    "database": "Engineering",
+    "environments": {
+        "prod": {"read": "MLNOESQLEXP01", "write": "MLNOESQLEXP01"},
+        "uat":  {"read": "MLNOESQLEXP01", "write": "MLNOESQLUAT01"},
+        "dev":  {"read": "MLNOESQLEXP01", "write": "MLNOESQLUAT01"}
+    },
+    "email": {
+        "enable_email_notifications": true,
+        "notification_email": "cdunbar@metroline.co.uk",
+        "notify_on_success": false,
+        "notify_on_failure": true
+    }
+}

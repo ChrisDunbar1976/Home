@@ -1,0 +1,60 @@
+2025-08-19 16:06:05,840 - INFO - Starting mileage data import process...
+2025-08-19 16:06:06,275 - INFO - Successfully connected to MLNOESQLUAT01/Mileage
+2025-08-19 16:06:06,275 - INFO - Starting transaction...
+2025-08-19 16:06:10,831 - INFO - Successfully read Excel file: Mileage.xlsx
+2025-08-19 16:06:10,831 - INFO - Data shape: (12045, 54)
+2025-08-19 16:06:10,831 - INFO - Starting data transformation...
+2025-08-19 16:06:10,875 - INFO - Data transformation completed. Shape: (12045, 51)
+2025-08-19 16:06:10,899 - INFO - Removed 0 rows with null Curt No
+2025-08-19 16:06:10,905 - INFO - Removed 129 cancelled curtailments
+2025-08-19 16:06:10,912 - INFO - Removed 0 rows with excessive mileage
+2025-08-19 16:06:10,925 - INFO - Staging table truncated successfully
+2025-08-19 16:06:11,138 - INFO - Prepared 11916 rows for insertion
+2025-08-19 16:06:17,189 - INFO - Inserted chunk 1: 500/11916 rows (4.2%) - 6.05s
+2025-08-19 16:06:23,016 - INFO - Inserted chunk 2: 1000/11916 rows (8.4%) - 5.83s
+2025-08-19 16:06:28,191 - INFO - Inserted chunk 3: 1500/11916 rows (12.6%) - 5.18s
+2025-08-19 16:06:33,291 - INFO - Inserted chunk 4: 2000/11916 rows (16.8%) - 5.10s
+2025-08-19 16:06:33,311 - INFO - Intermediate commit at 2000 rows
+2025-08-19 16:06:38,659 - INFO - Inserted chunk 5: 2500/11916 rows (21.0%) - 5.35s
+2025-08-19 16:06:44,008 - INFO - Inserted chunk 6: 3000/11916 rows (25.2%) - 5.35s
+2025-08-19 16:06:49,356 - INFO - Inserted chunk 7: 3500/11916 rows (29.4%) - 5.35s
+2025-08-19 16:06:54,320 - INFO - Inserted chunk 8: 4000/11916 rows (33.6%) - 4.96s
+2025-08-19 16:06:54,340 - INFO - Intermediate commit at 4000 rows
+2025-08-19 16:06:59,878 - INFO - Inserted chunk 9: 4500/11916 rows (37.8%) - 5.54s
+2025-08-19 16:07:03,095 - INFO - Inserted chunk 10: 5000/11916 rows (42.0%) - 3.22s
+2025-08-19 16:07:08,680 - INFO - Inserted chunk 11: 5500/11916 rows (46.2%) - 5.59s
+2025-08-19 16:07:13,442 - INFO - Inserted chunk 12: 6000/11916 rows (50.4%) - 4.76s
+2025-08-19 16:07:13,468 - INFO - Intermediate commit at 6000 rows
+2025-08-19 16:07:19,061 - INFO - Inserted chunk 13: 6500/11916 rows (54.5%) - 5.59s
+2025-08-19 16:07:24,576 - INFO - Inserted chunk 14: 7000/11916 rows (58.7%) - 5.52s
+2025-08-19 16:07:30,389 - INFO - Inserted chunk 15: 7500/11916 rows (62.9%) - 5.81s
+2025-08-19 16:07:37,474 - INFO - Inserted chunk 16: 8000/11916 rows (67.1%) - 7.09s
+2025-08-19 16:07:37,492 - INFO - Intermediate commit at 8000 rows
+2025-08-19 16:07:43,448 - INFO - Inserted chunk 17: 8500/11916 rows (71.3%) - 5.96s
+2025-08-19 16:07:49,109 - INFO - Inserted chunk 18: 9000/11916 rows (75.5%) - 5.66s
+2025-08-19 16:07:54,312 - INFO - Inserted chunk 19: 9500/11916 rows (79.7%) - 5.20s
+2025-08-19 16:08:00,258 - INFO - Inserted chunk 20: 10000/11916 rows (83.9%) - 5.95s
+2025-08-19 16:08:00,276 - INFO - Intermediate commit at 10000 rows
+2025-08-19 16:08:06,020 - INFO - Inserted chunk 21: 10500/11916 rows (88.1%) - 5.74s
+2025-08-19 16:08:11,972 - INFO - Inserted chunk 22: 11000/11916 rows (92.3%) - 5.95s
+2025-08-19 16:08:16,841 - INFO - Inserted chunk 23: 11500/11916 rows (96.5%) - 4.87s
+2025-08-19 16:08:21,426 - INFO - Inserted chunk 24: 11916/11916 rows (100.0%) - 4.58s
+2025-08-19 16:08:21,426 - INFO - Successfully inserted all 11916 rows into staging table
+2025-08-19 16:08:21,430 - INFO - Starting garage procedure execution for 13 garages...
+2025-08-19 16:08:21,431 - INFO - Executing procedure for garage W (1/13)...
+2025-08-19 16:08:21,589 - INFO - Executing procedure for garage AH (2/13)...
+2025-08-19 16:08:21,714 - INFO - Executing procedure for garage EW (3/13)...
+2025-08-19 16:08:21,780 - INFO - Executing procedure for garage G (4/13)...
+2025-08-19 16:08:21,843 - INFO - Executing procedure for garage HD (5/13)...
+2025-08-19 16:08:21,909 - INFO - Executing procedure for garage HT (6/13)...
+2025-08-19 16:08:22,109 - INFO - Executing procedure for garage KC (7/13)...
+2025-08-19 16:08:22,209 - INFO - Executing procedure for garage SG (8/13)...
+2025-08-19 16:08:22,276 - INFO - Executing procedure for garage PV (9/13)...
+2025-08-19 16:08:22,384 - INFO - Executing procedure for garage PB (10/13)...
+2025-08-19 16:08:22,470 - INFO - Executing procedure for garage UX (11/13)...
+2025-08-19 16:08:22,561 - INFO - Executing procedure for garage AC (12/13)...
+2025-08-19 16:08:22,696 - INFO - Executing procedure for garage WJ (13/13)...
+2025-08-19 16:08:22,781 - INFO - All garage procedures completed successfully
+2025-08-19 16:08:22,810 - INFO - Transaction committed successfully in 136.97s
+2025-08-19 16:08:22,859 - INFO - Mileage data import completed successfully!
+2025-08-19 16:08:22,874 - INFO - Database connection closed

@@ -1,0 +1,1650 @@
+2025-08-13 10:35:15,568 - MOTHistoryImport - INFO - Logging initialized. Log file: Logs\mot_history_import_20250813_103515.log
+2025-08-13 10:35:15,568 - MOTHistoryImport - INFO - Configuration loaded: {'database': {'server': 'MLNOESQLUAT01', 'database': 'Engineering', 'trusted_connection': True}, 'files': {'log_directory': 'Logs'}, 'processing': {'batch_size': 100, 'request_timeout': 30, 'max_retries': 3}, 'logging': {'log_level': 'DEBUG'}, 'security': {'client_id_from_env': True, 'client_secret_from_env': True, 'api_key_from_env': True, 'db_password_from_env': False}}
+2025-08-13 10:35:15,616 - MOTHistoryImport - INFO - JSON data logging initialized. File: Logs\mot_history_data_20250813_103515.json
+2025-08-13 10:35:15,616 - MOTHistoryImport - INFO - Using config rate limit: 15 RPS
+2025-08-13 10:35:15,616 - MOTHistoryImport - INFO - Starting Database connection to MLNOESQLUAT01.Engineering with 15-minute retry window
+2025-08-13 10:35:15,638 - MOTHistoryImport - INFO - Establishing database connection...
+2025-08-13 10:35:15,774 - MOTHistoryImport - INFO - Database connection established successfully
+2025-08-13 10:35:15,790 - MOTHistoryImport - DEBUG - Retrieved APIId 2 for service 'GOV MOT History Service'
+2025-08-13 10:35:15,797 - MOTHistoryImport - DEBUG - Retrieved rate limit 1 seconds for APIId 2
+2025-08-13 10:35:15,806 - MOTHistoryImport - INFO - Updated rate limit from 15.000 to 1.000 RPS (1s interval)
+2025-08-13 10:35:15,806 - MOTHistoryImport - INFO - API logging initialized - APIId: 2, Rate Limit: 1s
+2025-08-13 10:35:15,806 - MOTHistoryImport - DEBUG - API logging enabled for MOTAPIClient with APIId: 2
+2025-08-13 10:35:15,806 - MOTHistoryImport - INFO - Starting MOT History Data Import (Bulk Mode)
+2025-08-13 10:35:15,806 - MOTHistoryImport - INFO - Starting Database connection to MLNOESQLUAT01.Engineering with 15-minute retry window
+2025-08-13 10:35:15,806 - MOTHistoryImport - INFO - Establishing database connection...
+2025-08-13 10:35:15,869 - MOTHistoryImport - INFO - Database connection established successfully
+2025-08-13 10:35:15,869 - MOTHistoryImport - INFO - Truncating table: StageMOTVehicles
+2025-08-13 10:35:15,885 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTVehicles
+2025-08-13 10:35:15,897 - MOTHistoryImport - INFO - Truncating table: StageMOTTests
+2025-08-13 10:35:15,901 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTTests
+2025-08-13 10:35:15,901 - MOTHistoryImport - INFO - Truncating table: StageMOTDefects
+2025-08-13 10:35:15,917 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTDefects
+2025-08-13 10:35:15,917 - MOTHistoryImport - INFO - Truncating table: StageMOTVehiclesNotFound
+2025-08-13 10:35:15,933 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTVehiclesNotFound
+2025-08-13 10:35:15,933 - MOTHistoryImport - INFO - Reading vehicle registrations from source database: MLNOESQLEXP01
+2025-08-13 10:35:15,933 - MOTHistoryImport - INFO - Starting Source database connection to MLNOESQLEXP01.ML-Equinox with 15-minute retry window
+2025-08-13 10:35:15,933 - MOTHistoryImport - INFO - Establishing source database connection to MLNOESQLEXP01
+2025-08-13 10:35:16,179 - MOTHistoryImport - INFO - Read 489 vehicle registrations from source database (MLNOESQLEXP01)
+2025-08-13 10:35:16,187 - MOTHistoryImport - INFO - Processing batch 1/5 (100 registrations)
+2025-08-13 10:35:16,189 - MOTHistoryImport - DEBUG - Processing registration: LK57EJA
+2025-08-13 10:35:16,225 - MOTHistoryImport - INFO - Requesting new OAuth2 token...
+2025-08-13 10:35:16,233 - MOTHistoryImport - DEBUG - TOKEN_URL: https://login.microsoftonline.com/a455b827-244f-4c97-b5b4-ce5d13b4d00c/oauth2/v2.0/token
+2025-08-13 10:35:16,240 - MOTHistoryImport - DEBUG - CLIENT_ID: b6964dc0-b...
+2025-08-13 10:35:16,245 - MOTHistoryImport - DEBUG - CLIENT_SECRET: **********...
+2025-08-13 10:35:16,253 - MOTHistoryImport - DEBUG - SCOPE_URL: https://tapi.dvsa.gov.uk/.default
+2025-08-13 10:35:16,264 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): login.microsoftonline.com:443
+2025-08-13 10:35:16,402 - urllib3.connectionpool - DEBUG - https://login.microsoftonline.com:443 "POST /a455b827-244f-4c97-b5b4-ce5d13b4d00c/oauth2/v2.0/token HTTP/1.1" 200 1456
+2025-08-13 10:35:16,406 - MOTHistoryImport - INFO - OAuth2 token obtained successfully
+2025-08-13 10:35:16,409 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LK57EJA
+2025-08-13 10:35:16,413 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): history.mot.api.gov.uk:443
+2025-08-13 10:35:17,066 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LK57EJA HTTP/1.1" 200 None
+2025-08-13 10:35:17,130 - MOTHistoryImport - DEBUG - Processing registration: BV10WVX
+2025-08-13 10:35:17,130 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BV10WVX
+2025-08-13 10:35:18,042 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BV10WVX HTTP/1.1" 200 None
+2025-08-13 10:35:18,233 - MOTHistoryImport - DEBUG - Processing registration: BK10MFA
+2025-08-13 10:35:18,233 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BK10MFA
+2025-08-13 10:35:19,128 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BK10MFA HTTP/1.1" 200 None
+2025-08-13 10:35:19,271 - MOTHistoryImport - DEBUG - Processing registration: BK10MFF
+2025-08-13 10:35:19,271 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BK10MFF
+2025-08-13 10:35:20,249 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BK10MFF HTTP/1.1" 200 None
+2025-08-13 10:35:20,377 - MOTHistoryImport - DEBUG - Processing registration: BK10MEV
+2025-08-13 10:35:20,377 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BK10MEV
+2025-08-13 10:35:21,474 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BK10MEV HTTP/1.1" 200 None
+2025-08-13 10:35:21,622 - MOTHistoryImport - DEBUG - Processing registration: BK10MFE
+2025-08-13 10:35:21,622 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BK10MFE
+2025-08-13 10:35:22,389 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BK10MFE HTTP/1.1" 200 None
+2025-08-13 10:35:22,531 - MOTHistoryImport - DEBUG - Processing registration: BK10MFO
+2025-08-13 10:35:22,531 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BK10MFO
+2025-08-13 10:35:23,137 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BK10MFO HTTP/1.1" 200 None
+2025-08-13 10:35:23,265 - MOTHistoryImport - DEBUG - Processing registration: LF69UXT
+2025-08-13 10:35:23,266 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UXT
+2025-08-13 10:35:23,859 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UXT HTTP/1.1" 200 None
+2025-08-13 10:35:23,985 - MOTHistoryImport - DEBUG - Processing registration: LF69UYL
+2025-08-13 10:35:24,001 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYL
+2025-08-13 10:35:24,757 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYL HTTP/1.1" 200 None
+2025-08-13 10:35:24,918 - MOTHistoryImport - DEBUG - Processing registration: SL63GAA
+2025-08-13 10:35:24,918 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GAA
+2025-08-13 10:35:25,619 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GAA HTTP/1.1" 200 None
+2025-08-13 10:35:25,619 - MOTHistoryImport - INFO - API Rate - Legacy: 1.17 RPS, Dynamic: 0 RPS (Daily: 10/500000)
+2025-08-13 10:35:25,761 - MOTHistoryImport - DEBUG - Processing registration: LF69UXV
+2025-08-13 10:35:25,761 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UXV
+2025-08-13 10:35:26,431 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UXV HTTP/1.1" 200 None
+2025-08-13 10:35:26,590 - MOTHistoryImport - DEBUG - Processing registration: LF69UYT
+2025-08-13 10:35:26,590 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYT
+2025-08-13 10:35:27,792 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYT HTTP/1.1" 200 None
+2025-08-13 10:35:27,981 - MOTHistoryImport - DEBUG - Processing registration: LF69UYX
+2025-08-13 10:35:27,983 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYX
+2025-08-13 10:35:28,560 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYX HTTP/1.1" 200 None
+2025-08-13 10:35:28,718 - MOTHistoryImport - DEBUG - Processing registration: LF69UYV
+2025-08-13 10:35:28,718 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYV
+2025-08-13 10:35:29,296 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYV HTTP/1.1" 200 None
+2025-08-13 10:35:29,467 - MOTHistoryImport - DEBUG - Processing registration: LF69UYA
+2025-08-13 10:35:29,467 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYA
+2025-08-13 10:35:30,554 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYA HTTP/1.1" 200 None
+2025-08-13 10:35:30,665 - MOTHistoryImport - DEBUG - Processing registration: LF69UXW
+2025-08-13 10:35:30,665 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UXW
+2025-08-13 10:35:31,767 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UXW HTTP/1.1" 200 None
+2025-08-13 10:35:31,942 - MOTHistoryImport - DEBUG - Processing registration: LF69UYP
+2025-08-13 10:35:31,942 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYP
+2025-08-13 10:35:33,364 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYP HTTP/1.1" 200 None
+2025-08-13 10:35:33,522 - MOTHistoryImport - DEBUG - Processing registration: LF69UYB
+2025-08-13 10:35:33,522 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYB
+2025-08-13 10:35:34,017 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYB HTTP/1.1" 200 None
+2025-08-13 10:35:34,128 - MOTHistoryImport - DEBUG - Processing registration: LF69UYU
+2025-08-13 10:35:34,137 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYU
+2025-08-13 10:35:34,962 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYU HTTP/1.1" 200 None
+2025-08-13 10:35:35,169 - MOTHistoryImport - DEBUG - Processing registration: LF69UYC
+2025-08-13 10:35:35,170 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYC
+2025-08-13 10:35:35,953 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYC HTTP/1.1" 200 None
+2025-08-13 10:35:35,969 - MOTHistoryImport - INFO - API Rate - Legacy: 1.06 RPS, Dynamic: 0 RPS (Daily: 20/500000)
+2025-08-13 10:35:36,144 - MOTHistoryImport - DEBUG - Processing registration: LF69UYM
+2025-08-13 10:35:36,144 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYM
+2025-08-13 10:35:36,798 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYM HTTP/1.1" 200 None
+2025-08-13 10:35:36,973 - MOTHistoryImport - DEBUG - Processing registration: LF69UYE
+2025-08-13 10:35:36,973 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYE
+2025-08-13 10:35:37,596 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYE HTTP/1.1" 200 None
+2025-08-13 10:35:37,851 - MOTHistoryImport - DEBUG - Processing registration: LF69UYW
+2025-08-13 10:35:37,851 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYW
+2025-08-13 10:35:38,683 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYW HTTP/1.1" 200 None
+2025-08-13 10:35:38,858 - MOTHistoryImport - DEBUG - Processing registration: LF69UYY
+2025-08-13 10:35:38,874 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYY
+2025-08-13 10:35:39,833 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYY HTTP/1.1" 200 None
+2025-08-13 10:35:40,006 - MOTHistoryImport - DEBUG - Processing registration: LF69UYJ
+2025-08-13 10:35:40,024 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYJ
+2025-08-13 10:35:40,759 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYJ HTTP/1.1" 200 None
+2025-08-13 10:35:40,950 - MOTHistoryImport - DEBUG - Processing registration: LF69UYN
+2025-08-13 10:35:40,950 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYN
+2025-08-13 10:35:41,970 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYN HTTP/1.1" 200 None
+2025-08-13 10:35:42,156 - MOTHistoryImport - DEBUG - Processing registration: LF69UYO
+2025-08-13 10:35:42,172 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYO
+2025-08-13 10:35:42,796 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYO HTTP/1.1" 200 None
+2025-08-13 10:35:42,955 - MOTHistoryImport - DEBUG - Processing registration: LF69UYK
+2025-08-13 10:35:42,955 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYK
+2025-08-13 10:35:43,822 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYK HTTP/1.1" 200 None
+2025-08-13 10:35:44,029 - MOTHistoryImport - DEBUG - Processing registration: LF69UYD
+2025-08-13 10:35:44,029 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYD
+2025-08-13 10:35:44,636 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYD HTTP/1.1" 200 None
+2025-08-13 10:35:44,843 - MOTHistoryImport - DEBUG - Processing registration: LF69UYZ
+2025-08-13 10:35:44,859 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYZ
+2025-08-13 10:35:45,478 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYZ HTTP/1.1" 200 None
+2025-08-13 10:35:45,494 - MOTHistoryImport - INFO - API Rate - Legacy: 1.06 RPS, Dynamic: 0 RPS (Daily: 30/500000)
+2025-08-13 10:35:45,658 - MOTHistoryImport - DEBUG - Processing registration: LF69UYH
+2025-08-13 10:35:45,658 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYH
+2025-08-13 10:35:46,387 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYH HTTP/1.1" 200 None
+2025-08-13 10:35:46,515 - MOTHistoryImport - DEBUG - Processing registration: LF69UXP
+2025-08-13 10:35:46,515 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UXP
+2025-08-13 10:35:47,089 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UXP HTTP/1.1" 200 None
+2025-08-13 10:35:47,296 - MOTHistoryImport - DEBUG - Processing registration: LF69UXU
+2025-08-13 10:35:47,296 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UXU
+2025-08-13 10:35:48,050 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UXU HTTP/1.1" 200 None
+2025-08-13 10:35:48,272 - MOTHistoryImport - DEBUG - Processing registration: LF69UYR
+2025-08-13 10:35:48,288 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYR
+2025-08-13 10:35:48,886 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYR HTTP/1.1" 200 None
+2025-08-13 10:35:49,099 - MOTHistoryImport - DEBUG - Processing registration: LF69UXY
+2025-08-13 10:35:49,103 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UXY
+2025-08-13 10:35:49,955 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UXY HTTP/1.1" 200 None
+2025-08-13 10:35:50,130 - MOTHistoryImport - DEBUG - Processing registration: LF69UXX
+2025-08-13 10:35:50,130 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UXX
+2025-08-13 10:35:50,801 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UXX HTTP/1.1" 200 None
+2025-08-13 10:35:51,134 - MOTHistoryImport - DEBUG - Processing registration: LF69UXS
+2025-08-13 10:35:51,134 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UXS
+2025-08-13 10:35:52,093 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UXS HTTP/1.1" 200 None
+2025-08-13 10:35:52,332 - MOTHistoryImport - DEBUG - Processing registration: LF69UYS
+2025-08-13 10:35:52,332 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYS
+2025-08-13 10:35:53,708 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYS HTTP/1.1" 200 None
+2025-08-13 10:35:53,962 - MOTHistoryImport - DEBUG - Processing registration: LF69UYG
+2025-08-13 10:35:53,977 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UYG
+2025-08-13 10:35:54,667 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UYG HTTP/1.1" 200 None
+2025-08-13 10:35:54,873 - MOTHistoryImport - DEBUG - Processing registration: LF69UXZ
+2025-08-13 10:35:54,873 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LF69UXZ
+2025-08-13 10:35:55,654 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LF69UXZ HTTP/1.1" 200 None
+2025-08-13 10:35:55,670 - MOTHistoryImport - INFO - API Rate - Legacy: 1.04 RPS, Dynamic: 0 RPS (Daily: 40/500000)
+2025-08-13 10:35:55,939 - MOTHistoryImport - DEBUG - Processing registration: MF74NLR
+2025-08-13 10:35:55,939 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NLR
+2025-08-13 10:35:56,512 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NLR HTTP/1.1" 200 None
+2025-08-13 10:35:56,813 - MOTHistoryImport - DEBUG - Processing registration: MF74NLT
+2025-08-13 10:35:56,817 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NLT
+2025-08-13 10:35:57,353 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NLT HTTP/1.1" 200 None
+2025-08-13 10:35:57,654 - MOTHistoryImport - DEBUG - Processing registration: MF74NLU
+2025-08-13 10:35:57,670 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NLU
+2025-08-13 10:35:58,358 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NLU HTTP/1.1" 200 None
+2025-08-13 10:35:58,611 - MOTHistoryImport - DEBUG - Processing registration: MF74NLV
+2025-08-13 10:35:58,611 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NLV
+2025-08-13 10:35:59,350 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NLV HTTP/1.1" 200 None
+2025-08-13 10:35:59,569 - MOTHistoryImport - DEBUG - Processing registration: MF74NLX
+2025-08-13 10:35:59,569 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NLX
+2025-08-13 10:36:00,157 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NLX HTTP/1.1" 200 None
+2025-08-13 10:36:00,363 - MOTHistoryImport - DEBUG - Processing registration: MF74NLY
+2025-08-13 10:36:00,379 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NLY
+2025-08-13 10:36:01,032 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NLY HTTP/1.1" 200 None
+2025-08-13 10:36:01,287 - MOTHistoryImport - DEBUG - Processing registration: MF74NMA
+2025-08-13 10:36:01,287 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NMA
+2025-08-13 10:36:01,893 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NMA HTTP/1.1" 200 None
+2025-08-13 10:36:02,130 - MOTHistoryImport - DEBUG - Processing registration: MF74NME
+2025-08-13 10:36:02,130 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NME
+2025-08-13 10:36:02,826 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NME HTTP/1.1" 200 None
+2025-08-13 10:36:03,095 - MOTHistoryImport - DEBUG - Processing registration: MF74NMJ
+2025-08-13 10:36:03,095 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NMJ
+2025-08-13 10:36:04,070 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NMJ HTTP/1.1" 200 None
+2025-08-13 10:36:04,290 - MOTHistoryImport - DEBUG - Processing registration: MF74NMK
+2025-08-13 10:36:04,290 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NMK
+2025-08-13 10:36:04,836 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NMK HTTP/1.1" 200 None
+2025-08-13 10:36:04,836 - MOTHistoryImport - INFO - API Rate - Legacy: 1.05 RPS, Dynamic: 0 RPS (Daily: 50/500000)
+2025-08-13 10:36:05,003 - MOTHistoryImport - DEBUG - Processing registration: MF74NMM
+2025-08-13 10:36:05,003 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NMM
+2025-08-13 10:36:05,624 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NMM HTTP/1.1" 200 None
+2025-08-13 10:36:05,847 - MOTHistoryImport - DEBUG - Processing registration: MF74NMO
+2025-08-13 10:36:05,847 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NMO
+2025-08-13 10:36:06,672 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NMO HTTP/1.1" 200 None
+2025-08-13 10:36:06,891 - MOTHistoryImport - DEBUG - Processing registration: MF74NMU
+2025-08-13 10:36:06,895 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NMU
+2025-08-13 10:36:07,474 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NMU HTTP/1.1" 200 None
+2025-08-13 10:36:07,676 - MOTHistoryImport - DEBUG - Processing registration: MF74NMV
+2025-08-13 10:36:07,679 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NMV
+2025-08-13 10:36:08,320 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NMV HTTP/1.1" 200 None
+2025-08-13 10:36:08,570 - MOTHistoryImport - DEBUG - Processing registration: MF74NMX
+2025-08-13 10:36:08,570 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NMX
+2025-08-13 10:36:09,536 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NMX HTTP/1.1" 200 None
+2025-08-13 10:36:09,736 - MOTHistoryImport - DEBUG - Processing registration: MF74NMY
+2025-08-13 10:36:09,738 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NMY
+2025-08-13 10:36:10,701 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NMY HTTP/1.1" 200 None
+2025-08-13 10:36:10,920 - MOTHistoryImport - DEBUG - Processing registration: MF74NMZ
+2025-08-13 10:36:10,920 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NMZ
+2025-08-13 10:36:11,590 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NMZ HTTP/1.1" 200 None
+2025-08-13 10:36:11,804 - MOTHistoryImport - DEBUG - Processing registration: MF74NNC
+2025-08-13 10:36:11,804 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNC
+2025-08-13 10:36:12,451 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNC HTTP/1.1" 200 None
+2025-08-13 10:36:12,595 - MOTHistoryImport - DEBUG - Processing registration: MF74NND
+2025-08-13 10:36:12,595 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NND
+2025-08-13 10:36:13,286 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NND HTTP/1.1" 200 None
+2025-08-13 10:36:13,511 - MOTHistoryImport - DEBUG - Processing registration: MF74NNG
+2025-08-13 10:36:13,514 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNG
+2025-08-13 10:36:14,117 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNG HTTP/1.1" 200 None
+2025-08-13 10:36:14,117 - MOTHistoryImport - INFO - API Rate - Legacy: 1.05 RPS, Dynamic: 0 RPS (Daily: 60/500000)
+2025-08-13 10:36:14,336 - MOTHistoryImport - DEBUG - Processing registration: MF74NNH
+2025-08-13 10:36:14,336 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNH
+2025-08-13 10:36:15,121 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNH HTTP/1.1" 200 None
+2025-08-13 10:36:15,362 - MOTHistoryImport - DEBUG - Processing registration: MF74NNJ
+2025-08-13 10:36:15,366 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNJ
+2025-08-13 10:36:16,142 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNJ HTTP/1.1" 200 None
+2025-08-13 10:36:16,365 - MOTHistoryImport - DEBUG - Processing registration: MF74NNK
+2025-08-13 10:36:16,369 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNK
+2025-08-13 10:36:17,070 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNK HTTP/1.1" 200 None
+2025-08-13 10:36:17,315 - MOTHistoryImport - DEBUG - Processing registration: MF74NNL
+2025-08-13 10:36:17,317 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNL
+2025-08-13 10:36:18,169 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNL HTTP/1.1" 200 None
+2025-08-13 10:36:18,395 - MOTHistoryImport - DEBUG - Processing registration: MF74NNM
+2025-08-13 10:36:18,411 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNM
+2025-08-13 10:36:19,117 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNM HTTP/1.1" 200 None
+2025-08-13 10:36:19,367 - MOTHistoryImport - DEBUG - Processing registration: MF74NNO
+2025-08-13 10:36:19,367 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNO
+2025-08-13 10:36:20,035 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNO HTTP/1.1" 200 None
+2025-08-13 10:36:20,313 - MOTHistoryImport - DEBUG - Processing registration: MF74NNP
+2025-08-13 10:36:20,316 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNP
+2025-08-13 10:36:20,985 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNP HTTP/1.1" 200 None
+2025-08-13 10:36:21,210 - MOTHistoryImport - DEBUG - Processing registration: MF74NNR
+2025-08-13 10:36:21,213 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNR
+2025-08-13 10:36:21,970 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNR HTTP/1.1" 200 None
+2025-08-13 10:36:22,183 - MOTHistoryImport - DEBUG - Processing registration: MF74NNT
+2025-08-13 10:36:22,186 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNT
+2025-08-13 10:36:23,391 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNT HTTP/1.1" 200 None
+2025-08-13 10:36:23,636 - MOTHistoryImport - DEBUG - Processing registration: MF74NNU
+2025-08-13 10:36:23,636 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNU
+2025-08-13 10:36:24,323 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNU HTTP/1.1" 200 None
+2025-08-13 10:36:24,323 - MOTHistoryImport - INFO - API Rate - Legacy: 1.04 RPS, Dynamic: 0 RPS (Daily: 70/500000)
+2025-08-13 10:36:24,608 - MOTHistoryImport - DEBUG - Processing registration: MF74NNV
+2025-08-13 10:36:24,612 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNV
+2025-08-13 10:36:25,131 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNV HTTP/1.1" 200 None
+2025-08-13 10:36:25,266 - MOTHistoryImport - DEBUG - Processing registration: MF74NNW
+2025-08-13 10:36:25,281 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNW
+2025-08-13 10:36:25,868 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNW HTTP/1.1" 200 None
+2025-08-13 10:36:26,096 - MOTHistoryImport - DEBUG - Processing registration: MF74NNX
+2025-08-13 10:36:26,112 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNX
+2025-08-13 10:36:27,174 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNX HTTP/1.1" 200 None
+2025-08-13 10:36:27,474 - MOTHistoryImport - DEBUG - Processing registration: MF74NNZ
+2025-08-13 10:36:27,474 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNZ
+2025-08-13 10:36:28,073 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNZ HTTP/1.1" 200 None
+2025-08-13 10:36:28,406 - MOTHistoryImport - DEBUG - Processing registration: MF74NOH
+2025-08-13 10:36:28,406 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NOH
+2025-08-13 10:36:29,284 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NOH HTTP/1.1" 200 None
+2025-08-13 10:36:29,517 - MOTHistoryImport - DEBUG - Processing registration: MF74NOU
+2025-08-13 10:36:29,517 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NOU
+2025-08-13 10:36:30,395 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NOU HTTP/1.1" 200 None
+2025-08-13 10:36:30,640 - MOTHistoryImport - DEBUG - Processing registration: MF74NPA
+2025-08-13 10:36:30,642 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPA
+2025-08-13 10:36:31,339 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPA HTTP/1.1" 200 None
+2025-08-13 10:36:31,804 - MOTHistoryImport - DEBUG - Processing registration: MF74NPC
+2025-08-13 10:36:31,805 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPC
+2025-08-13 10:36:32,540 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPC HTTP/1.1" 200 None
+2025-08-13 10:36:32,784 - MOTHistoryImport - DEBUG - Processing registration: MF74NPD
+2025-08-13 10:36:32,802 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPD
+2025-08-13 10:36:33,537 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPD HTTP/1.1" 200 None
+2025-08-13 10:36:33,727 - MOTHistoryImport - DEBUG - Processing registration: MF74NPE
+2025-08-13 10:36:33,734 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPE
+2025-08-13 10:36:34,424 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPE HTTP/1.1" 200 None
+2025-08-13 10:36:34,430 - MOTHistoryImport - INFO - API Rate - Legacy: 1.04 RPS, Dynamic: 0 RPS (Daily: 80/500000)
+2025-08-13 10:36:34,618 - MOTHistoryImport - DEBUG - Processing registration: MF74NPG
+2025-08-13 10:36:34,634 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPG
+2025-08-13 10:36:35,387 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPG HTTP/1.1" 200 None
+2025-08-13 10:36:35,588 - MOTHistoryImport - DEBUG - Processing registration: MF74NPJ
+2025-08-13 10:36:35,588 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPJ
+2025-08-13 10:36:36,301 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPJ HTTP/1.1" 200 None
+2025-08-13 10:36:36,535 - MOTHistoryImport - DEBUG - Processing registration: MF74NPK
+2025-08-13 10:36:36,538 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPK
+2025-08-13 10:36:37,199 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPK HTTP/1.1" 200 None
+2025-08-13 10:36:37,452 - MOTHistoryImport - DEBUG - Processing registration: MF74NPN
+2025-08-13 10:36:37,452 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPN
+2025-08-13 10:36:38,185 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPN HTTP/1.1" 200 None
+2025-08-13 10:36:38,434 - MOTHistoryImport - DEBUG - Processing registration: MF74NPO
+2025-08-13 10:36:38,436 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPO
+2025-08-13 10:36:39,510 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPO HTTP/1.1" 200 None
+2025-08-13 10:36:39,770 - MOTHistoryImport - DEBUG - Processing registration: MF74NPP
+2025-08-13 10:36:39,774 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPP
+2025-08-13 10:36:40,326 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPP HTTP/1.1" 200 None
+2025-08-13 10:36:40,516 - MOTHistoryImport - DEBUG - Processing registration: MF74NPU
+2025-08-13 10:36:40,516 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPU
+2025-08-13 10:36:41,114 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPU HTTP/1.1" 200 None
+2025-08-13 10:36:41,367 - MOTHistoryImport - DEBUG - Processing registration: MF74NPV
+2025-08-13 10:36:41,367 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPV
+2025-08-13 10:36:41,933 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPV HTTP/1.1" 200 None
+2025-08-13 10:36:42,182 - MOTHistoryImport - DEBUG - Processing registration: MF74NPX
+2025-08-13 10:36:42,182 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPX
+2025-08-13 10:36:42,714 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPX HTTP/1.1" 200 None
+2025-08-13 10:36:42,892 - MOTHistoryImport - DEBUG - Processing registration: MF74NPY
+2025-08-13 10:36:42,895 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPY
+2025-08-13 10:36:43,771 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPY HTTP/1.1" 200 None
+2025-08-13 10:36:43,771 - MOTHistoryImport - INFO - API Rate - Legacy: 1.05 RPS, Dynamic: 0 RPS (Daily: 90/500000)
+2025-08-13 10:36:44,023 - MOTHistoryImport - DEBUG - Processing registration: MF74NPZ
+2025-08-13 10:36:44,026 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NPZ
+2025-08-13 10:36:44,816 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NPZ HTTP/1.1" 200 None
+2025-08-13 10:36:45,057 - MOTHistoryImport - DEBUG - Processing registration: MF74NRE
+2025-08-13 10:36:45,060 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NRE
+2025-08-13 10:36:45,982 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NRE HTTP/1.1" 200 None
+2025-08-13 10:36:46,217 - MOTHistoryImport - DEBUG - Processing registration: MF74NRJ
+2025-08-13 10:36:46,217 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NRJ
+2025-08-13 10:36:47,031 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NRJ HTTP/1.1" 200 None
+2025-08-13 10:36:47,298 - MOTHistoryImport - DEBUG - Processing registration: MF74NRK
+2025-08-13 10:36:47,298 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NRK
+2025-08-13 10:36:48,159 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NRK HTTP/1.1" 200 None
+2025-08-13 10:36:48,393 - MOTHistoryImport - DEBUG - Processing registration: MF74NRL
+2025-08-13 10:36:48,396 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NRL
+2025-08-13 10:36:48,965 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NRL HTTP/1.1" 200 None
+2025-08-13 10:36:49,233 - MOTHistoryImport - DEBUG - Processing registration: MF74NRN
+2025-08-13 10:36:49,235 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NRN
+2025-08-13 10:36:50,586 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NRN HTTP/1.1" 200 None
+2025-08-13 10:36:50,815 - MOTHistoryImport - DEBUG - Processing registration: MF74NRO
+2025-08-13 10:36:50,815 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NRO
+2025-08-13 10:36:51,955 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NRO HTTP/1.1" 200 None
+2025-08-13 10:36:52,120 - MOTHistoryImport - DEBUG - Processing registration: MF74NRU
+2025-08-13 10:36:52,120 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NRU
+2025-08-13 10:36:52,781 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NRU HTTP/1.1" 200 None
+2025-08-13 10:36:53,014 - MOTHistoryImport - DEBUG - Processing registration: MF74NRV
+2025-08-13 10:36:53,030 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NRV
+2025-08-13 10:36:53,748 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NRV HTTP/1.1" 200 None
+2025-08-13 10:36:53,979 - MOTHistoryImport - DEBUG - Processing registration: MF74NRX
+2025-08-13 10:36:53,979 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NRX
+2025-08-13 10:36:54,804 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NRX HTTP/1.1" 200 None
+2025-08-13 10:36:54,807 - MOTHistoryImport - INFO - API Rate - Legacy: 1.03 RPS, Dynamic: 0 RPS (Daily: 100/500000)
+2025-08-13 10:36:55,113 - MOTHistoryImport - INFO - Bulk inserting 100 vehicle records...
+2025-08-13 10:36:56,590 - MOTHistoryImport - INFO - Successfully bulk inserted 100 vehicle records
+2025-08-13 10:36:56,590 - MOTHistoryImport - INFO - Bulk inserting 298 test records...
+2025-08-13 10:36:56,669 - MOTHistoryImport - INFO - Successfully exported 298 records to CSV_Exports\StageMOTTests_20250813_103656.csv
+2025-08-13 10:36:58,893 - MOTHistoryImport - INFO - Successfully processed 298 test records (0 duplicates skipped)
+2025-08-13 10:36:58,896 - MOTHistoryImport - INFO - Bulk inserting 17 defect records...
+2025-08-13 10:36:58,985 - MOTHistoryImport - INFO - Successfully bulk inserted 17 defect records
+2025-08-13 10:36:58,992 - MOTHistoryImport - INFO - Bulk batch committed: 100 successful, 0 failed, 100 vehicles, 298 tests, 17 defects, 0 not found
+2025-08-13 10:36:58,994 - MOTHistoryImport - INFO - Progress: 20.4% (100/489)
+2025-08-13 10:36:58,996 - MOTHistoryImport - INFO - Processing batch 2/5 (100 registrations)
+2025-08-13 10:36:58,996 - MOTHistoryImport - DEBUG - Processing registration: MF74NRY
+2025-08-13 10:36:58,996 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NRY
+2025-08-13 10:36:59,810 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NRY HTTP/1.1" 200 None
+2025-08-13 10:37:00,094 - MOTHistoryImport - DEBUG - Processing registration: MF74NRZ
+2025-08-13 10:37:00,094 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NRZ
+2025-08-13 10:37:00,801 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NRZ HTTP/1.1" 200 None
+2025-08-13 10:37:00,978 - MOTHistoryImport - DEBUG - Processing registration: MF74NSE
+2025-08-13 10:37:00,982 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NSE
+2025-08-13 10:37:01,662 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NSE HTTP/1.1" 200 None
+2025-08-13 10:37:01,967 - MOTHistoryImport - DEBUG - Processing registration: MF74NSJ
+2025-08-13 10:37:01,971 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NSJ
+2025-08-13 10:37:02,822 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NSJ HTTP/1.1" 200 None
+2025-08-13 10:37:03,057 - MOTHistoryImport - DEBUG - Processing registration: MF74NSK
+2025-08-13 10:37:03,057 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NSK
+2025-08-13 10:37:03,861 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NSK HTTP/1.1" 200 None
+2025-08-13 10:37:04,202 - MOTHistoryImport - DEBUG - Processing registration: MF74NSN
+2025-08-13 10:37:04,202 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NSN
+2025-08-13 10:37:04,843 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NSN HTTP/1.1" 200 None
+2025-08-13 10:37:05,081 - MOTHistoryImport - DEBUG - Processing registration: MF74NSO
+2025-08-13 10:37:05,081 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NSO
+2025-08-13 10:37:05,597 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NSO HTTP/1.1" 200 None
+2025-08-13 10:37:05,873 - MOTHistoryImport - DEBUG - Processing registration: MF74NSU
+2025-08-13 10:37:05,876 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NSU
+2025-08-13 10:37:06,928 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NSU HTTP/1.1" 200 None
+2025-08-13 10:37:07,196 - MOTHistoryImport - DEBUG - Processing registration: MF74NSV
+2025-08-13 10:37:07,196 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NSV
+2025-08-13 10:37:07,873 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NSV HTTP/1.1" 200 None
+2025-08-13 10:37:08,188 - MOTHistoryImport - DEBUG - Processing registration: MF74NSY
+2025-08-13 10:37:08,195 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NSY
+2025-08-13 10:37:09,032 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NSY HTTP/1.1" 200 None
+2025-08-13 10:37:09,043 - MOTHistoryImport - INFO - API Rate - Legacy: 0.94 RPS, Dynamic: 0 RPS (Daily: 110/500000)
+2025-08-13 10:37:09,511 - MOTHistoryImport - DEBUG - Processing registration: MF74NSZ
+2025-08-13 10:37:09,511 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NSZ
+2025-08-13 10:37:10,325 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NSZ HTTP/1.1" 200 None
+2025-08-13 10:37:10,942 - MOTHistoryImport - DEBUG - Processing registration: MF74NTA
+2025-08-13 10:37:10,942 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NTA
+2025-08-13 10:37:11,714 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NTA HTTP/1.1" 200 None
+2025-08-13 10:37:12,076 - MOTHistoryImport - DEBUG - Processing registration: MF74NUJ
+2025-08-13 10:37:12,076 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NUJ
+2025-08-13 10:37:12,935 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NUJ HTTP/1.1" 200 None
+2025-08-13 10:37:13,219 - MOTHistoryImport - DEBUG - Processing registration: MF74NUK
+2025-08-13 10:37:13,219 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NUK
+2025-08-13 10:37:14,265 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NUK HTTP/1.1" 200 None
+2025-08-13 10:37:14,517 - MOTHistoryImport - DEBUG - Processing registration: MF74NUM
+2025-08-13 10:37:14,521 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NUM
+2025-08-13 10:37:15,778 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NUM HTTP/1.1" 200 None
+2025-08-13 10:37:16,124 - MOTHistoryImport - DEBUG - Processing registration: MF74NUO
+2025-08-13 10:37:16,127 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NUO
+2025-08-13 10:37:16,827 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NUO HTTP/1.1" 200 None
+2025-08-13 10:37:17,027 - MOTHistoryImport - DEBUG - Processing registration: MF74NUP
+2025-08-13 10:37:17,027 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NUP
+2025-08-13 10:37:17,667 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NUP HTTP/1.1" 200 None
+2025-08-13 10:37:18,045 - MOTHistoryImport - DEBUG - Processing registration: MJ74JKV
+2025-08-13 10:37:18,048 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JKV
+2025-08-13 10:37:18,743 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JKV HTTP/1.1" 200 None
+2025-08-13 10:37:19,008 - MOTHistoryImport - DEBUG - Processing registration: MJ74JKX
+2025-08-13 10:37:19,011 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JKX
+2025-08-13 10:37:20,021 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JKX HTTP/1.1" 200 None
+2025-08-13 10:37:20,366 - MOTHistoryImport - DEBUG - Processing registration: MJ74JKY
+2025-08-13 10:37:20,378 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JKY
+2025-08-13 10:37:20,979 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JKY HTTP/1.1" 200 None
+2025-08-13 10:37:20,985 - MOTHistoryImport - INFO - API Rate - Legacy: 0.90 RPS, Dynamic: 0 RPS (Daily: 120/500000)
+2025-08-13 10:37:21,275 - MOTHistoryImport - DEBUG - Processing registration: MJ74JKZ
+2025-08-13 10:37:21,275 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JKZ
+2025-08-13 10:37:22,461 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JKZ HTTP/1.1" 200 None
+2025-08-13 10:37:22,781 - MOTHistoryImport - DEBUG - Processing registration: MJ74JLO
+2025-08-13 10:37:22,781 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JLO
+2025-08-13 10:37:23,410 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JLO HTTP/1.1" 200 None
+2025-08-13 10:37:23,758 - MOTHistoryImport - DEBUG - Processing registration: MJ74JLU
+2025-08-13 10:37:23,758 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JLU
+2025-08-13 10:37:24,390 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JLU HTTP/1.1" 200 None
+2025-08-13 10:37:24,783 - MOTHistoryImport - DEBUG - Processing registration: MJ74JLV
+2025-08-13 10:37:24,786 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JLV
+2025-08-13 10:37:25,576 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JLV HTTP/1.1" 200 None
+2025-08-13 10:37:25,924 - MOTHistoryImport - DEBUG - Processing registration: MJ74JLX
+2025-08-13 10:37:25,929 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JLX
+2025-08-13 10:37:26,607 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JLX HTTP/1.1" 200 None
+2025-08-13 10:37:26,898 - MOTHistoryImport - DEBUG - Processing registration: MJ74JMO
+2025-08-13 10:37:26,898 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JMO
+2025-08-13 10:37:27,440 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JMO HTTP/1.1" 200 None
+2025-08-13 10:37:27,621 - MOTHistoryImport - DEBUG - Processing registration: MJ74JMU
+2025-08-13 10:37:27,621 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JMU
+2025-08-13 10:37:28,231 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JMU HTTP/1.1" 200 None
+2025-08-13 10:37:28,483 - MOTHistoryImport - DEBUG - Processing registration: MJ74JMV
+2025-08-13 10:37:28,483 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JMV
+2025-08-13 10:37:29,340 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JMV HTTP/1.1" 200 None
+2025-08-13 10:37:29,689 - MOTHistoryImport - DEBUG - Processing registration: MJ74JMX
+2025-08-13 10:37:29,689 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JMX
+2025-08-13 10:37:30,392 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JMX HTTP/1.1" 200 None
+2025-08-13 10:37:30,690 - MOTHistoryImport - DEBUG - Processing registration: MJ74JNF
+2025-08-13 10:37:30,705 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JNF
+2025-08-13 10:37:31,375 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JNF HTTP/1.1" 200 None
+2025-08-13 10:37:31,378 - MOTHistoryImport - INFO - API Rate - Legacy: 0.90 RPS, Dynamic: 0 RPS (Daily: 130/500000)
+2025-08-13 10:37:31,650 - MOTHistoryImport - DEBUG - Processing registration: MJ74JNK
+2025-08-13 10:37:31,662 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JNK
+2025-08-13 10:37:32,462 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JNK HTTP/1.1" 200 None
+2025-08-13 10:37:32,703 - MOTHistoryImport - DEBUG - Processing registration: MJ74JNL
+2025-08-13 10:37:32,707 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JNL
+2025-08-13 10:37:33,392 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JNL HTTP/1.1" 200 None
+2025-08-13 10:37:33,650 - MOTHistoryImport - DEBUG - Processing registration: MJ74JNN
+2025-08-13 10:37:33,650 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JNN
+2025-08-13 10:37:34,623 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JNN HTTP/1.1" 200 None
+2025-08-13 10:37:34,916 - MOTHistoryImport - DEBUG - Processing registration: MJ74JNO
+2025-08-13 10:37:34,932 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JNO
+2025-08-13 10:37:35,608 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JNO HTTP/1.1" 200 None
+2025-08-13 10:37:35,892 - MOTHistoryImport - DEBUG - Processing registration: MJ74JNU
+2025-08-13 10:37:35,908 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JNU
+2025-08-13 10:37:36,575 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JNU HTTP/1.1" 200 None
+2025-08-13 10:37:36,886 - MOTHistoryImport - DEBUG - Processing registration: MJ74JNV
+2025-08-13 10:37:36,888 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JNV
+2025-08-13 10:37:37,459 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JNV HTTP/1.1" 200 None
+2025-08-13 10:37:37,758 - MOTHistoryImport - DEBUG - Processing registration: MJ74JNX
+2025-08-13 10:37:37,775 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JNX
+2025-08-13 10:37:38,412 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JNX HTTP/1.1" 200 None
+2025-08-13 10:37:38,746 - MOTHistoryImport - DEBUG - Processing registration: MJ74JNZ
+2025-08-13 10:37:38,746 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JNZ
+2025-08-13 10:37:39,871 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JNZ HTTP/1.1" 200 None
+2025-08-13 10:37:40,140 - MOTHistoryImport - DEBUG - Processing registration: MJ74JOA
+2025-08-13 10:37:40,140 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JOA
+2025-08-13 10:37:41,066 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JOA HTTP/1.1" 200 None
+2025-08-13 10:37:41,451 - MOTHistoryImport - DEBUG - Processing registration: MJ74JOH
+2025-08-13 10:37:41,456 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JOH
+2025-08-13 10:37:42,129 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JOH HTTP/1.1" 200 None
+2025-08-13 10:37:42,129 - MOTHistoryImport - INFO - API Rate - Legacy: 0.88 RPS, Dynamic: 0 RPS (Daily: 140/500000)
+2025-08-13 10:37:42,458 - MOTHistoryImport - DEBUG - Processing registration: MJ74JOU
+2025-08-13 10:37:42,458 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JOU
+2025-08-13 10:37:43,002 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JOU HTTP/1.1" 200 None
+2025-08-13 10:37:43,273 - MOTHistoryImport - DEBUG - Processing registration: MJ74JOV
+2025-08-13 10:37:43,273 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JOV
+2025-08-13 10:37:43,941 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JOV HTTP/1.1" 200 None
+2025-08-13 10:37:44,195 - MOTHistoryImport - DEBUG - Processing registration: MJ74JPF
+2025-08-13 10:37:44,198 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JPF
+2025-08-13 10:37:45,245 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JPF HTTP/1.1" 200 None
+2025-08-13 10:37:45,540 - MOTHistoryImport - DEBUG - Processing registration: MJ74JPO
+2025-08-13 10:37:45,540 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JPO
+2025-08-13 10:37:46,519 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JPO HTTP/1.1" 200 None
+2025-08-13 10:37:46,840 - MOTHistoryImport - DEBUG - Processing registration: MJ74JPU
+2025-08-13 10:37:46,840 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JPU
+2025-08-13 10:37:47,473 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JPU HTTP/1.1" 200 None
+2025-08-13 10:37:47,936 - MOTHistoryImport - DEBUG - Processing registration: MJ74JPV
+2025-08-13 10:37:47,936 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JPV
+2025-08-13 10:37:48,569 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JPV HTTP/1.1" 200 None
+2025-08-13 10:37:48,905 - MOTHistoryImport - DEBUG - Processing registration: MJ74JPX
+2025-08-13 10:37:48,919 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JPX
+2025-08-13 10:37:50,309 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JPX HTTP/1.1" 200 None
+2025-08-13 10:37:50,671 - MOTHistoryImport - DEBUG - Processing registration: MJ74JPY
+2025-08-13 10:37:50,671 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JPY
+2025-08-13 10:37:51,305 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JPY HTTP/1.1" 200 None
+2025-08-13 10:37:51,601 - MOTHistoryImport - DEBUG - Processing registration: MJ74JRO
+2025-08-13 10:37:51,606 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JRO
+2025-08-13 10:37:52,922 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JRO HTTP/1.1" 200 None
+2025-08-13 10:37:53,271 - MOTHistoryImport - DEBUG - Processing registration: MJ74JRU
+2025-08-13 10:37:53,274 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JRU
+2025-08-13 10:37:53,893 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JRU HTTP/1.1" 200 None
+2025-08-13 10:37:53,904 - MOTHistoryImport - INFO - API Rate - Legacy: 0.86 RPS, Dynamic: 0 RPS (Daily: 150/500000)
+2025-08-13 10:37:54,222 - MOTHistoryImport - DEBUG - Processing registration: MJ74JRV
+2025-08-13 10:37:54,235 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JRV
+2025-08-13 10:37:55,190 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JRV HTTP/1.1" 200 None
+2025-08-13 10:37:55,538 - MOTHistoryImport - DEBUG - Processing registration: MJ74JRX
+2025-08-13 10:37:55,554 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MJ74JRX
+2025-08-13 10:37:56,177 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MJ74JRX HTTP/1.1" 200 None
+2025-08-13 10:37:56,486 - MOTHistoryImport - DEBUG - Processing registration: LV74CGG
+2025-08-13 10:37:56,494 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74CGG
+2025-08-13 10:37:57,502 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74CGG HTTP/1.1" 200 None
+2025-08-13 10:37:57,772 - MOTHistoryImport - DEBUG - Processing registration: LV74CGK
+2025-08-13 10:37:57,772 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74CGK
+2025-08-13 10:37:58,334 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74CGK HTTP/1.1" 200 None
+2025-08-13 10:37:58,667 - MOTHistoryImport - DEBUG - Processing registration: LV74CGO
+2025-08-13 10:37:58,667 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74CGO
+2025-08-13 10:37:59,303 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74CGO HTTP/1.1" 200 None
+2025-08-13 10:37:59,668 - MOTHistoryImport - DEBUG - Processing registration: LV74CGU
+2025-08-13 10:37:59,668 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74CGU
+2025-08-13 10:38:00,514 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74CGU HTTP/1.1" 200 None
+2025-08-13 10:38:00,880 - MOTHistoryImport - DEBUG - Processing registration: LV74CGX
+2025-08-13 10:38:00,880 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74CGX
+2025-08-13 10:38:02,040 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74CGX HTTP/1.1" 200 None
+2025-08-13 10:38:02,372 - MOTHistoryImport - DEBUG - Processing registration: LV74CGY
+2025-08-13 10:38:02,388 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74CGY
+2025-08-13 10:38:02,954 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74CGY HTTP/1.1" 200 None
+2025-08-13 10:38:03,486 - MOTHistoryImport - DEBUG - Processing registration: LV74CGZ
+2025-08-13 10:38:03,502 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74CGZ
+2025-08-13 10:38:04,495 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74CGZ HTTP/1.1" 200 None
+2025-08-13 10:38:04,779 - MOTHistoryImport - DEBUG - Processing registration: LV74KNA
+2025-08-13 10:38:04,779 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74KNA
+2025-08-13 10:38:05,428 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74KNA HTTP/1.1" 200 None
+2025-08-13 10:38:05,444 - MOTHistoryImport - INFO - API Rate - Legacy: 0.90 RPS, Dynamic: 0 RPS (Daily: 160/500000)
+2025-08-13 10:38:05,999 - MOTHistoryImport - DEBUG - Processing registration: LV74KNB
+2025-08-13 10:38:06,014 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74KNB
+2025-08-13 10:38:06,972 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74KNB HTTP/1.1" 200 None
+2025-08-13 10:38:07,280 - MOTHistoryImport - DEBUG - Processing registration: LV74KNC
+2025-08-13 10:38:07,290 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74KNC
+2025-08-13 10:38:07,769 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74KNC HTTP/1.1" 200 None
+2025-08-13 10:38:08,072 - MOTHistoryImport - DEBUG - Processing registration: LV74KND
+2025-08-13 10:38:08,072 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74KND
+2025-08-13 10:38:08,933 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74KND HTTP/1.1" 200 None
+2025-08-13 10:38:09,233 - MOTHistoryImport - DEBUG - Processing registration: LV74KNE
+2025-08-13 10:38:09,233 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74KNE
+2025-08-13 10:38:09,847 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74KNE HTTP/1.1" 200 None
+2025-08-13 10:38:10,172 - MOTHistoryImport - DEBUG - Processing registration: LV74KNF
+2025-08-13 10:38:10,172 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74KNF
+2025-08-13 10:38:10,908 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74KNF HTTP/1.1" 200 None
+2025-08-13 10:38:11,468 - MOTHistoryImport - DEBUG - Processing registration: LV74KNG
+2025-08-13 10:38:11,468 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74KNG
+2025-08-13 10:38:12,021 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74KNG HTTP/1.1" 200 None
+2025-08-13 10:38:12,511 - MOTHistoryImport - DEBUG - Processing registration: LV74KNH
+2025-08-13 10:38:12,527 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74KNH
+2025-08-13 10:38:13,135 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74KNH HTTP/1.1" 200 None
+2025-08-13 10:38:13,498 - MOTHistoryImport - DEBUG - Processing registration: LV74KNJ
+2025-08-13 10:38:13,498 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74KNJ
+2025-08-13 10:38:14,073 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74KNJ HTTP/1.1" 200 None
+2025-08-13 10:38:14,579 - MOTHistoryImport - DEBUG - Processing registration: LV74KNK
+2025-08-13 10:38:14,579 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74KNK
+2025-08-13 10:38:15,231 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74KNK HTTP/1.1" 200 None
+2025-08-13 10:38:15,565 - MOTHistoryImport - DEBUG - Processing registration: LV74THU
+2025-08-13 10:38:15,565 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74THU
+2025-08-13 10:38:16,286 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74THU HTTP/1.1" 200 None
+2025-08-13 10:38:16,286 - MOTHistoryImport - INFO - API Rate - Legacy: 0.93 RPS, Dynamic: 0 RPS (Daily: 170/500000)
+2025-08-13 10:38:16,570 - MOTHistoryImport - DEBUG - Processing registration: LV74THX
+2025-08-13 10:38:16,578 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74THX
+2025-08-13 10:38:17,321 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74THX HTTP/1.1" 200 None
+2025-08-13 10:38:17,543 - MOTHistoryImport - DEBUG - Processing registration: LV74THZ
+2025-08-13 10:38:17,543 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: LV74THZ
+2025-08-13 10:38:18,643 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/LV74THZ HTTP/1.1" 200 None
+2025-08-13 10:38:20,496 - MOTHistoryImport - DEBUG - Processing registration: MF74NNB
+2025-08-13 10:38:20,496 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NNB
+2025-08-13 10:38:21,167 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NNB HTTP/1.1" 200 None
+2025-08-13 10:38:22,496 - MOTHistoryImport - DEBUG - Processing registration: SK74BMZ
+2025-08-13 10:38:22,496 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BMZ
+2025-08-13 10:38:23,053 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BMZ HTTP/1.1" 200 None
+2025-08-13 10:38:23,922 - MOTHistoryImport - DEBUG - Processing registration: SK74BLF
+2025-08-13 10:38:23,926 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BLF
+2025-08-13 10:38:24,630 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BLF HTTP/1.1" 200 None
+2025-08-13 10:38:24,961 - MOTHistoryImport - DEBUG - Processing registration: SK74BKY
+2025-08-13 10:38:24,977 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BKY
+2025-08-13 10:38:26,002 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BKY HTTP/1.1" 200 None
+2025-08-13 10:38:26,332 - MOTHistoryImport - DEBUG - Processing registration: SK74BKZ
+2025-08-13 10:38:26,332 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BKZ
+2025-08-13 10:38:27,142 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BKZ HTTP/1.1" 200 None
+2025-08-13 10:38:27,400 - MOTHistoryImport - DEBUG - Processing registration: SK74BLJ
+2025-08-13 10:38:27,400 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BLJ
+2025-08-13 10:38:28,084 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BLJ HTTP/1.1" 200 None
+2025-08-13 10:38:28,338 - MOTHistoryImport - DEBUG - Processing registration: SK74BLN
+2025-08-13 10:38:28,338 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BLN
+2025-08-13 10:38:28,913 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BLN HTTP/1.1" 200 None
+2025-08-13 10:38:29,276 - MOTHistoryImport - DEBUG - Processing registration: SK74BLV
+2025-08-13 10:38:29,276 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BLV
+2025-08-13 10:38:30,232 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BLV HTTP/1.1" 200 None
+2025-08-13 10:38:30,248 - MOTHistoryImport - INFO - API Rate - Legacy: 0.87 RPS, Dynamic: 0 RPS (Daily: 180/500000)
+2025-08-13 10:38:30,598 - MOTHistoryImport - DEBUG - Processing registration: SK74BLZ
+2025-08-13 10:38:30,605 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BLZ
+2025-08-13 10:38:31,352 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BLZ HTTP/1.1" 200 None
+2025-08-13 10:38:31,708 - MOTHistoryImport - DEBUG - Processing registration: SK74BMO
+2025-08-13 10:38:31,715 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BMO
+2025-08-13 10:38:32,497 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BMO HTTP/1.1" 200 None
+2025-08-13 10:38:32,893 - MOTHistoryImport - DEBUG - Processing registration: SK74BLX
+2025-08-13 10:38:32,893 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BLX
+2025-08-13 10:38:33,818 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BLX HTTP/1.1" 200 None
+2025-08-13 10:38:34,216 - MOTHistoryImport - DEBUG - Processing registration: SK74BMU
+2025-08-13 10:38:34,216 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BMU
+2025-08-13 10:38:35,014 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BMU HTTP/1.1" 200 None
+2025-08-13 10:38:35,331 - MOTHistoryImport - DEBUG - Processing registration: YN61BFO
+2025-08-13 10:38:35,331 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BFO
+2025-08-13 10:38:35,922 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BFO HTTP/1.1" 200 None
+2025-08-13 10:38:36,207 - MOTHistoryImport - DEBUG - Processing registration: YN61BFU
+2025-08-13 10:38:36,207 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BFU
+2025-08-13 10:38:36,843 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BFU HTTP/1.1" 200 None
+2025-08-13 10:38:37,271 - MOTHistoryImport - DEBUG - Processing registration: YN61BFP
+2025-08-13 10:38:37,287 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BFP
+2025-08-13 10:38:38,081 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BFP HTTP/1.1" 200 None
+2025-08-13 10:38:38,447 - MOTHistoryImport - DEBUG - Processing registration: YN61BFV
+2025-08-13 10:38:38,447 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BFV
+2025-08-13 10:38:39,451 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BFV HTTP/1.1" 200 None
+2025-08-13 10:38:39,863 - MOTHistoryImport - DEBUG - Processing registration: YN61BFX
+2025-08-13 10:38:39,863 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BFX
+2025-08-13 10:38:40,822 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BFX HTTP/1.1" 200 None
+2025-08-13 10:38:41,243 - MOTHistoryImport - DEBUG - Processing registration: YN61BFZ
+2025-08-13 10:38:41,243 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BFZ
+2025-08-13 10:38:42,505 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BFZ HTTP/1.1" 200 None
+2025-08-13 10:38:42,505 - MOTHistoryImport - INFO - API Rate - Legacy: 0.84 RPS, Dynamic: 0 RPS (Daily: 190/500000)
+2025-08-13 10:38:42,824 - MOTHistoryImport - DEBUG - Processing registration: YN61BFY
+2025-08-13 10:38:42,824 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BFY
+2025-08-13 10:38:43,540 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BFY HTTP/1.1" 200 None
+2025-08-13 10:38:43,926 - MOTHistoryImport - DEBUG - Processing registration: YN61BGX
+2025-08-13 10:38:43,926 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BGX
+2025-08-13 10:38:45,149 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BGX HTTP/1.1" 200 None
+2025-08-13 10:38:45,545 - MOTHistoryImport - DEBUG - Processing registration: YN61BGF
+2025-08-13 10:38:45,562 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BGF
+2025-08-13 10:38:46,276 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BGF HTTP/1.1" 200 None
+2025-08-13 10:38:46,687 - MOTHistoryImport - DEBUG - Processing registration: YN61BGK
+2025-08-13 10:38:46,687 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BGK
+2025-08-13 10:38:47,333 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BGK HTTP/1.1" 200 None
+2025-08-13 10:38:47,738 - MOTHistoryImport - DEBUG - Processing registration: YN61BGE
+2025-08-13 10:38:47,754 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BGE
+2025-08-13 10:38:48,499 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BGE HTTP/1.1" 200 None
+2025-08-13 10:38:48,863 - MOTHistoryImport - DEBUG - Processing registration: YN61BGO
+2025-08-13 10:38:48,863 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BGO
+2025-08-13 10:38:49,852 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BGO HTTP/1.1" 200 None
+2025-08-13 10:38:50,217 - MOTHistoryImport - DEBUG - Processing registration: YN61BGY
+2025-08-13 10:38:50,217 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BGY
+2025-08-13 10:38:50,949 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BGY HTTP/1.1" 200 None
+2025-08-13 10:38:51,408 - MOTHistoryImport - DEBUG - Processing registration: YN61BGZ
+2025-08-13 10:38:51,408 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BGZ
+2025-08-13 10:38:51,965 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BGZ HTTP/1.1" 200 None
+2025-08-13 10:38:52,393 - MOTHistoryImport - DEBUG - Processing registration: YN61BGU
+2025-08-13 10:38:52,393 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BGU
+2025-08-13 10:38:52,983 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BGU HTTP/1.1" 200 None
+2025-08-13 10:38:53,463 - MOTHistoryImport - DEBUG - Processing registration: YN61BGV
+2025-08-13 10:38:53,476 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BGV
+2025-08-13 10:38:54,192 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BGV HTTP/1.1" 200 None
+2025-08-13 10:38:54,192 - MOTHistoryImport - INFO - API Rate - Legacy: 0.85 RPS, Dynamic: 0 RPS (Daily: 200/500000)
+2025-08-13 10:38:54,700 - MOTHistoryImport - INFO - Bulk inserting 100 vehicle records...
+2025-08-13 10:38:55,207 - MOTHistoryImport - INFO - Successfully bulk inserted 100 vehicle records
+2025-08-13 10:38:55,207 - MOTHistoryImport - INFO - Bulk inserting 184 test records...
+2025-08-13 10:38:55,255 - MOTHistoryImport - INFO - Successfully exported 184 records to CSV_Exports\StageMOTTests_20250813_103855.csv
+2025-08-13 10:38:55,683 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (576EB9D5AF68811F086480463F4DC1F6EFCFA9729E655EAA152D94BD8FBBFC72). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:38:56,186 - MOTHistoryImport - INFO - Successfully processed 183 test records (1 duplicates skipped)
+2025-08-13 10:38:56,186 - MOTHistoryImport - INFO - Bulk inserting 39 defect records...
+2025-08-13 10:38:56,424 - MOTHistoryImport - INFO - Successfully bulk inserted 39 defect records
+2025-08-13 10:38:56,424 - MOTHistoryImport - INFO - Bulk batch committed: 100 successful, 0 failed, 100 vehicles, 184 tests, 39 defects, 0 not found
+2025-08-13 10:38:56,440 - MOTHistoryImport - INFO - Progress: 40.9% (200/489)
+2025-08-13 10:38:56,440 - MOTHistoryImport - INFO - Processing batch 3/5 (100 registrations)
+2025-08-13 10:38:56,446 - MOTHistoryImport - DEBUG - Processing registration: YN61BHA
+2025-08-13 10:38:56,451 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN61BHA
+2025-08-13 10:38:57,414 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN61BHA HTTP/1.1" 200 None
+2025-08-13 10:38:57,827 - MOTHistoryImport - DEBUG - Processing registration: SL63FZR
+2025-08-13 10:38:57,843 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZR
+2025-08-13 10:38:58,768 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZR HTTP/1.1" 200 None
+2025-08-13 10:38:59,180 - MOTHistoryImport - DEBUG - Processing registration: YN62BEY
+2025-08-13 10:38:59,180 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BEY
+2025-08-13 10:38:59,852 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BEY HTTP/1.1" 200 None
+2025-08-13 10:39:00,372 - MOTHistoryImport - DEBUG - Processing registration: YN62BBX
+2025-08-13 10:39:00,372 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BBX
+2025-08-13 10:39:01,329 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BBX HTTP/1.1" 200 None
+2025-08-13 10:39:01,930 - MOTHistoryImport - DEBUG - Processing registration: YN62BCY
+2025-08-13 10:39:01,949 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BCY
+2025-08-13 10:39:02,760 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BCY HTTP/1.1" 200 None
+2025-08-13 10:39:03,220 - MOTHistoryImport - DEBUG - Processing registration: YN62BFP
+2025-08-13 10:39:03,220 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BFP
+2025-08-13 10:39:04,384 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BFP HTTP/1.1" 200 None
+2025-08-13 10:39:04,811 - MOTHistoryImport - DEBUG - Processing registration: YN62BTV
+2025-08-13 10:39:04,811 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BTV
+2025-08-13 10:39:06,152 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BTV HTTP/1.1" 200 None
+2025-08-13 10:39:06,580 - MOTHistoryImport - DEBUG - Processing registration: YN62BSU
+2025-08-13 10:39:06,596 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BSU
+2025-08-13 10:39:07,366 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BSU HTTP/1.1" 200 None
+2025-08-13 10:39:07,791 - MOTHistoryImport - DEBUG - Processing registration: YN62BVR
+2025-08-13 10:39:07,791 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BVR
+2025-08-13 10:39:08,495 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BVR HTTP/1.1" 200 None
+2025-08-13 10:39:09,018 - MOTHistoryImport - DEBUG - Processing registration: MX62GKG
+2025-08-13 10:39:09,034 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GKG
+2025-08-13 10:39:09,721 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GKG HTTP/1.1" 200 None
+2025-08-13 10:39:09,721 - MOTHistoryImport - INFO - API Rate - Legacy: 0.79 RPS, Dynamic: 0 RPS (Daily: 210/500000)
+2025-08-13 10:39:10,181 - MOTHistoryImport - DEBUG - Processing registration: MX62GKV
+2025-08-13 10:39:10,181 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GKV
+2025-08-13 10:39:10,978 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GKV HTTP/1.1" 200 None
+2025-08-13 10:39:11,422 - MOTHistoryImport - DEBUG - Processing registration: MX62GKZ
+2025-08-13 10:39:11,438 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GKZ
+2025-08-13 10:39:12,054 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GKZ HTTP/1.1" 200 None
+2025-08-13 10:39:12,516 - MOTHistoryImport - DEBUG - Processing registration: MX62GNN
+2025-08-13 10:39:12,531 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GNN
+2025-08-13 10:39:13,361 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GNN HTTP/1.1" 200 None
+2025-08-13 10:39:13,820 - MOTHistoryImport - DEBUG - Processing registration: MX13FLM
+2025-08-13 10:39:13,836 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX13FLM
+2025-08-13 10:39:14,822 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX13FLM HTTP/1.1" 200 None
+2025-08-13 10:39:15,282 - MOTHistoryImport - DEBUG - Processing registration: MX62GUO
+2025-08-13 10:39:15,282 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GUO
+2025-08-13 10:39:16,015 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GUO HTTP/1.1" 200 None
+2025-08-13 10:39:16,426 - MOTHistoryImport - DEBUG - Processing registration: MX62GVE
+2025-08-13 10:39:16,426 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GVE
+2025-08-13 10:39:17,399 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GVE HTTP/1.1" 200 None
+2025-08-13 10:39:17,858 - MOTHistoryImport - DEBUG - Processing registration: MX62GWE
+2025-08-13 10:39:17,858 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GWE
+2025-08-13 10:39:18,560 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GWE HTTP/1.1" 200 None
+2025-08-13 10:39:18,956 - MOTHistoryImport - DEBUG - Processing registration: MX62GWL
+2025-08-13 10:39:18,956 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GWL
+2025-08-13 10:39:19,544 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GWL HTTP/1.1" 200 None
+2025-08-13 10:39:20,101 - MOTHistoryImport - DEBUG - Processing registration: MX62GTY
+2025-08-13 10:39:20,101 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GTY
+2025-08-13 10:39:20,709 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GTY HTTP/1.1" 200 None
+2025-08-13 10:39:21,090 - MOTHistoryImport - DEBUG - Processing registration: MX13FNR
+2025-08-13 10:39:21,090 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX13FNR
+2025-08-13 10:39:21,667 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX13FNR HTTP/1.1" 200 None
+2025-08-13 10:39:21,687 - MOTHistoryImport - INFO - API Rate - Legacy: 0.80 RPS, Dynamic: 0 RPS (Daily: 220/500000)
+2025-08-13 10:39:22,159 - MOTHistoryImport - DEBUG - Processing registration: MX13FNN
+2025-08-13 10:39:22,159 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX13FNN
+2025-08-13 10:39:22,910 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX13FNN HTTP/1.1" 200 None
+2025-08-13 10:39:23,434 - MOTHistoryImport - DEBUG - Processing registration: MX13FNM
+2025-08-13 10:39:23,434 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX13FNM
+2025-08-13 10:39:24,054 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX13FNM HTTP/1.1" 200 None
+2025-08-13 10:39:24,513 - MOTHistoryImport - DEBUG - Processing registration: MX13FNO
+2025-08-13 10:39:24,513 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX13FNO
+2025-08-13 10:39:25,119 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX13FNO HTTP/1.1" 200 None
+2025-08-13 10:39:25,562 - MOTHistoryImport - DEBUG - Processing registration: MX13FNP
+2025-08-13 10:39:25,562 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX13FNP
+2025-08-13 10:39:26,517 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX13FNP HTTP/1.1" 200 None
+2025-08-13 10:39:27,009 - MOTHistoryImport - DEBUG - Processing registration: SK63AUW
+2025-08-13 10:39:27,009 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK63AUW
+2025-08-13 10:39:27,950 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK63AUW HTTP/1.1" 200 None
+2025-08-13 10:39:28,401 - MOTHistoryImport - DEBUG - Processing registration: SK63AUX
+2025-08-13 10:39:28,401 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK63AUX
+2025-08-13 10:39:28,985 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK63AUX HTTP/1.1" 200 None
+2025-08-13 10:39:29,478 - MOTHistoryImport - DEBUG - Processing registration: SK63AUY
+2025-08-13 10:39:29,494 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK63AUY
+2025-08-13 10:39:30,228 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK63AUY HTTP/1.1" 200 None
+2025-08-13 10:39:31,022 - MOTHistoryImport - DEBUG - Processing registration: SK63AVB
+2025-08-13 10:39:31,022 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK63AVB
+2025-08-13 10:39:31,627 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK63AVB HTTP/1.1" 200 None
+2025-08-13 10:39:32,136 - MOTHistoryImport - DEBUG - Processing registration: SK63AVC
+2025-08-13 10:39:32,151 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK63AVC
+2025-08-13 10:39:32,678 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK63AVC HTTP/1.1" 200 None
+2025-08-13 10:39:33,135 - MOTHistoryImport - DEBUG - Processing registration: SK63AVE
+2025-08-13 10:39:33,135 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK63AVE
+2025-08-13 10:39:33,774 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK63AVE HTTP/1.1" 200 None
+2025-08-13 10:39:33,778 - MOTHistoryImport - INFO - API Rate - Legacy: 0.80 RPS, Dynamic: 0 RPS (Daily: 230/500000)
+2025-08-13 10:39:34,264 - MOTHistoryImport - DEBUG - Processing registration: SL63FZH
+2025-08-13 10:39:34,264 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZH
+2025-08-13 10:39:34,936 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZH HTTP/1.1" 200 None
+2025-08-13 10:39:35,537 - MOTHistoryImport - DEBUG - Processing registration: SL63FZJ
+2025-08-13 10:39:35,537 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZJ
+2025-08-13 10:39:36,126 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZJ HTTP/1.1" 200 None
+2025-08-13 10:39:36,634 - MOTHistoryImport - DEBUG - Processing registration: SL63FZK
+2025-08-13 10:39:36,634 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZK
+2025-08-13 10:39:37,212 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZK HTTP/1.1" 200 None
+2025-08-13 10:39:37,890 - MOTHistoryImport - DEBUG - Processing registration: SL63FZM
+2025-08-13 10:39:37,890 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZM
+2025-08-13 10:39:38,547 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZM HTTP/1.1" 200 None
+2025-08-13 10:39:39,184 - MOTHistoryImport - DEBUG - Processing registration: SL63FZN
+2025-08-13 10:39:39,197 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZN
+2025-08-13 10:39:39,915 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZN HTTP/1.1" 200 None
+2025-08-13 10:39:40,638 - MOTHistoryImport - DEBUG - Processing registration: SL63FZO
+2025-08-13 10:39:40,638 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZO
+2025-08-13 10:39:41,322 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZO HTTP/1.1" 200 None
+2025-08-13 10:39:41,972 - MOTHistoryImport - DEBUG - Processing registration: SL63FZP
+2025-08-13 10:39:41,987 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZP
+2025-08-13 10:39:42,689 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZP HTTP/1.1" 200 None
+2025-08-13 10:39:43,211 - MOTHistoryImport - DEBUG - Processing registration: SL63FZS
+2025-08-13 10:39:43,211 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZS
+2025-08-13 10:39:44,268 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZS HTTP/1.1" 200 None
+2025-08-13 10:39:45,125 - MOTHistoryImport - DEBUG - Processing registration: SL63FZT
+2025-08-13 10:39:45,133 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZT
+2025-08-13 10:39:45,930 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZT HTTP/1.1" 200 None
+2025-08-13 10:39:46,536 - MOTHistoryImport - DEBUG - Processing registration: SL63FZU
+2025-08-13 10:39:46,536 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZU
+2025-08-13 10:39:47,156 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZU HTTP/1.1" 200 None
+2025-08-13 10:39:47,156 - MOTHistoryImport - INFO - API Rate - Legacy: 0.79 RPS, Dynamic: 0 RPS (Daily: 240/500000)
+2025-08-13 10:39:47,774 - MOTHistoryImport - DEBUG - Processing registration: SL63FZV
+2025-08-13 10:39:47,774 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZV
+2025-08-13 10:39:48,400 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZV HTTP/1.1" 200 None
+2025-08-13 10:39:49,520 - MOTHistoryImport - DEBUG - Processing registration: SL63FZW
+2025-08-13 10:39:49,520 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZW
+2025-08-13 10:39:50,316 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZW HTTP/1.1" 200 None
+2025-08-13 10:39:52,109 - MOTHistoryImport - DEBUG - Processing registration: SL63FZX
+2025-08-13 10:39:52,109 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZX
+2025-08-13 10:39:53,081 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZX HTTP/1.1" 200 None
+2025-08-13 10:39:53,667 - MOTHistoryImport - DEBUG - Processing registration: SL63FZY
+2025-08-13 10:39:53,667 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZY
+2025-08-13 10:39:54,482 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZY HTTP/1.1" 200 None
+2025-08-13 10:39:55,113 - MOTHistoryImport - DEBUG - Processing registration: SL63FZZ
+2025-08-13 10:39:55,113 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63FZZ
+2025-08-13 10:39:55,842 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63FZZ HTTP/1.1" 200 None
+2025-08-13 10:39:56,386 - MOTHistoryImport - DEBUG - Processing registration: SL63GCX
+2025-08-13 10:39:56,386 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GCX
+2025-08-13 10:39:56,977 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GCX HTTP/1.1" 200 None
+2025-08-13 10:39:57,576 - MOTHistoryImport - DEBUG - Processing registration: SL63GAO
+2025-08-13 10:39:57,576 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GAO
+2025-08-13 10:39:58,248 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GAO HTTP/1.1" 200 None
+2025-08-13 10:39:58,946 - MOTHistoryImport - DEBUG - Processing registration: SL63GAU
+2025-08-13 10:39:58,946 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GAU
+2025-08-13 10:39:59,548 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GAU HTTP/1.1" 200 None
+2025-08-13 10:40:00,249 - MOTHistoryImport - DEBUG - Processing registration: SL63GBE
+2025-08-13 10:40:00,261 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GBE
+2025-08-13 10:40:01,382 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GBE HTTP/1.1" 200 None
+2025-08-13 10:40:02,024 - MOTHistoryImport - DEBUG - Processing registration: SL63GCO
+2025-08-13 10:40:02,031 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GCO
+2025-08-13 10:40:02,995 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GCO HTTP/1.1" 200 None
+2025-08-13 10:40:02,995 - MOTHistoryImport - INFO - API Rate - Legacy: 0.77 RPS, Dynamic: 0 RPS (Daily: 250/500000)
+2025-08-13 10:40:03,707 - MOTHistoryImport - DEBUG - Processing registration: SL63GCU
+2025-08-13 10:40:03,707 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GCU
+2025-08-13 10:40:04,554 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GCU HTTP/1.1" 200 None
+2025-08-13 10:40:05,164 - MOTHistoryImport - DEBUG - Processing registration: SL63GCV
+2025-08-13 10:40:05,164 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GCV
+2025-08-13 10:40:05,781 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GCV HTTP/1.1" 200 None
+2025-08-13 10:40:06,367 - MOTHistoryImport - DEBUG - Processing registration: SL63GCZ
+2025-08-13 10:40:06,367 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GCZ
+2025-08-13 10:40:07,081 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GCZ HTTP/1.1" 200 None
+2025-08-13 10:40:07,697 - MOTHistoryImport - DEBUG - Processing registration: SL63GDE
+2025-08-13 10:40:07,697 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GDE
+2025-08-13 10:40:08,363 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GDE HTTP/1.1" 200 None
+2025-08-13 10:40:09,018 - MOTHistoryImport - DEBUG - Processing registration: SL63GDA
+2025-08-13 10:40:09,023 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GDA
+2025-08-13 10:40:09,666 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GDA HTTP/1.1" 200 None
+2025-08-13 10:40:10,754 - MOTHistoryImport - DEBUG - Processing registration: SL63GDF
+2025-08-13 10:40:10,764 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GDF
+2025-08-13 10:40:11,692 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GDF HTTP/1.1" 200 None
+2025-08-13 10:40:12,345 - MOTHistoryImport - DEBUG - Processing registration: SL63GDJ
+2025-08-13 10:40:12,350 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GDJ
+2025-08-13 10:40:13,450 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GDJ HTTP/1.1" 200 None
+2025-08-13 10:40:14,129 - MOTHistoryImport - DEBUG - Processing registration: SL63GDK
+2025-08-13 10:40:14,132 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SL63GDK
+2025-08-13 10:40:15,092 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SL63GDK HTTP/1.1" 200 None
+2025-08-13 10:40:15,711 - MOTHistoryImport - DEBUG - Processing registration: SN63VTX
+2025-08-13 10:40:15,711 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SN63VTX
+2025-08-13 10:40:16,395 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SN63VTX HTTP/1.1" 200 None
+2025-08-13 10:40:16,903 - MOTHistoryImport - DEBUG - Processing registration: YX74OEW
+2025-08-13 10:40:16,903 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OEW
+2025-08-13 10:40:17,617 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OEW HTTP/1.1" 200 None
+2025-08-13 10:40:17,648 - MOTHistoryImport - INFO - API Rate - Legacy: 0.74 RPS, Dynamic: 0 RPS (Daily: 260/500000)
+2025-08-13 10:40:18,251 - MOTHistoryImport - DEBUG - Processing registration: YX74OEY
+2025-08-13 10:40:18,251 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OEY
+2025-08-13 10:40:19,018 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OEY HTTP/1.1" 200 None
+2025-08-13 10:40:19,716 - MOTHistoryImport - DEBUG - Processing registration: YX74OEZ
+2025-08-13 10:40:19,716 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OEZ
+2025-08-13 10:40:20,658 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OEZ HTTP/1.1" 200 None
+2025-08-13 10:40:21,356 - MOTHistoryImport - DEBUG - Processing registration: YX74OFA
+2025-08-13 10:40:21,356 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OFA
+2025-08-13 10:40:22,152 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OFA HTTP/1.1" 200 None
+2025-08-13 10:40:22,993 - MOTHistoryImport - DEBUG - Processing registration: YX74OFB
+2025-08-13 10:40:22,993 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OFB
+2025-08-13 10:40:23,918 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OFB HTTP/1.1" 200 None
+2025-08-13 10:40:24,617 - MOTHistoryImport - DEBUG - Processing registration: YX74OFC
+2025-08-13 10:40:24,617 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OFC
+2025-08-13 10:40:25,459 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OFC HTTP/1.1" 200 None
+2025-08-13 10:40:26,140 - MOTHistoryImport - DEBUG - Processing registration: YX74OFD
+2025-08-13 10:40:26,156 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OFD
+2025-08-13 10:40:26,746 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OFD HTTP/1.1" 200 None
+2025-08-13 10:40:27,427 - MOTHistoryImport - DEBUG - Processing registration: YX74OFE
+2025-08-13 10:40:27,427 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OFE
+2025-08-13 10:40:28,049 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OFE HTTP/1.1" 200 None
+2025-08-13 10:40:28,680 - MOTHistoryImport - DEBUG - Processing registration: YX74OFG
+2025-08-13 10:40:28,680 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OFG
+2025-08-13 10:40:29,350 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OFG HTTP/1.1" 200 None
+2025-08-13 10:40:30,064 - MOTHistoryImport - DEBUG - Processing registration: YX74OFH
+2025-08-13 10:40:30,064 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OFH
+2025-08-13 10:40:30,990 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OFH HTTP/1.1" 200 None
+2025-08-13 10:40:31,791 - MOTHistoryImport - DEBUG - Processing registration: YX74OFJ
+2025-08-13 10:40:31,791 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OFJ
+2025-08-13 10:40:32,822 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OFJ HTTP/1.1" 200 None
+2025-08-13 10:40:32,838 - MOTHistoryImport - INFO - API Rate - Legacy: 0.69 RPS, Dynamic: 0 RPS (Daily: 270/500000)
+2025-08-13 10:40:33,615 - MOTHistoryImport - DEBUG - Processing registration: YX74OFK
+2025-08-13 10:40:33,615 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OFK
+2025-08-13 10:40:34,301 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OFK HTTP/1.1" 200 None
+2025-08-13 10:40:35,141 - MOTHistoryImport - DEBUG - Processing registration: YX74OJC
+2025-08-13 10:40:35,141 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJC
+2025-08-13 10:40:35,856 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJC HTTP/1.1" 200 None
+2025-08-13 10:40:36,799 - MOTHistoryImport - DEBUG - Processing registration: YX74OJA
+2025-08-13 10:40:36,799 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJA
+2025-08-13 10:40:37,833 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJA HTTP/1.1" 200 None
+2025-08-13 10:40:38,718 - MOTHistoryImport - DEBUG - Processing registration: YX74OJB
+2025-08-13 10:40:38,718 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJB
+2025-08-13 10:40:39,579 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJB HTTP/1.1" 200 None
+2025-08-13 10:40:40,214 - MOTHistoryImport - DEBUG - Processing registration: YX74OJD
+2025-08-13 10:40:40,214 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJD
+2025-08-13 10:40:41,188 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJD HTTP/1.1" 200 None
+2025-08-13 10:40:43,954 - MOTHistoryImport - DEBUG - Processing registration: YX74OJJ
+2025-08-13 10:40:43,970 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJJ
+2025-08-13 10:40:44,611 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJJ HTTP/1.1" 200 None
+2025-08-13 10:40:45,459 - MOTHistoryImport - DEBUG - Processing registration: YX74OJE
+2025-08-13 10:40:45,459 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJE
+2025-08-13 10:40:46,321 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJE HTTP/1.1" 200 None
+2025-08-13 10:40:47,050 - MOTHistoryImport - DEBUG - Processing registration: YX74OJF
+2025-08-13 10:40:47,070 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJF
+2025-08-13 10:40:47,861 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJF HTTP/1.1" 200 None
+2025-08-13 10:40:48,551 - MOTHistoryImport - DEBUG - Processing registration: YX74OJG
+2025-08-13 10:40:48,567 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJG
+2025-08-13 10:40:49,654 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJG HTTP/1.1" 200 None
+2025-08-13 10:40:50,382 - MOTHistoryImport - DEBUG - Processing registration: YX74OJH
+2025-08-13 10:40:50,398 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJH
+2025-08-13 10:40:50,990 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJH HTTP/1.1" 200 None
+2025-08-13 10:40:50,990 - MOTHistoryImport - INFO - API Rate - Legacy: 0.66 RPS, Dynamic: 0 RPS (Daily: 280/500000)
+2025-08-13 10:40:51,739 - MOTHistoryImport - DEBUG - Processing registration: YX74OJK
+2025-08-13 10:40:51,739 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJK
+2025-08-13 10:40:52,623 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJK HTTP/1.1" 200 None
+2025-08-13 10:40:53,280 - MOTHistoryImport - DEBUG - Processing registration: YX74OJL
+2025-08-13 10:40:53,280 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJL
+2025-08-13 10:40:54,026 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJL HTTP/1.1" 200 None
+2025-08-13 10:40:54,776 - MOTHistoryImport - DEBUG - Processing registration: YX74OJM
+2025-08-13 10:40:54,792 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJM
+2025-08-13 10:40:56,100 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJM HTTP/1.1" 200 None
+2025-08-13 10:40:56,939 - MOTHistoryImport - DEBUG - Processing registration: YX74OJN
+2025-08-13 10:40:56,939 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJN
+2025-08-13 10:40:57,479 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJN HTTP/1.1" 200 None
+2025-08-13 10:40:58,178 - MOTHistoryImport - DEBUG - Processing registration: YX74OJO
+2025-08-13 10:40:58,185 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJO
+2025-08-13 10:40:58,914 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJO HTTP/1.1" 200 None
+2025-08-13 10:40:59,720 - MOTHistoryImport - DEBUG - Processing registration: YX74OJP
+2025-08-13 10:40:59,720 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJP
+2025-08-13 10:41:00,293 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJP HTTP/1.1" 200 None
+2025-08-13 10:41:01,072 - MOTHistoryImport - DEBUG - Processing registration: YX74OJR
+2025-08-13 10:41:01,088 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJR
+2025-08-13 10:41:01,664 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJR HTTP/1.1" 200 None
+2025-08-13 10:41:02,483 - MOTHistoryImport - DEBUG - Processing registration: YX74OJS
+2025-08-13 10:41:02,485 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJS
+2025-08-13 10:41:03,219 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJS HTTP/1.1" 200 None
+2025-08-13 10:41:04,074 - MOTHistoryImport - DEBUG - Processing registration: YX74OJV
+2025-08-13 10:41:04,074 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJV
+2025-08-13 10:41:05,012 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJV HTTP/1.1" 200 None
+2025-08-13 10:41:05,693 - MOTHistoryImport - DEBUG - Processing registration: YX74OJU
+2025-08-13 10:41:05,693 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJU
+2025-08-13 10:41:06,427 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJU HTTP/1.1" 200 None
+2025-08-13 10:41:06,445 - MOTHistoryImport - INFO - API Rate - Legacy: 0.64 RPS, Dynamic: 0 RPS (Daily: 290/500000)
+2025-08-13 10:41:07,125 - MOTHistoryImport - DEBUG - Processing registration: YX74OJZ
+2025-08-13 10:41:07,141 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJZ
+2025-08-13 10:41:07,668 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJZ HTTP/1.1" 200 None
+2025-08-13 10:41:08,380 - MOTHistoryImport - DEBUG - Processing registration: YX74OJW
+2025-08-13 10:41:08,412 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJW
+2025-08-13 10:41:09,385 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJW HTTP/1.1" 200 None
+2025-08-13 10:41:10,352 - MOTHistoryImport - DEBUG - Processing registration: YX74OJY
+2025-08-13 10:41:10,352 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJY
+2025-08-13 10:41:10,972 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJY HTTP/1.1" 200 None
+2025-08-13 10:41:11,573 - MOTHistoryImport - DEBUG - Processing registration: YX74OKA
+2025-08-13 10:41:11,573 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKA
+2025-08-13 10:41:12,656 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKA HTTP/1.1" 200 None
+2025-08-13 10:41:13,356 - MOTHistoryImport - DEBUG - Processing registration: YX74OKB
+2025-08-13 10:41:13,356 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKB
+2025-08-13 10:41:14,036 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKB HTTP/1.1" 200 None
+2025-08-13 10:41:14,700 - MOTHistoryImport - DEBUG - Processing registration: YX74OJT
+2025-08-13 10:41:14,700 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OJT
+2025-08-13 10:41:15,227 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OJT HTTP/1.1" 200 None
+2025-08-13 10:41:15,987 - MOTHistoryImport - DEBUG - Processing registration: YX74OKC
+2025-08-13 10:41:16,004 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKC
+2025-08-13 10:41:16,579 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKC HTTP/1.1" 200 None
+2025-08-13 10:41:17,264 - MOTHistoryImport - DEBUG - Processing registration: YX74OKD
+2025-08-13 10:41:17,264 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKD
+2025-08-13 10:41:18,025 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKD HTTP/1.1" 200 None
+2025-08-13 10:41:18,770 - MOTHistoryImport - DEBUG - Processing registration: YX74OKE
+2025-08-13 10:41:18,770 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKE
+2025-08-13 10:41:19,425 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKE HTTP/1.1" 200 None
+2025-08-13 10:41:20,120 - MOTHistoryImport - DEBUG - Processing registration: YX74OKF
+2025-08-13 10:41:20,120 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKF
+2025-08-13 10:41:20,741 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKF HTTP/1.1" 200 None
+2025-08-13 10:41:20,757 - MOTHistoryImport - INFO - API Rate - Legacy: 0.65 RPS, Dynamic: 0 RPS (Daily: 300/500000)
+2025-08-13 10:41:21,406 - MOTHistoryImport - INFO - Bulk inserting 100 vehicle records...
+2025-08-13 10:41:21,959 - MOTHistoryImport - INFO - Successfully bulk inserted 100 vehicle records
+2025-08-13 10:41:21,961 - MOTHistoryImport - INFO - Bulk inserting 540 test records...
+2025-08-13 10:41:22,040 - MOTHistoryImport - INFO - Successfully exported 540 records to CSV_Exports\StageMOTTests_20250813_104121.csv
+2025-08-13 10:41:22,135 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (623F911C03DC689F8A1934B2BBE40411BFFBE360ADAC09A7BC988A3716C8D26B). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:41:22,278 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (F1FCA8408480EAD45DC8A0E06EA9BE9038BDE46DFCC50121C3783DC906CC43EC). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:41:22,844 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (119D18FB342DB4452F410430031DE87818E5B487DD803A444E21D01093FB30D5). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:41:23,585 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (792EADD23D85B3F7D7E156D43525AC3AABEAC75A291934B44D913D0C184AA8FD). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:41:23,679 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (31FD0F3710281C6F8C56335DB10352A19481B0A38B0756F01A61EE28A24C6273). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:41:23,727 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (94484ADBA59D6D7ACC6747A1AA0405DC9F8A2046602E08A7A43C169604FD26E3). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:41:23,806 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (7F74CAACA69511FAA8DC3DE21FA61E67D736A0BBA32E96296E2D0A7ABED01C0B). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:41:23,981 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (EE1C26E65AC2BD58D2C8DAD02AA8A2E02CC54C89E7B1C74646C492FA5838073F). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:41:24,219 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (78B04B0AE6722B43375DA78BB9E3D8B98F5D1DABBAF14B49E7FC23A46E514A8C). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:41:24,727 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (E01632F20D10D84A99EED00216C689F379ED3D7B2AAE8F77A99D8E8C266148EB). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:41:24,997 - MOTHistoryImport - INFO - Successfully processed 530 test records (10 duplicates skipped)
+2025-08-13 10:41:24,997 - MOTHistoryImport - INFO - Bulk inserting 59 defect records...
+2025-08-13 10:41:25,330 - MOTHistoryImport - INFO - Successfully bulk inserted 59 defect records
+2025-08-13 10:41:25,346 - MOTHistoryImport - INFO - Bulk batch committed: 100 successful, 0 failed, 100 vehicles, 540 tests, 59 defects, 0 not found
+2025-08-13 10:41:25,346 - MOTHistoryImport - INFO - Progress: 61.3% (300/489)
+2025-08-13 10:41:25,361 - MOTHistoryImport - INFO - Processing batch 4/5 (100 registrations)
+2025-08-13 10:41:25,361 - MOTHistoryImport - DEBUG - Processing registration: YX74OKG
+2025-08-13 10:41:25,361 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKG
+2025-08-13 10:41:26,288 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKG HTTP/1.1" 200 None
+2025-08-13 10:41:27,043 - MOTHistoryImport - DEBUG - Processing registration: YX74OKH
+2025-08-13 10:41:27,046 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKH
+2025-08-13 10:41:27,693 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKH HTTP/1.1" 200 None
+2025-08-13 10:41:28,359 - MOTHistoryImport - DEBUG - Processing registration: YX74OKJ
+2025-08-13 10:41:28,359 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKJ
+2025-08-13 10:41:29,030 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKJ HTTP/1.1" 200 None
+2025-08-13 10:41:29,805 - MOTHistoryImport - DEBUG - Processing registration: YX74OKK
+2025-08-13 10:41:29,805 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKK
+2025-08-13 10:41:30,486 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKK HTTP/1.1" 200 None
+2025-08-13 10:41:31,168 - MOTHistoryImport - DEBUG - Processing registration: YX74OKL
+2025-08-13 10:41:31,168 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKL
+2025-08-13 10:41:31,692 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKL HTTP/1.1" 200 None
+2025-08-13 10:41:32,388 - MOTHistoryImport - DEBUG - Processing registration: YX74OKM
+2025-08-13 10:41:32,391 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKM
+2025-08-13 10:41:33,409 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKM HTTP/1.1" 200 None
+2025-08-13 10:41:34,314 - MOTHistoryImport - DEBUG - Processing registration: YX74OKN
+2025-08-13 10:41:34,317 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKN
+2025-08-13 10:41:34,970 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKN HTTP/1.1" 200 None
+2025-08-13 10:41:35,827 - MOTHistoryImport - DEBUG - Processing registration: YX74OKO
+2025-08-13 10:41:35,827 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKO
+2025-08-13 10:41:36,705 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKO HTTP/1.1" 200 None
+2025-08-13 10:41:37,783 - MOTHistoryImport - DEBUG - Processing registration: YX74OKP
+2025-08-13 10:41:37,791 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKP
+2025-08-13 10:41:38,852 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKP HTTP/1.1" 200 None
+2025-08-13 10:41:39,471 - MOTHistoryImport - DEBUG - Processing registration: MX58DWA
+2025-08-13 10:41:39,492 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DWA
+2025-08-13 10:41:40,285 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DWA HTTP/1.1" 200 None
+2025-08-13 10:41:40,296 - MOTHistoryImport - INFO - API Rate - Legacy: 0.61 RPS, Dynamic: 0 RPS (Daily: 310/500000)
+2025-08-13 10:41:41,062 - MOTHistoryImport - DEBUG - Processing registration: MX58DXA
+2025-08-13 10:41:41,062 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DXA
+2025-08-13 10:41:41,733 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DXA HTTP/1.1" 200 None
+2025-08-13 10:41:42,383 - MOTHistoryImport - DEBUG - Processing registration: MX58DXB
+2025-08-13 10:41:42,383 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DXB
+2025-08-13 10:41:43,084 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DXB HTTP/1.1" 200 None
+2025-08-13 10:41:43,925 - MOTHistoryImport - DEBUG - Processing registration: MX58DXE
+2025-08-13 10:41:43,942 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DXE
+2025-08-13 10:41:44,565 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DXE HTTP/1.1" 200 None
+2025-08-13 10:41:45,278 - MOTHistoryImport - DEBUG - Processing registration: BD74WHB
+2025-08-13 10:41:45,278 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHB
+2025-08-13 10:41:46,308 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHB HTTP/1.1" 200 None
+2025-08-13 10:41:47,241 - MOTHistoryImport - DEBUG - Processing registration: BD74WJN
+2025-08-13 10:41:47,261 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WJN
+2025-08-13 10:41:48,072 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WJN HTTP/1.1" 200 None
+2025-08-13 10:41:48,937 - MOTHistoryImport - DEBUG - Processing registration: BD74WJY
+2025-08-13 10:41:48,937 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WJY
+2025-08-13 10:41:49,750 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WJY HTTP/1.1" 200 None
+2025-08-13 10:41:52,371 - MOTHistoryImport - DEBUG - Processing registration: BU25YUO
+2025-08-13 10:41:52,371 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YUO
+2025-08-13 10:41:53,441 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YUO HTTP/1.1" 200 None
+2025-08-13 10:41:55,374 - MOTHistoryImport - DEBUG - Processing registration: BU25YUX
+2025-08-13 10:41:55,390 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YUX
+2025-08-13 10:41:56,318 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YUX HTTP/1.1" 200 None
+2025-08-13 10:41:58,599 - MOTHistoryImport - DEBUG - Processing registration: BD74WLH
+2025-08-13 10:41:58,615 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WLH
+2025-08-13 10:41:59,408 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WLH HTTP/1.1" 200 None
+2025-08-13 10:42:02,345 - MOTHistoryImport - DEBUG - Processing registration: BD74WLJ
+2025-08-13 10:42:02,345 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WLJ
+2025-08-13 10:42:03,060 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WLJ HTTP/1.1" 200 None
+2025-08-13 10:42:03,064 - MOTHistoryImport - INFO - API Rate - Legacy: 0.55 RPS, Dynamic: 0 RPS (Daily: 320/500000)
+2025-08-13 10:42:03,981 - MOTHistoryImport - DEBUG - Processing registration: BU25YVH
+2025-08-13 10:42:03,981 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVH
+2025-08-13 10:42:04,488 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVH HTTP/1.1" 200 None
+2025-08-13 10:42:05,391 - MOTHistoryImport - DEBUG - Processing registration: BU25YWM
+2025-08-13 10:42:05,391 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWM
+2025-08-13 10:42:06,252 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWM HTTP/1.1" 200 None
+2025-08-13 10:42:07,139 - MOTHistoryImport - DEBUG - Processing registration: BU25YWP
+2025-08-13 10:42:07,142 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWP
+2025-08-13 10:42:07,836 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWP HTTP/1.1" 200 None
+2025-08-13 10:42:08,596 - MOTHistoryImport - DEBUG - Processing registration: BD74WHR
+2025-08-13 10:42:08,596 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHR
+2025-08-13 10:42:09,136 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHR HTTP/1.1" 200 None
+2025-08-13 10:42:10,035 - MOTHistoryImport - DEBUG - Processing registration: BD74WHS
+2025-08-13 10:42:10,040 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHS
+2025-08-13 10:42:10,582 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHS HTTP/1.1" 200 None
+2025-08-13 10:42:11,295 - MOTHistoryImport - DEBUG - Processing registration: BU25YVD
+2025-08-13 10:42:11,295 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVD
+2025-08-13 10:42:11,950 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVD HTTP/1.1" 200 None
+2025-08-13 10:42:12,679 - MOTHistoryImport - DEBUG - Processing registration: BD74WLV
+2025-08-13 10:42:12,679 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WLV
+2025-08-13 10:42:13,911 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WLV HTTP/1.1" 200 None
+2025-08-13 10:42:14,750 - MOTHistoryImport - DEBUG - Processing registration: BD74WLW
+2025-08-13 10:42:14,750 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WLW
+2025-08-13 10:42:15,471 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WLW HTTP/1.1" 200 None
+2025-08-13 10:42:16,247 - MOTHistoryImport - DEBUG - Processing registration: BU25YVK
+2025-08-13 10:42:16,263 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVK
+2025-08-13 10:42:17,060 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVK HTTP/1.1" 200 None
+2025-08-13 10:42:17,820 - MOTHistoryImport - DEBUG - Processing registration: BU25YVW
+2025-08-13 10:42:17,836 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVW
+2025-08-13 10:42:19,374 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVW HTTP/1.1" 200 None
+2025-08-13 10:42:19,374 - MOTHistoryImport - INFO - API Rate - Legacy: 0.53 RPS, Dynamic: 0 RPS (Daily: 330/500000)
+2025-08-13 10:42:20,293 - MOTHistoryImport - DEBUG - Processing registration: BU25YVX
+2025-08-13 10:42:20,309 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVX
+2025-08-13 10:42:20,899 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVX HTTP/1.1" 200 None
+2025-08-13 10:42:21,724 - MOTHistoryImport - DEBUG - Processing registration: BU25YWG
+2025-08-13 10:42:21,724 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWG
+2025-08-13 10:42:22,506 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWG HTTP/1.1" 200 None
+2025-08-13 10:42:23,234 - MOTHistoryImport - DEBUG - Processing registration: BU25YWV
+2025-08-13 10:42:23,250 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWV
+2025-08-13 10:42:23,938 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWV HTTP/1.1" 200 None
+2025-08-13 10:42:24,716 - MOTHistoryImport - DEBUG - Processing registration: BU25YXB
+2025-08-13 10:42:24,716 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXB
+2025-08-13 10:42:25,799 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXB HTTP/1.1" 200 None
+2025-08-13 10:42:26,656 - MOTHistoryImport - DEBUG - Processing registration: BU25YXC
+2025-08-13 10:42:26,664 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXC
+2025-08-13 10:42:27,246 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXC HTTP/1.1" 200 None
+2025-08-13 10:42:28,498 - MOTHistoryImport - DEBUG - Processing registration: BU25YXE
+2025-08-13 10:42:28,498 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXE
+2025-08-13 10:42:29,248 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXE HTTP/1.1" 200 None
+2025-08-13 10:42:30,155 - MOTHistoryImport - DEBUG - Processing registration: BU25YXF
+2025-08-13 10:42:30,155 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXF
+2025-08-13 10:42:30,769 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXF HTTP/1.1" 200 None
+2025-08-13 10:42:31,586 - MOTHistoryImport - DEBUG - Processing registration: BD74WGY
+2025-08-13 10:42:31,586 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WGY
+2025-08-13 10:42:32,049 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WGY HTTP/1.1" 200 None
+2025-08-13 10:42:32,699 - MOTHistoryImport - DEBUG - Processing registration: BD74WHH
+2025-08-13 10:42:32,715 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHH
+2025-08-13 10:42:33,290 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHH HTTP/1.1" 200 None
+2025-08-13 10:42:34,146 - MOTHistoryImport - DEBUG - Processing registration: BD74WKA
+2025-08-13 10:42:34,162 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKA
+2025-08-13 10:42:34,750 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKA HTTP/1.1" 200 None
+2025-08-13 10:42:34,750 - MOTHistoryImport - INFO - API Rate - Legacy: 0.57 RPS, Dynamic: 0 RPS (Daily: 340/500000)
+2025-08-13 10:42:35,447 - MOTHistoryImport - DEBUG - Processing registration: BU25YWR
+2025-08-13 10:42:35,463 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWR
+2025-08-13 10:42:36,291 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWR HTTP/1.1" 200 None
+2025-08-13 10:42:37,114 - MOTHistoryImport - DEBUG - Processing registration: BD74WHG
+2025-08-13 10:42:37,130 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHG
+2025-08-13 10:42:37,757 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHG HTTP/1.1" 200 None
+2025-08-13 10:42:38,496 - MOTHistoryImport - DEBUG - Processing registration: BD74WHJ
+2025-08-13 10:42:38,496 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHJ
+2025-08-13 10:42:39,455 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHJ HTTP/1.1" 200 None
+2025-08-13 10:42:40,232 - MOTHistoryImport - DEBUG - Processing registration: BD74WKE
+2025-08-13 10:42:40,248 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKE
+2025-08-13 10:42:40,963 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKE HTTP/1.1" 200 None
+2025-08-13 10:42:41,803 - MOTHistoryImport - DEBUG - Processing registration: BD74WKM
+2025-08-13 10:42:41,803 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKM
+2025-08-13 10:42:42,569 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKM HTTP/1.1" 200 None
+2025-08-13 10:42:43,439 - MOTHistoryImport - DEBUG - Processing registration: BD74WKR
+2025-08-13 10:42:43,455 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKR
+2025-08-13 10:42:44,015 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKR HTTP/1.1" 200 None
+2025-08-13 10:42:44,776 - MOTHistoryImport - DEBUG - Processing registration: BU25YVB
+2025-08-13 10:42:44,776 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVB
+2025-08-13 10:42:45,335 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVB HTTP/1.1" 200 None
+2025-08-13 10:42:46,112 - MOTHistoryImport - DEBUG - Processing registration: BU25YVL
+2025-08-13 10:42:46,112 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVL
+2025-08-13 10:42:46,654 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVL HTTP/1.1" 200 None
+2025-08-13 10:42:47,447 - MOTHistoryImport - DEBUG - Processing registration: BU25YVZ
+2025-08-13 10:42:47,447 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVZ
+2025-08-13 10:42:48,294 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVZ HTTP/1.1" 200 None
+2025-08-13 10:42:49,132 - MOTHistoryImport - DEBUG - Processing registration: BU25YWD
+2025-08-13 10:42:49,132 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWD
+2025-08-13 10:42:49,739 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWD HTTP/1.1" 200 None
+2025-08-13 10:42:49,739 - MOTHistoryImport - INFO - API Rate - Legacy: 0.58 RPS, Dynamic: 0 RPS (Daily: 350/500000)
+2025-08-13 10:42:50,520 - MOTHistoryImport - DEBUG - Processing registration: BU25YWH
+2025-08-13 10:42:50,520 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWH
+2025-08-13 10:42:51,090 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWH HTTP/1.1" 200 None
+2025-08-13 10:42:51,820 - MOTHistoryImport - DEBUG - Processing registration: BU25YWW
+2025-08-13 10:42:51,820 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWW
+2025-08-13 10:42:52,492 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWW HTTP/1.1" 200 None
+2025-08-13 10:42:53,428 - MOTHistoryImport - DEBUG - Processing registration: BD74WHT
+2025-08-13 10:42:53,428 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHT
+2025-08-13 10:42:54,204 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHT HTTP/1.1" 200 None
+2025-08-13 10:42:54,905 - MOTHistoryImport - DEBUG - Processing registration: BD74WHE
+2025-08-13 10:42:54,905 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHE
+2025-08-13 10:42:55,590 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHE HTTP/1.1" 200 None
+2025-08-13 10:42:56,241 - MOTHistoryImport - DEBUG - Processing registration: BD74WKH
+2025-08-13 10:42:56,241 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKH
+2025-08-13 10:42:56,898 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKH HTTP/1.1" 200 None
+2025-08-13 10:42:57,691 - MOTHistoryImport - DEBUG - Processing registration: BD74WKJ
+2025-08-13 10:42:57,691 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKJ
+2025-08-13 10:42:58,615 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKJ HTTP/1.1" 200 None
+2025-08-13 10:42:59,458 - MOTHistoryImport - DEBUG - Processing registration: BD74WLO
+2025-08-13 10:42:59,474 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WLO
+2025-08-13 10:43:00,138 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WLO HTTP/1.1" 200 None
+2025-08-13 10:43:00,994 - MOTHistoryImport - DEBUG - Processing registration: BD74WLP
+2025-08-13 10:43:00,994 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WLP
+2025-08-13 10:43:01,747 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WLP HTTP/1.1" 200 None
+2025-08-13 10:43:02,517 - MOTHistoryImport - DEBUG - Processing registration: BU25YWJ
+2025-08-13 10:43:02,517 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWJ
+2025-08-13 10:43:03,053 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWJ HTTP/1.1" 200 None
+2025-08-13 10:43:03,819 - MOTHistoryImport - DEBUG - Processing registration: BU25YWT
+2025-08-13 10:43:03,819 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWT
+2025-08-13 10:43:04,484 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWT HTTP/1.1" 200 None
+2025-08-13 10:43:04,484 - MOTHistoryImport - INFO - API Rate - Legacy: 0.67 RPS, Dynamic: 0 RPS (Daily: 360/500000)
+2025-08-13 10:43:05,181 - MOTHistoryImport - DEBUG - Processing registration: BD74WHA
+2025-08-13 10:43:05,181 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHA
+2025-08-13 10:43:05,801 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHA HTTP/1.1" 200 None
+2025-08-13 10:43:06,799 - MOTHistoryImport - DEBUG - Processing registration: BD74WJJ
+2025-08-13 10:43:06,799 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WJJ
+2025-08-13 10:43:07,292 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WJJ HTTP/1.1" 200 None
+2025-08-13 10:43:07,944 - MOTHistoryImport - DEBUG - Processing registration: BD74WJK
+2025-08-13 10:43:07,944 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WJK
+2025-08-13 10:43:08,568 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WJK HTTP/1.1" 200 None
+2025-08-13 10:43:09,344 - MOTHistoryImport - DEBUG - Processing registration: BD74WJM
+2025-08-13 10:43:09,344 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WJM
+2025-08-13 10:43:10,079 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WJM HTTP/1.1" 200 None
+2025-08-13 10:43:10,934 - MOTHistoryImport - DEBUG - Processing registration: BD74WJU
+2025-08-13 10:43:10,934 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WJU
+2025-08-13 10:43:11,445 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WJU HTTP/1.1" 200 None
+2025-08-13 10:43:12,348 - MOTHistoryImport - DEBUG - Processing registration: BU25YUW
+2025-08-13 10:43:12,348 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YUW
+2025-08-13 10:43:12,888 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YUW HTTP/1.1" 200 None
+2025-08-13 10:43:13,588 - MOTHistoryImport - DEBUG - Processing registration: BU25YUL
+2025-08-13 10:43:13,588 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YUL
+2025-08-13 10:43:14,213 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YUL HTTP/1.1" 200 None
+2025-08-13 10:43:15,054 - MOTHistoryImport - DEBUG - Processing registration: BD74WKK
+2025-08-13 10:43:15,054 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKK
+2025-08-13 10:43:16,076 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKK HTTP/1.1" 200 None
+2025-08-13 10:43:16,964 - MOTHistoryImport - DEBUG - Processing registration: BD74WLU
+2025-08-13 10:43:16,980 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WLU
+2025-08-13 10:43:17,567 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WLU HTTP/1.1" 200 None
+2025-08-13 10:43:18,327 - MOTHistoryImport - DEBUG - Processing registration: BU25YVM
+2025-08-13 10:43:18,341 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVM
+2025-08-13 10:43:19,045 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVM HTTP/1.1" 200 None
+2025-08-13 10:43:19,061 - MOTHistoryImport - INFO - API Rate - Legacy: 0.69 RPS, Dynamic: 0 RPS (Daily: 370/500000)
+2025-08-13 10:43:19,806 - MOTHistoryImport - DEBUG - Processing registration: BU25YWA
+2025-08-13 10:43:19,806 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWA
+2025-08-13 10:43:20,446 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWA HTTP/1.1" 200 None
+2025-08-13 10:43:21,496 - MOTHistoryImport - DEBUG - Processing registration: BU25YWE
+2025-08-13 10:43:21,507 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWE
+2025-08-13 10:43:22,061 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWE HTTP/1.1" 200 None
+2025-08-13 10:43:22,901 - MOTHistoryImport - DEBUG - Processing registration: BU25YWX
+2025-08-13 10:43:22,901 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWX
+2025-08-13 10:43:23,680 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWX HTTP/1.1" 200 None
+2025-08-13 10:43:24,427 - MOTHistoryImport - DEBUG - Processing registration: BD74WHP
+2025-08-13 10:43:24,443 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHP
+2025-08-13 10:43:25,590 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHP HTTP/1.1" 200 None
+2025-08-13 10:43:26,453 - MOTHistoryImport - DEBUG - Processing registration: BD74WHM
+2025-08-13 10:43:26,462 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHM
+2025-08-13 10:43:27,137 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHM HTTP/1.1" 200 None
+2025-08-13 10:43:27,942 - MOTHistoryImport - DEBUG - Processing registration: BD74WHC
+2025-08-13 10:43:27,942 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHC
+2025-08-13 10:43:28,486 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHC HTTP/1.1" 200 None
+2025-08-13 10:43:29,374 - MOTHistoryImport - DEBUG - Processing registration: BD74WJV
+2025-08-13 10:43:29,390 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WJV
+2025-08-13 10:43:30,025 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WJV HTTP/1.1" 200 None
+2025-08-13 10:43:30,802 - MOTHistoryImport - DEBUG - Processing registration: BU25YUR
+2025-08-13 10:43:30,802 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YUR
+2025-08-13 10:43:31,730 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YUR HTTP/1.1" 200 None
+2025-08-13 10:43:32,571 - MOTHistoryImport - DEBUG - Processing registration: BU25YVC
+2025-08-13 10:43:32,587 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVC
+2025-08-13 10:43:33,193 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVC HTTP/1.1" 200 None
+2025-08-13 10:43:34,017 - MOTHistoryImport - DEBUG - Processing registration: BU25YVP
+2025-08-13 10:43:34,017 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVP
+2025-08-13 10:43:34,656 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVP HTTP/1.1" 200 None
+2025-08-13 10:43:34,656 - MOTHistoryImport - INFO - API Rate - Legacy: 0.68 RPS, Dynamic: 0 RPS (Daily: 380/500000)
+2025-08-13 10:43:35,432 - MOTHistoryImport - DEBUG - Processing registration: BU25YWK
+2025-08-13 10:43:35,432 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWK
+2025-08-13 10:43:35,975 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWK HTTP/1.1" 200 None
+2025-08-13 10:43:36,768 - MOTHistoryImport - DEBUG - Processing registration: BU25YXA
+2025-08-13 10:43:36,768 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXA
+2025-08-13 10:43:37,373 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXA HTTP/1.1" 200 None
+2025-08-13 10:43:38,181 - MOTHistoryImport - DEBUG - Processing registration: BD74WHN
+2025-08-13 10:43:38,181 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHN
+2025-08-13 10:43:39,011 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHN HTTP/1.1" 200 None
+2025-08-13 10:43:39,948 - MOTHistoryImport - DEBUG - Processing registration: BD74WGZ
+2025-08-13 10:43:39,948 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WGZ
+2025-08-13 10:43:40,550 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WGZ HTTP/1.1" 200 None
+2025-08-13 10:43:41,598 - MOTHistoryImport - DEBUG - Processing registration: BD74WHK
+2025-08-13 10:43:41,598 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHK
+2025-08-13 10:43:42,254 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHK HTTP/1.1" 200 None
+2025-08-13 10:43:43,153 - MOTHistoryImport - DEBUG - Processing registration: BD74WJZ
+2025-08-13 10:43:43,169 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WJZ
+2025-08-13 10:43:43,864 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WJZ HTTP/1.1" 200 None
+2025-08-13 10:43:44,725 - MOTHistoryImport - DEBUG - Processing registration: BD74WJE
+2025-08-13 10:43:44,725 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WJE
+2025-08-13 10:43:45,599 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WJE HTTP/1.1" 200 None
+2025-08-13 10:43:46,438 - MOTHistoryImport - DEBUG - Processing registration: BU25YVE
+2025-08-13 10:43:46,454 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVE
+2025-08-13 10:43:47,143 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVE HTTP/1.1" 200 None
+2025-08-13 10:43:48,011 - MOTHistoryImport - DEBUG - Processing registration: BU25YVF
+2025-08-13 10:43:48,027 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVF
+2025-08-13 10:43:48,618 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVF HTTP/1.1" 200 None
+2025-08-13 10:43:49,442 - MOTHistoryImport - DEBUG - Processing registration: BU25YVN
+2025-08-13 10:43:49,442 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVN
+2025-08-13 10:43:50,094 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVN HTTP/1.1" 200 None
+2025-08-13 10:43:50,094 - MOTHistoryImport - INFO - API Rate - Legacy: 0.68 RPS, Dynamic: 0 RPS (Daily: 390/500000)
+2025-08-13 10:43:50,902 - MOTHistoryImport - DEBUG - Processing registration: BU25YWB
+2025-08-13 10:43:50,902 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWB
+2025-08-13 10:43:51,606 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWB HTTP/1.1" 200 None
+2025-08-13 10:43:52,433 - MOTHistoryImport - DEBUG - Processing registration: BU25YWF
+2025-08-13 10:43:52,433 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWF
+2025-08-13 10:43:53,417 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWF HTTP/1.1" 200 None
+2025-08-13 10:43:54,225 - MOTHistoryImport - DEBUG - Processing registration: BU25YWN
+2025-08-13 10:43:54,225 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWN
+2025-08-13 10:43:55,342 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWN HTTP/1.1" 200 None
+2025-08-13 10:43:56,124 - MOTHistoryImport - DEBUG - Processing registration: BU25YWO
+2025-08-13 10:43:56,128 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWO
+2025-08-13 10:43:56,903 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWO HTTP/1.1" 200 None
+2025-08-13 10:43:58,254 - MOTHistoryImport - DEBUG - Processing registration: BU25YWZ
+2025-08-13 10:43:58,254 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWZ
+2025-08-13 10:43:58,878 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWZ HTTP/1.1" 200 None
+2025-08-13 10:43:59,624 - MOTHistoryImport - DEBUG - Processing registration: BU25YXD
+2025-08-13 10:43:59,640 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXD
+2025-08-13 10:44:00,723 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXD HTTP/1.1" 200 None
+2025-08-13 10:44:01,517 - MOTHistoryImport - DEBUG - Processing registration: BU25YUV
+2025-08-13 10:44:01,517 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YUV
+2025-08-13 10:44:02,398 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YUV HTTP/1.1" 200 None
+2025-08-13 10:44:03,179 - MOTHistoryImport - DEBUG - Processing registration: BD74WHF
+2025-08-13 10:44:03,179 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHF
+2025-08-13 10:44:04,213 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHF HTTP/1.1" 200 None
+2025-08-13 10:44:05,147 - MOTHistoryImport - DEBUG - Processing registration: BD74WHL
+2025-08-13 10:44:05,163 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHL
+2025-08-13 10:44:05,783 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHL HTTP/1.1" 200 None
+2025-08-13 10:44:06,640 - MOTHistoryImport - DEBUG - Processing registration: BD74WKB
+2025-08-13 10:44:06,640 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKB
+2025-08-13 10:44:07,168 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKB HTTP/1.1" 200 None
+2025-08-13 10:44:07,168 - MOTHistoryImport - INFO - API Rate - Legacy: 0.65 RPS, Dynamic: 0 RPS (Daily: 400/500000)
+2025-08-13 10:44:07,912 - MOTHistoryImport - INFO - Bulk inserting 100 vehicle records...
+2025-08-13 10:44:08,450 - MOTHistoryImport - INFO - Successfully bulk inserted 100 vehicle records
+2025-08-13 10:44:08,466 - MOTHistoryImport - INFO - Bulk inserting 84 test records...
+2025-08-13 10:44:08,514 - MOTHistoryImport - INFO - Successfully exported 84 records to CSV_Exports\StageMOTTests_20250813_104408.csv
+2025-08-13 10:44:08,941 - MOTHistoryImport - INFO - Successfully processed 84 test records (0 duplicates skipped)
+2025-08-13 10:44:08,941 - MOTHistoryImport - INFO - Bulk inserting 4 defect records...
+2025-08-13 10:44:08,973 - MOTHistoryImport - INFO - Successfully bulk inserted 4 defect records
+2025-08-13 10:44:08,989 - MOTHistoryImport - INFO - Bulk batch committed: 100 successful, 0 failed, 100 vehicles, 84 tests, 4 defects, 0 not found
+2025-08-13 10:44:08,989 - MOTHistoryImport - INFO - Progress: 81.8% (400/489)
+2025-08-13 10:44:08,989 - MOTHistoryImport - INFO - Processing batch 5/5 (89 registrations)
+2025-08-13 10:44:08,989 - MOTHistoryImport - DEBUG - Processing registration: BD74WKC
+2025-08-13 10:44:08,989 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKC
+2025-08-13 10:44:10,275 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKC HTTP/1.1" 200 None
+2025-08-13 10:44:11,244 - MOTHistoryImport - DEBUG - Processing registration: BU25YUT
+2025-08-13 10:44:11,244 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YUT
+2025-08-13 10:44:11,884 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YUT HTTP/1.1" 200 None
+2025-08-13 10:44:12,564 - MOTHistoryImport - DEBUG - Processing registration: BD74WKP
+2025-08-13 10:44:12,564 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKP
+2025-08-13 10:44:13,282 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKP HTTP/1.1" 200 None
+2025-08-13 10:44:14,170 - MOTHistoryImport - DEBUG - Processing registration: BU25YVT
+2025-08-13 10:44:14,170 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVT
+2025-08-13 10:44:14,664 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVT HTTP/1.1" 200 None
+2025-08-13 10:44:15,313 - MOTHistoryImport - DEBUG - Processing registration: BL74XNU
+2025-08-13 10:44:15,327 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BL74XNU
+2025-08-13 10:44:15,917 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BL74XNU HTTP/1.1" 200 None
+2025-08-13 10:44:17,168 - MOTHistoryImport - DEBUG - Processing registration: BU25YWL
+2025-08-13 10:44:17,168 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWL
+2025-08-13 10:44:18,535 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWL HTTP/1.1" 200 None
+2025-08-13 10:44:19,243 - MOTHistoryImport - DEBUG - Processing registration: MF74NLZ
+2025-08-13 10:44:19,243 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MF74NLZ
+2025-08-13 10:44:20,218 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MF74NLZ HTTP/1.1" 200 None
+2025-08-13 10:44:21,013 - MOTHistoryImport - DEBUG - Processing registration: BD74WKF
+2025-08-13 10:44:21,013 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKF
+2025-08-13 10:44:21,812 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKF HTTP/1.1" 200 None
+2025-08-13 10:44:22,620 - MOTHistoryImport - DEBUG - Processing registration: BD74WKG
+2025-08-13 10:44:22,620 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKG
+2025-08-13 10:44:23,566 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKG HTTP/1.1" 200 None
+2025-08-13 10:44:24,517 - MOTHistoryImport - DEBUG - Processing registration: BU25YUN
+2025-08-13 10:44:24,517 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YUN
+2025-08-13 10:44:25,460 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YUN HTTP/1.1" 200 None
+2025-08-13 10:44:25,460 - MOTHistoryImport - INFO - API Rate - Legacy: 0.62 RPS, Dynamic: 0 RPS (Daily: 410/500000)
+2025-08-13 10:44:26,268 - MOTHistoryImport - DEBUG - Processing registration: BD74WKN
+2025-08-13 10:44:26,268 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKN
+2025-08-13 10:44:26,953 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKN HTTP/1.1" 200 None
+2025-08-13 10:44:27,730 - MOTHistoryImport - DEBUG - Processing registration: BU25YVA
+2025-08-13 10:44:27,739 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVA
+2025-08-13 10:44:28,768 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVA HTTP/1.1" 200 None
+2025-08-13 10:44:29,843 - MOTHistoryImport - DEBUG - Processing registration: BD74WKT
+2025-08-13 10:44:29,843 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WKT
+2025-08-13 10:44:30,882 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WKT HTTP/1.1" 200 None
+2025-08-13 10:44:31,833 - MOTHistoryImport - DEBUG - Processing registration: BU25YVG
+2025-08-13 10:44:31,833 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVG
+2025-08-13 10:44:32,423 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVG HTTP/1.1" 200 None
+2025-08-13 10:44:33,263 - MOTHistoryImport - DEBUG - Processing registration: BU25YVO
+2025-08-13 10:44:33,263 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVO
+2025-08-13 10:44:34,413 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVO HTTP/1.1" 200 None
+2025-08-13 10:44:35,255 - MOTHistoryImport - DEBUG - Processing registration: BU25YWC
+2025-08-13 10:44:35,255 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YWC
+2025-08-13 10:44:35,866 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YWC HTTP/1.1" 200 None
+2025-08-13 10:44:36,904 - MOTHistoryImport - DEBUG - Processing registration: BL74XOO
+2025-08-13 10:44:36,904 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BL74XOO
+2025-08-13 10:44:37,720 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BL74XOO HTTP/1.1" 200 None
+2025-08-13 10:44:38,543 - MOTHistoryImport - DEBUG - Processing registration: BD74WHV
+2025-08-13 10:44:38,558 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WHV
+2025-08-13 10:44:39,486 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WHV HTTP/1.1" 200 None
+2025-08-13 10:44:40,274 - MOTHistoryImport - DEBUG - Processing registration: BD74WGX
+2025-08-13 10:44:40,279 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WGX
+2025-08-13 10:44:40,932 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WGX HTTP/1.1" 200 None
+2025-08-13 10:44:41,739 - MOTHistoryImport - DEBUG - Processing registration: BD74WJO
+2025-08-13 10:44:41,739 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WJO
+2025-08-13 10:44:42,298 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WJO HTTP/1.1" 200 None
+2025-08-13 10:44:42,314 - MOTHistoryImport - INFO - API Rate - Legacy: 0.60 RPS, Dynamic: 0 RPS (Daily: 420/500000)
+2025-08-13 10:44:43,680 - MOTHistoryImport - DEBUG - Processing registration: BD74WLR
+2025-08-13 10:44:43,680 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BD74WLR
+2025-08-13 10:44:44,385 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BD74WLR HTTP/1.1" 200 None
+2025-08-13 10:44:45,297 - MOTHistoryImport - DEBUG - Processing registration: BU25YVJ
+2025-08-13 10:44:45,297 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVJ
+2025-08-13 10:44:46,098 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVJ HTTP/1.1" 200 None
+2025-08-13 10:44:46,921 - MOTHistoryImport - DEBUG - Processing registration: BU25YVV
+2025-08-13 10:44:46,921 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YVV
+2025-08-13 10:44:47,619 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YVV HTTP/1.1" 200 None
+2025-08-13 10:44:48,413 - MOTHistoryImport - DEBUG - Processing registration: BL74XNV
+2025-08-13 10:44:48,429 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BL74XNV
+2025-08-13 10:44:49,051 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BL74XNV HTTP/1.1" 200 None
+2025-08-13 10:44:50,005 - MOTHistoryImport - DEBUG - Processing registration: MX58DXF
+2025-08-13 10:44:50,009 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DXF
+2025-08-13 10:44:50,704 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DXF HTTP/1.1" 200 None
+2025-08-13 10:44:51,637 - MOTHistoryImport - DEBUG - Processing registration: MX58DXJ
+2025-08-13 10:44:51,637 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DXJ
+2025-08-13 10:44:52,750 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DXJ HTTP/1.1" 200 None
+2025-08-13 10:44:53,651 - MOTHistoryImport - DEBUG - Processing registration: MX58DYP
+2025-08-13 10:44:53,651 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DYP
+2025-08-13 10:44:54,323 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DYP HTTP/1.1" 200 None
+2025-08-13 10:44:55,497 - MOTHistoryImport - DEBUG - Processing registration: MX58DXO
+2025-08-13 10:44:55,513 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DXO
+2025-08-13 10:44:56,422 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DXO HTTP/1.1" 200 None
+2025-08-13 10:44:57,281 - MOTHistoryImport - DEBUG - Processing registration: MX58DZJ
+2025-08-13 10:44:57,281 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DZJ
+2025-08-13 10:44:57,918 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DZJ HTTP/1.1" 200 None
+2025-08-13 10:44:58,759 - MOTHistoryImport - DEBUG - Processing registration: MX58DZL
+2025-08-13 10:44:58,759 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DZL
+2025-08-13 10:44:59,476 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DZL HTTP/1.1" 200 None
+2025-08-13 10:44:59,476 - MOTHistoryImport - INFO - API Rate - Legacy: 0.60 RPS, Dynamic: 0 RPS (Daily: 430/500000)
+2025-08-13 10:45:00,442 - MOTHistoryImport - DEBUG - Processing registration: MX58DZO
+2025-08-13 10:45:00,444 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DZO
+2025-08-13 10:45:01,018 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DZO HTTP/1.1" 200 None
+2025-08-13 10:45:02,028 - MOTHistoryImport - DEBUG - Processing registration: SJ15PUY
+2025-08-13 10:45:02,030 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SJ15PUY
+2025-08-13 10:45:02,877 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SJ15PUY HTTP/1.1" 200 None
+2025-08-13 10:45:03,788 - MOTHistoryImport - DEBUG - Processing registration: SR15NKW
+2025-08-13 10:45:03,791 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SR15NKW
+2025-08-13 10:45:04,476 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SR15NKW HTTP/1.1" 200 None
+2025-08-13 10:45:05,380 - MOTHistoryImport - DEBUG - Processing registration: SJ15PVL
+2025-08-13 10:45:05,380 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SJ15PVL
+2025-08-13 10:45:06,173 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SJ15PVL HTTP/1.1" 200 None
+2025-08-13 10:45:07,019 - MOTHistoryImport - DEBUG - Processing registration: SJ15PVN
+2025-08-13 10:45:07,031 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SJ15PVN
+2025-08-13 10:45:07,994 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SJ15PVN HTTP/1.1" 200 None
+2025-08-13 10:45:08,830 - MOTHistoryImport - DEBUG - Processing registration: SJ15PVF
+2025-08-13 10:45:08,830 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SJ15PVF
+2025-08-13 10:45:09,548 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SJ15PVF HTTP/1.1" 200 None
+2025-08-13 10:45:10,627 - MOTHistoryImport - DEBUG - Processing registration: SJ15PVK
+2025-08-13 10:45:10,627 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SJ15PVK
+2025-08-13 10:45:11,255 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SJ15PVK HTTP/1.1" 200 None
+2025-08-13 10:45:12,380 - MOTHistoryImport - DEBUG - Processing registration: SJ15PVE
+2025-08-13 10:45:12,380 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SJ15PVE
+2025-08-13 10:45:13,094 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SJ15PVE HTTP/1.1" 200 None
+2025-08-13 10:45:14,160 - MOTHistoryImport - DEBUG - Processing registration: SJ15PVO
+2025-08-13 10:45:14,160 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SJ15PVO
+2025-08-13 10:45:14,759 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SJ15PVO HTTP/1.1" 200 None
+2025-08-13 10:45:15,773 - MOTHistoryImport - DEBUG - Processing registration: SA15VML
+2025-08-13 10:45:15,773 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SA15VML
+2025-08-13 10:45:16,635 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SA15VML HTTP/1.1" 200 None
+2025-08-13 10:45:16,635 - MOTHistoryImport - INFO - API Rate - Legacy: 0.60 RPS, Dynamic: 0 RPS (Daily: 440/500000)
+2025-08-13 10:45:17,569 - MOTHistoryImport - DEBUG - Processing registration: SA15VTW
+2025-08-13 10:45:17,569 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SA15VTW
+2025-08-13 10:45:18,308 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SA15VTW HTTP/1.1" 200 None
+2025-08-13 10:45:19,100 - MOTHistoryImport - DEBUG - Processing registration: SK74BKX
+2025-08-13 10:45:19,100 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BKX
+2025-08-13 10:45:19,720 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BKX HTTP/1.1" 200 None
+2025-08-13 10:45:20,731 - MOTHistoryImport - DEBUG - Processing registration: SK25AHN
+2025-08-13 10:45:20,737 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK25AHN
+2025-08-13 10:45:22,043 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK25AHN HTTP/1.1" 200 None
+2025-08-13 10:45:23,092 - MOTHistoryImport - DEBUG - Processing registration: SK25AHO
+2025-08-13 10:45:23,092 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK25AHO
+2025-08-13 10:45:23,796 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK25AHO HTTP/1.1" 200 None
+2025-08-13 10:45:24,715 - MOTHistoryImport - DEBUG - Processing registration: SK74BNA
+2025-08-13 10:45:24,715 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BNA
+2025-08-13 10:45:25,782 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BNA HTTP/1.1" 200 None
+2025-08-13 10:45:26,590 - MOTHistoryImport - DEBUG - Processing registration: SK74BNB
+2025-08-13 10:45:26,590 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BNB
+2025-08-13 10:45:27,175 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BNB HTTP/1.1" 200 None
+2025-08-13 10:45:28,111 - MOTHistoryImport - DEBUG - Processing registration: SK74BND
+2025-08-13 10:45:28,111 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BND
+2025-08-13 10:45:28,685 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BND HTTP/1.1" 200 None
+2025-08-13 10:45:29,605 - MOTHistoryImport - DEBUG - Processing registration: SK74BNE
+2025-08-13 10:45:29,605 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BNE
+2025-08-13 10:45:30,260 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BNE HTTP/1.1" 200 None
+2025-08-13 10:45:31,241 - MOTHistoryImport - DEBUG - Processing registration: SK74BNF
+2025-08-13 10:45:31,241 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BNF
+2025-08-13 10:45:31,928 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BNF HTTP/1.1" 200 None
+2025-08-13 10:45:33,006 - MOTHistoryImport - DEBUG - Processing registration: SK74BNJ
+2025-08-13 10:45:33,021 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BNJ
+2025-08-13 10:45:33,602 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BNJ HTTP/1.1" 200 None
+2025-08-13 10:45:33,613 - MOTHistoryImport - INFO - API Rate - Legacy: 0.61 RPS, Dynamic: 0 RPS (Daily: 450/500000)
+2025-08-13 10:45:34,691 - MOTHistoryImport - DEBUG - Processing registration: SK74BNL
+2025-08-13 10:45:34,691 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BNL
+2025-08-13 10:45:36,157 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BNL HTTP/1.1" 200 None
+2025-08-13 10:45:37,145 - MOTHistoryImport - DEBUG - Processing registration: SK74BNN
+2025-08-13 10:45:37,146 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BNN
+2025-08-13 10:45:37,658 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BNN HTTP/1.1" 200 None
+2025-08-13 10:45:38,712 - MOTHistoryImport - DEBUG - Processing registration: SK74BNO
+2025-08-13 10:45:38,712 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK74BNO
+2025-08-13 10:45:39,591 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK74BNO HTTP/1.1" 200 None
+2025-08-13 10:45:40,652 - MOTHistoryImport - DEBUG - Processing registration: SK25AHP
+2025-08-13 10:45:40,663 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SK25AHP
+2025-08-13 10:45:41,224 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SK25AHP HTTP/1.1" 200 None
+2025-08-13 10:45:42,099 - MOTHistoryImport - DEBUG - Processing registration: SA15VTU
+2025-08-13 10:45:42,099 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SA15VTU
+2025-08-13 10:45:42,849 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SA15VTU HTTP/1.1" 200 None
+2025-08-13 10:45:43,786 - MOTHistoryImport - DEBUG - Processing registration: SA15VTY
+2025-08-13 10:45:43,786 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SA15VTY
+2025-08-13 10:45:44,950 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SA15VTY HTTP/1.1" 200 None
+2025-08-13 10:45:45,902 - MOTHistoryImport - DEBUG - Processing registration: SA15VTV
+2025-08-13 10:45:45,902 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SA15VTV
+2025-08-13 10:45:46,746 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SA15VTV HTTP/1.1" 200 None
+2025-08-13 10:45:47,667 - MOTHistoryImport - DEBUG - Processing registration: SA15VTX
+2025-08-13 10:45:47,667 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: SA15VTX
+2025-08-13 10:45:48,306 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/SA15VTX HTTP/1.1" 200 None
+2025-08-13 10:45:49,218 - MOTHistoryImport - DEBUG - Processing registration: YN62BVS
+2025-08-13 10:45:49,220 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BVS
+2025-08-13 10:45:49,759 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BVS HTTP/1.1" 200 None
+2025-08-13 10:45:50,804 - MOTHistoryImport - DEBUG - Processing registration: YN62BXA
+2025-08-13 10:45:50,804 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BXA
+2025-08-13 10:45:51,458 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BXA HTTP/1.1" 200 None
+2025-08-13 10:45:51,458 - MOTHistoryImport - INFO - API Rate - Legacy: 0.60 RPS, Dynamic: 0 RPS (Daily: 460/500000)
+2025-08-13 10:45:52,378 - MOTHistoryImport - DEBUG - Processing registration: YN62BXO
+2025-08-13 10:45:52,378 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BXO
+2025-08-13 10:45:53,397 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BXO HTTP/1.1" 200 None
+2025-08-13 10:45:54,428 - MOTHistoryImport - DEBUG - Processing registration: YN62BXS
+2025-08-13 10:45:54,444 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BXS
+2025-08-13 10:45:55,084 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BXS HTTP/1.1" 200 None
+2025-08-13 10:45:56,111 - MOTHistoryImport - DEBUG - Processing registration: YN62BXX
+2025-08-13 10:45:56,111 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BXX
+2025-08-13 10:45:56,798 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BXX HTTP/1.1" 200 None
+2025-08-13 10:45:57,844 - MOTHistoryImport - DEBUG - Processing registration: YN62BYA
+2025-08-13 10:45:57,852 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BYA
+2025-08-13 10:45:58,594 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BYA HTTP/1.1" 200 None
+2025-08-13 10:45:59,768 - MOTHistoryImport - DEBUG - Processing registration: YN62BYS
+2025-08-13 10:45:59,768 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BYS
+2025-08-13 10:46:00,467 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BYS HTTP/1.1" 200 None
+2025-08-13 10:46:01,561 - MOTHistoryImport - DEBUG - Processing registration: YN62BYU
+2025-08-13 10:46:01,561 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BYU
+2025-08-13 10:46:02,092 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BYU HTTP/1.1" 200 None
+2025-08-13 10:46:03,092 - MOTHistoryImport - DEBUG - Processing registration: YN62BZT
+2025-08-13 10:46:03,103 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BZT
+2025-08-13 10:46:03,870 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BZT HTTP/1.1" 200 None
+2025-08-13 10:46:04,981 - MOTHistoryImport - DEBUG - Processing registration: YN62BZK
+2025-08-13 10:46:04,981 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BZK
+2025-08-13 10:46:05,748 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BZK HTTP/1.1" 200 None
+2025-08-13 10:46:06,908 - MOTHistoryImport - DEBUG - Processing registration: YN62BZG
+2025-08-13 10:46:06,908 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YN62BZG
+2025-08-13 10:46:07,586 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YN62BZG HTTP/1.1" 200 None
+2025-08-13 10:46:09,051 - MOTHistoryImport - DEBUG - Processing registration: MX62GNP
+2025-08-13 10:46:09,051 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GNP
+2025-08-13 10:46:09,627 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GNP HTTP/1.1" 200 None
+2025-08-13 10:46:09,643 - MOTHistoryImport - INFO - API Rate - Legacy: 0.58 RPS, Dynamic: 0 RPS (Daily: 470/500000)
+2025-08-13 10:46:10,627 - MOTHistoryImport - DEBUG - Processing registration: MX62GPJ
+2025-08-13 10:46:10,627 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GPJ
+2025-08-13 10:46:11,646 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GPJ HTTP/1.1" 200 None
+2025-08-13 10:46:12,628 - MOTHistoryImport - DEBUG - Processing registration: MX62GOP
+2025-08-13 10:46:12,628 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GOP
+2025-08-13 10:46:13,359 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GOP HTTP/1.1" 200 None
+2025-08-13 10:46:14,359 - MOTHistoryImport - DEBUG - Processing registration: MX62GPZ
+2025-08-13 10:46:14,359 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX62GPZ
+2025-08-13 10:46:14,979 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX62GPZ HTTP/1.1" 200 None
+2025-08-13 10:46:15,995 - MOTHistoryImport - DEBUG - Processing registration: MX58DVV
+2025-08-13 10:46:16,011 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DVV
+2025-08-13 10:46:16,564 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DVV HTTP/1.1" 200 None
+2025-08-13 10:46:17,626 - MOTHistoryImport - DEBUG - Processing registration: MX58DVY
+2025-08-13 10:46:17,626 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DVY
+2025-08-13 10:46:18,361 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DVY HTTP/1.1" 200 None
+2025-08-13 10:46:19,585 - MOTHistoryImport - DEBUG - Processing registration: MX58DVU
+2025-08-13 10:46:19,585 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DVU
+2025-08-13 10:46:20,320 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DVU HTTP/1.1" 200 None
+2025-08-13 10:46:21,779 - MOTHistoryImport - DEBUG - Processing registration: MX58DWJ
+2025-08-13 10:46:21,795 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58DWJ
+2025-08-13 10:46:22,576 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58DWJ HTTP/1.1" 200 None
+2025-08-13 10:46:23,672 - MOTHistoryImport - DEBUG - Processing registration: MX58EBK
+2025-08-13 10:46:23,672 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58EBK
+2025-08-13 10:46:24,805 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58EBK HTTP/1.1" 200 None
+2025-08-13 10:46:25,802 - MOTHistoryImport - DEBUG - Processing registration: MX58EBL
+2025-08-13 10:46:25,804 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58EBL
+2025-08-13 10:46:26,553 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58EBL HTTP/1.1" 200 None
+2025-08-13 10:46:27,604 - MOTHistoryImport - DEBUG - Processing registration: MX58EBG
+2025-08-13 10:46:27,604 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: MX58EBG
+2025-08-13 10:46:28,326 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/MX58EBG HTTP/1.1" 200 None
+2025-08-13 10:46:28,340 - MOTHistoryImport - INFO - API Rate - Legacy: 0.57 RPS, Dynamic: 0 RPS (Daily: 480/500000)
+2025-08-13 10:46:29,481 - MOTHistoryImport - DEBUG - Processing registration: YX74OKV
+2025-08-13 10:46:29,481 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: YX74OKV
+2025-08-13 10:46:30,201 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/YX74OKV HTTP/1.1" 200 None
+2025-08-13 10:46:31,292 - MOTHistoryImport - DEBUG - Processing registration: BU25YXG
+2025-08-13 10:46:31,308 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXG
+2025-08-13 10:46:31,644 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXG HTTP/1.1" 404 None
+2025-08-13 10:46:31,644 - MOTHistoryImport - ERROR - API request failed for registration BU25YXG: 404 Client Error: Not Found for url: https://history.mot.api.gov.uk/v1/trade/vehicles/registration/BU25YXG
+2025-08-13 10:46:32,848 - MOTHistoryImport - DEBUG - Processing registration: BU25YXH
+2025-08-13 10:46:32,848 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXH
+2025-08-13 10:46:33,102 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXH HTTP/1.1" 404 None
+2025-08-13 10:46:33,102 - MOTHistoryImport - ERROR - API request failed for registration BU25YXH: 404 Client Error: Not Found for url: https://history.mot.api.gov.uk/v1/trade/vehicles/registration/BU25YXH
+2025-08-13 10:46:34,355 - MOTHistoryImport - DEBUG - Processing registration: BU25YXJ
+2025-08-13 10:46:34,355 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXJ
+2025-08-13 10:46:34,561 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXJ HTTP/1.1" 404 None
+2025-08-13 10:46:34,577 - MOTHistoryImport - ERROR - API request failed for registration BU25YXJ: 404 Client Error: Not Found for url: https://history.mot.api.gov.uk/v1/trade/vehicles/registration/BU25YXJ
+2025-08-13 10:46:36,002 - MOTHistoryImport - DEBUG - Processing registration: BU25YXK
+2025-08-13 10:46:36,002 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXK
+2025-08-13 10:46:36,207 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXK HTTP/1.1" 404 None
+2025-08-13 10:46:36,207 - MOTHistoryImport - ERROR - API request failed for registration BU25YXK: 404 Client Error: Not Found for url: https://history.mot.api.gov.uk/v1/trade/vehicles/registration/BU25YXK
+2025-08-13 10:46:37,679 - MOTHistoryImport - DEBUG - Processing registration: BU25YXL
+2025-08-13 10:46:37,679 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXL
+2025-08-13 10:46:37,918 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXL HTTP/1.1" 404 None
+2025-08-13 10:46:37,933 - MOTHistoryImport - ERROR - API request failed for registration BU25YXL: 404 Client Error: Not Found for url: https://history.mot.api.gov.uk/v1/trade/vehicles/registration/BU25YXL
+2025-08-13 10:46:39,374 - MOTHistoryImport - DEBUG - Processing registration: BU25YXM
+2025-08-13 10:46:39,390 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXM
+2025-08-13 10:46:39,995 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXM HTTP/1.1" 200 None
+2025-08-13 10:46:40,993 - MOTHistoryImport - DEBUG - Processing registration: BU25YXN
+2025-08-13 10:46:40,993 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXN
+2025-08-13 10:46:41,545 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXN HTTP/1.1" 200 None
+2025-08-13 10:46:42,597 - MOTHistoryImport - DEBUG - Processing registration: BU25YXT
+2025-08-13 10:46:42,606 - MOTHistoryImport - DEBUG - Fetching MOT data for registration: BU25YXT
+2025-08-13 10:46:43,255 - urllib3.connectionpool - DEBUG - https://history.mot.api.gov.uk:443 "GET /v1/trade/vehicles/registration/BU25YXT HTTP/1.1" 200 None
+2025-08-13 10:46:44,382 - MOTHistoryImport - INFO - Bulk inserting 84 vehicle records...
+2025-08-13 10:46:44,863 - MOTHistoryImport - INFO - Successfully bulk inserted 84 vehicle records
+2025-08-13 10:46:44,867 - MOTHistoryImport - INFO - Bulk inserting 355 test records...
+2025-08-13 10:46:44,937 - MOTHistoryImport - INFO - Successfully exported 355 records to CSV_Exports\StageMOTTests_20250813_104644.csv
+2025-08-13 10:46:45,966 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (302739582F88FFE8BF6B5F64720422228BCEBD8CDB9042BB960E25C780235F1A). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:46:46,409 - MOTHistoryImport - WARNING - Skipped duplicate test record: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of PRIMARY KEY constraint 'PK_StageMOTTests'. Cannot insert duplicate key in object 'dbo.StageMOTTests'. The duplicate key value is (0A7FB5C0C203A37A2DEC779343524EB0BD8742A197FE505D0019EB23EDE63E58). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-08-13 10:46:46,821 - MOTHistoryImport - INFO - Successfully processed 353 test records (2 duplicates skipped)
+2025-08-13 10:46:46,821 - MOTHistoryImport - INFO - Bulk inserting 87 defect records...
+2025-08-13 10:46:47,399 - MOTHistoryImport - INFO - Successfully bulk inserted 87 defect records
+2025-08-13 10:46:47,408 - MOTHistoryImport - INFO - Bulk batch committed: 84 successful, 5 failed, 84 vehicles, 355 tests, 87 defects, 0 not found
+2025-08-13 10:46:47,408 - MOTHistoryImport - INFO - Progress: 100.0% (489/489)
+2025-08-13 10:46:47,408 - MOTHistoryImport - INFO - Running merge procedures after all batches...
+2025-08-13 10:46:47,408 - MOTHistoryImport - INFO - Running spFactMOTVehicles_Merge...
+2025-08-13 10:46:47,456 - MOTHistoryImport - INFO - spFactMOTVehicles_Merge completed successfully
+2025-08-13 10:46:47,472 - MOTHistoryImport - INFO - Running spFactMOTTests_Merge...
+2025-08-13 10:46:47,551 - MOTHistoryImport - INFO - spFactMOTTests_Merge completed successfully
+2025-08-13 10:46:47,567 - MOTHistoryImport - INFO - Running spFactMOTDefects_Merge...
+2025-08-13 10:46:47,599 - MOTHistoryImport - INFO - spFactMOTDefects_Merge completed successfully
+2025-08-13 10:46:47,615 - MOTHistoryImport - INFO - All merge stored procedures completed successfully
+2025-08-13 10:46:47,615 - MOTHistoryImport - INFO - ==================================================
+2025-08-13 10:46:47,615 - MOTHistoryImport - INFO - MOT HISTORY DATA IMPORT COMPLETED
+2025-08-13 10:46:47,615 - MOTHistoryImport - INFO - ==================================================
+2025-08-13 10:46:47,615 - MOTHistoryImport - INFO - Total registrations processed: 489
+2025-08-13 10:46:47,631 - MOTHistoryImport - INFO - Successful imports: 484
+2025-08-13 10:46:47,631 - MOTHistoryImport - INFO - Failed imports: 5
+2025-08-13 10:46:47,631 - MOTHistoryImport - INFO - Registrations not found: 0
+2025-08-13 10:46:47,631 - MOTHistoryImport - INFO - Vehicles inserted: 484
+2025-08-13 10:46:47,631 - MOTHistoryImport - INFO - Tests inserted: 1461
+2025-08-13 10:46:47,646 - MOTHistoryImport - INFO - Defects inserted: 206
+2025-08-13 10:46:47,646 - MOTHistoryImport - INFO - Total duration: 0:11:31.809057
+2025-08-13 10:46:47,652 - MOTHistoryImport - INFO - Average time per registration: 0:00:01.414742
+2025-08-13 10:46:47,652 - MOTHistoryImport - INFO - ========================= API RATE STATS =========================
+2025-08-13 10:46:47,652 - MOTHistoryImport - INFO - Total API requests: 484
+2025-08-13 10:46:47,662 - MOTHistoryImport - INFO - Final RPS (60-sec window): 0.49
+2025-08-13 10:46:47,662 - MOTHistoryImport - INFO - Average RPS (overall): 0.70
+2025-08-13 10:46:47,662 - MOTHistoryImport - INFO - Configured rate delay: 0.0s
+2025-08-13 10:46:47,662 - MOTHistoryImport - INFO - API request duration: 691.4s
+2025-08-13 10:46:47,662 - MOTHistoryImport - INFO - ==================================================
+2025-08-13 10:46:47,821 - MOTHistoryImport - INFO - Email sent successfully to cdunbar@metroline.co.uk
+2025-08-13 10:46:47,844 - MOTHistoryImport - INFO - Success notification email sent
+2025-08-13 10:46:47,844 - MOTHistoryImport - INFO - Database connection closed

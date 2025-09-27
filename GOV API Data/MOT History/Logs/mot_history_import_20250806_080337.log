@@ -1,0 +1,70 @@
+2025-08-06 08:03:37,503 - MOTHistoryImport - INFO - Logging initialized. Log file: Logs\mot_history_import_20250806_080337.log
+2025-08-06 08:03:37,507 - MOTHistoryImport - INFO - Configuration loaded: {'database': {'server': 'MLNOESQLUAT01', 'database': 'Engineering', 'trusted_connection': True}, 'files': {'input_csv_file': 'vehicle_registrations_new.csv', 'log_directory': 'Logs'}, 'processing': {'batch_size': 100, 'request_timeout': 30, 'max_retries': 3}, 'logging': {'log_level': 'INFO'}}
+2025-08-06 08:03:37,553 - MOTHistoryImport - INFO - JSON data logging initialized. File: Logs\mot_history_data_20250806_080337.json
+2025-08-06 08:03:37,554 - MOTHistoryImport - INFO - Starting MOT History Data Import (Bulk Mode)
+2025-08-06 08:03:37,554 - MOTHistoryImport - INFO - Establishing database connection...
+2025-08-06 08:03:37,818 - MOTHistoryImport - INFO - Database connection established successfully
+2025-08-06 08:03:37,828 - MOTHistoryImport - INFO - Truncating table: StageMOTVehicles
+2025-08-06 08:03:37,845 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTVehicles
+2025-08-06 08:03:37,855 - MOTHistoryImport - INFO - Truncating table: StageMOTTests
+2025-08-06 08:03:37,873 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTTests
+2025-08-06 08:03:37,874 - MOTHistoryImport - INFO - Truncating table: StageMOTDefects
+2025-08-06 08:03:37,884 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTDefects
+2025-08-06 08:03:37,884 - MOTHistoryImport - INFO - Truncating table: StageMOTVehiclesNotFound
+2025-08-06 08:03:37,898 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTVehiclesNotFound
+2025-08-06 08:03:37,898 - MOTHistoryImport - INFO - Reading vehicle registrations from SQL Server view
+2025-08-06 08:03:37,912 - MOTHistoryImport - INFO - Establishing database connection...
+2025-08-06 08:03:38,008 - MOTHistoryImport - INFO - Database connection established successfully
+2025-08-06 08:03:38,401 - MOTHistoryImport - INFO - Read 2285 vehicle registrations from SQL Server
+2025-08-06 08:03:38,405 - MOTHistoryImport - INFO - Processing batch 1/23 (100 registrations)
+2025-08-06 08:03:38,408 - MOTHistoryImport - INFO - Requesting new OAuth2 token...
+2025-08-06 08:03:38,666 - MOTHistoryImport - INFO - OAuth2 token obtained successfully
+2025-08-06 08:03:48,956 - MOTHistoryImport - INFO - API Rate - Legacy: 1.13 RPS, Dynamic: 0 RPS (Daily: 10/500000)
+2025-08-06 08:04:02,267 - MOTHistoryImport - INFO - API Rate - Legacy: 0.90 RPS, Dynamic: 0 RPS (Daily: 20/500000)
+2025-08-06 08:04:11,712 - MOTHistoryImport - INFO - API Rate - Legacy: 0.95 RPS, Dynamic: 0 RPS (Daily: 30/500000)
+2025-08-06 08:04:21,969 - MOTHistoryImport - INFO - API Rate - Legacy: 0.95 RPS, Dynamic: 0 RPS (Daily: 40/500000)
+2025-08-06 08:04:31,955 - MOTHistoryImport - INFO - API Rate - Legacy: 0.96 RPS, Dynamic: 0 RPS (Daily: 50/500000)
+2025-08-06 08:04:42,678 - MOTHistoryImport - INFO - API Rate - Legacy: 0.95 RPS, Dynamic: 0 RPS (Daily: 60/500000)
+2025-08-06 08:04:53,424 - MOTHistoryImport - INFO - API Rate - Legacy: 0.95 RPS, Dynamic: 0 RPS (Daily: 70/500000)
+2025-08-06 08:05:05,684 - MOTHistoryImport - INFO - API Rate - Legacy: 0.96 RPS, Dynamic: 0 RPS (Daily: 80/500000)
+2025-08-06 08:05:16,879 - MOTHistoryImport - INFO - API Rate - Legacy: 0.94 RPS, Dynamic: 0 RPS (Daily: 90/500000)
+2025-08-06 08:05:28,482 - MOTHistoryImport - INFO - API Rate - Legacy: 0.91 RPS, Dynamic: 0 RPS (Daily: 100/500000)
+2025-08-06 08:05:28,892 - MOTHistoryImport - INFO - Bulk inserting 100 vehicle records...
+2025-08-06 08:05:29,748 - MOTHistoryImport - INFO - Successfully bulk inserted 100 vehicle records
+2025-08-06 08:05:29,748 - MOTHistoryImport - INFO - Bulk inserting 715 test records...
+2025-08-06 08:05:34,746 - MOTHistoryImport - INFO - Successfully bulk inserted 715 test records
+2025-08-06 08:05:34,746 - MOTHistoryImport - INFO - Bulk inserting 146 defect records...
+2025-08-06 08:05:35,824 - MOTHistoryImport - INFO - Successfully bulk inserted 146 defect records
+2025-08-06 08:05:35,834 - MOTHistoryImport - INFO - Bulk batch committed: 100 successful, 0 failed, 100 vehicles, 715 tests, 146 defects, 0 not found
+2025-08-06 08:05:35,834 - MOTHistoryImport - INFO - Progress: 4.4% (100/2285)
+2025-08-06 08:05:35,843 - MOTHistoryImport - INFO - Processing batch 2/23 (100 registrations)
+2025-08-06 08:05:45,474 - MOTHistoryImport - INFO - API Rate - Legacy: 0.79 RPS, Dynamic: 0 RPS (Daily: 110/500000)
+2025-08-06 08:05:58,295 - MOTHistoryImport - INFO - API Rate - Legacy: 0.78 RPS, Dynamic: 0 RPS (Daily: 120/500000)
+2025-08-06 08:06:11,395 - MOTHistoryImport - INFO - API Rate - Legacy: 0.76 RPS, Dynamic: 0 RPS (Daily: 130/500000)
+2025-08-06 08:06:23,703 - MOTHistoryImport - INFO - API Rate - Legacy: 0.76 RPS, Dynamic: 0 RPS (Daily: 140/500000)
+2025-08-06 08:06:35,159 - MOTHistoryImport - INFO - API Rate - Legacy: 0.85 RPS, Dynamic: 0 RPS (Daily: 150/500000)
+2025-08-06 08:06:48,601 - MOTHistoryImport - INFO - API Rate - Legacy: 0.80 RPS, Dynamic: 0 RPS (Daily: 160/500000)
+2025-08-06 08:07:04,470 - MOTHistoryImport - INFO - API Rate - Legacy: 0.77 RPS, Dynamic: 0 RPS (Daily: 170/500000)
+2025-08-06 08:07:19,886 - MOTHistoryImport - INFO - API Rate - Legacy: 0.75 RPS, Dynamic: 0 RPS (Daily: 180/500000)
+2025-08-06 08:07:35,500 - MOTHistoryImport - INFO - API Rate - Legacy: 0.68 RPS, Dynamic: 0 RPS (Daily: 190/500000)
+2025-08-06 08:07:51,057 - MOTHistoryImport - INFO - API Rate - Legacy: 0.65 RPS, Dynamic: 0 RPS (Daily: 200/500000)
+2025-08-06 08:07:51,794 - MOTHistoryImport - INFO - Bulk inserting 100 vehicle records...
+2025-08-06 08:07:51,794 - MOTHistoryImport - WARNING - Truncating long value for key 'fuelType': Hybrid Electric (Clean)... (length: 23 -> 20)
+2025-08-06 08:07:51,794 - MOTHistoryImport - WARNING - Truncating long value for key 'fuelType': Hybrid Electric (Clean)... (length: 23 -> 20)
+2025-08-06 08:07:52,777 - MOTHistoryImport - INFO - Successfully bulk inserted 100 vehicle records
+2025-08-06 08:07:52,777 - MOTHistoryImport - INFO - Bulk inserting 788 test records...
+2025-08-06 08:07:57,904 - MOTHistoryImport - INFO - Successfully bulk inserted 788 test records
+2025-08-06 08:07:57,920 - MOTHistoryImport - INFO - Bulk inserting 933 defect records...
+2025-08-06 08:08:04,142 - MOTHistoryImport - INFO - Successfully bulk inserted 933 defect records
+2025-08-06 08:08:04,164 - MOTHistoryImport - INFO - Bulk batch committed: 100 successful, 0 failed, 100 vehicles, 788 tests, 933 defects, 0 not found
+2025-08-06 08:08:04,176 - MOTHistoryImport - INFO - Progress: 8.8% (200/2285)
+2025-08-06 08:08:04,176 - MOTHistoryImport - INFO - Processing batch 3/23 (100 registrations)
+2025-08-06 08:08:19,438 - MOTHistoryImport - INFO - API Rate - Legacy: 0.52 RPS, Dynamic: 0 RPS (Daily: 210/500000)
+2025-08-06 08:08:34,618 - MOTHistoryImport - INFO - API Rate - Legacy: 0.52 RPS, Dynamic: 0 RPS (Daily: 220/500000)
+2025-08-06 08:08:50,624 - MOTHistoryImport - INFO - API Rate - Legacy: 0.52 RPS, Dynamic: 0 RPS (Daily: 230/500000)
+2025-08-06 08:09:03,634 - MOTHistoryImport - INFO - API Rate - Legacy: 0.68 RPS, Dynamic: 0 RPS (Daily: 240/500000)
+2025-08-06 08:09:18,403 - MOTHistoryImport - INFO - API Rate - Legacy: 0.70 RPS, Dynamic: 0 RPS (Daily: 250/500000)
+2025-08-06 08:09:32,511 - MOTHistoryImport - INFO - API Rate - Legacy: 0.71 RPS, Dynamic: 0 RPS (Daily: 260/500000)
+2025-08-06 08:09:47,212 - MOTHistoryImport - INFO - API Rate - Legacy: 0.72 RPS, Dynamic: 0 RPS (Daily: 270/500000)
+2025-08-06 08:10:01,954 - MOTHistoryImport - INFO - API Rate - Legacy: 0.70 RPS, Dynamic: 0 RPS (Daily: 280/500000)
+2025-08-06 08:10:10,722 - MOTHistoryImport - INFO - Database connection closed

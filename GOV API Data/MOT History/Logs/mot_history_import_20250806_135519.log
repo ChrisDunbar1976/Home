@@ -1,0 +1,29 @@
+2025-08-06 13:55:19,928 - MOTHistoryImport - INFO - Logging initialized. Log file: Logs\mot_history_import_20250806_135519.log
+2025-08-06 13:55:19,931 - MOTHistoryImport - INFO - Configuration loaded: {'database': {'server': 'MLNOESQLUAT01', 'database': 'Engineering', 'trusted_connection': True}, 'files': {'input_csv_file': 'vehicle_registrations_new.csv', 'log_directory': 'Logs'}, 'processing': {'batch_size': 100, 'request_timeout': 30, 'max_retries': 3}, 'logging': {'log_level': 'INFO'}}
+2025-08-06 13:55:19,976 - MOTHistoryImport - INFO - JSON data logging initialized. File: Logs\mot_history_data_20250806_135519.json
+2025-08-06 13:55:19,979 - MOTHistoryImport - INFO - Starting MOT History Data Import (Bulk Mode)
+2025-08-06 13:55:19,985 - MOTHistoryImport - INFO - Establishing database connection...
+2025-08-06 13:55:20,139 - MOTHistoryImport - INFO - Database connection established successfully
+2025-08-06 13:55:20,143 - MOTHistoryImport - INFO - Truncating table: StageMOTVehicles
+2025-08-06 13:55:20,173 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTVehicles
+2025-08-06 13:55:20,183 - MOTHistoryImport - INFO - Truncating table: StageMOTTests
+2025-08-06 13:55:20,200 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTTests
+2025-08-06 13:55:20,206 - MOTHistoryImport - INFO - Truncating table: StageMOTDefects
+2025-08-06 13:55:20,227 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTDefects
+2025-08-06 13:55:20,231 - MOTHistoryImport - INFO - Truncating table: StageMOTVehiclesNotFound
+2025-08-06 13:55:20,256 - MOTHistoryImport - INFO - Successfully truncated table: StageMOTVehiclesNotFound
+2025-08-06 13:55:20,261 - MOTHistoryImport - INFO - Reading vehicle registrations from SQL Server view
+2025-08-06 13:55:20,264 - MOTHistoryImport - INFO - Establishing database connection...
+2025-08-06 13:55:20,334 - MOTHistoryImport - INFO - Database connection established successfully
+2025-08-06 13:55:20,735 - MOTHistoryImport - INFO - Read 2285 vehicle registrations from SQL Server
+2025-08-06 13:55:20,751 - MOTHistoryImport - INFO - Processing batch 1/23 (100 registrations)
+2025-08-06 13:55:20,754 - MOTHistoryImport - INFO - Requesting new OAuth2 token...
+2025-08-06 13:55:20,955 - MOTHistoryImport - INFO - OAuth2 token obtained successfully
+2025-08-06 13:55:31,810 - MOTHistoryImport - INFO - API Rate - Legacy: 1.02 RPS, Dynamic: 0 RPS (Daily: 10/500000)
+2025-08-06 13:55:41,398 - MOTHistoryImport - INFO - API Rate - Legacy: 1.03 RPS, Dynamic: 0 RPS (Daily: 20/500000)
+2025-08-06 13:55:50,207 - MOTHistoryImport - INFO - API Rate - Legacy: 1.06 RPS, Dynamic: 0 RPS (Daily: 30/500000)
+2025-08-06 13:55:59,216 - MOTHistoryImport - INFO - API Rate - Legacy: 1.07 RPS, Dynamic: 0 RPS (Daily: 40/500000)
+2025-08-06 13:56:10,028 - MOTHistoryImport - INFO - API Rate - Legacy: 1.04 RPS, Dynamic: 0 RPS (Daily: 50/500000)
+2025-08-06 13:56:20,196 - MOTHistoryImport - INFO - API Rate - Legacy: 1.03 RPS, Dynamic: 0 RPS (Daily: 60/500000)
+2025-08-06 13:56:30,383 - MOTHistoryImport - INFO - API Rate - Legacy: 1.04 RPS, Dynamic: 0 RPS (Daily: 70/500000)
+2025-08-06 13:56:39,323 - MOTHistoryImport - INFO - Database connection closed

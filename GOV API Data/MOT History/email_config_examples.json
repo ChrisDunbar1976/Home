@@ -1,0 +1,91 @@
+{
+  "examples": {
+    "service_account_with_auth": {
+      "comment": "Use a dedicated service account with authentication (RECOMMENDED)",
+      "email": {
+        "enable_email_notifications": true,
+        "smtp_server": "smtp.office365.com",
+        "smtp_port": 587,
+        "smtp_use_tls": true,
+        "smtp_use_auth": true,
+        "notification_email": "cdunbar@metroline.co.uk",
+        "sender_email": "mot-import-service@metroline.co.uk",
+        "sender_password": ""
+      },
+      "environment_variables": [
+        "set MOT_SENDER_EMAIL=mot-import-service@metroline.co.uk",
+        "set MOT_SENDER_PASSWORD=service-account-app-password"
+      ]
+    },
+    
+    "smtp_relay_no_auth": {
+      "comment": "Use internal SMTP relay without authentication",
+      "email": {
+        "enable_email_notifications": true,
+        "smtp_server": "mail.metroline.internal",
+        "smtp_port": 25,
+        "smtp_use_tls": false,
+        "smtp_use_auth": false,
+        "notification_email": "cdunbar@metroline.co.uk",
+        "sender_email": "mot-import-service@metroline.co.uk",
+        "sender_password": ""
+      },
+      "environment_variables": [
+        "REM No environment variables needed for no-auth SMTP relay"
+      ]
+    },
+    
+    "external_smtp_with_auth": {
+      "comment": "Use external SMTP service with authentication",
+      "email": {
+        "enable_email_notifications": true,
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587,
+        "smtp_use_tls": true,
+        "smtp_use_auth": true,
+        "notification_email": "cdunbar@metroline.co.uk",
+        "sender_email": "metroline.systems@gmail.com",
+        "sender_password": ""
+      },
+      "environment_variables": [
+        "set MOT_SENDER_EMAIL=metroline.systems@gmail.com",
+        "set MOT_SENDER_PASSWORD=app-specific-password"
+      ]
+    },
+    
+    "office365_shared_mailbox": {
+      "comment": "Use Office 365 shared mailbox (requires Send As permissions)",
+      "email": {
+        "enable_email_notifications": true,
+        "smtp_server": "smtp.office365.com",
+        "smtp_port": 587,
+        "smtp_use_tls": true,
+        "smtp_use_auth": true,
+        "notification_email": "cdunbar@metroline.co.uk",
+        "sender_email": "systems-alerts@metroline.co.uk",
+        "sender_password": ""
+      },
+      "environment_variables": [
+        "set MOT_SENDER_EMAIL=systems-alerts@metroline.co.uk",
+        "set MOT_SENDER_PASSWORD=shared-mailbox-password"
+      ]
+    },
+    
+    "disabled_notifications": {
+      "comment": "Disable email notifications completely",
+      "email": {
+        "enable_email_notifications": false,
+        "smtp_server": "",
+        "smtp_port": 587,
+        "smtp_use_tls": true,
+        "smtp_use_auth": true,
+        "notification_email": "cdunbar@metroline.co.uk",
+        "sender_email": "",
+        "sender_password": ""
+      },
+      "environment_variables": [
+        "REM No environment variables needed when notifications disabled"
+      ]
+    }
+  }
+}
