@@ -1,0 +1,35 @@
+{
+  "name": "prompt-enhancer",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "bin": {
+    "prompt-enhancer": "src/cli/cli.js"
+  },
+  "scripts": {
+    "test": "node tests/test.js",
+    "start": "node src/cli/cli.js",
+    "dev": "node src/cli/cli.js interactive",
+    "build": "echo \"Build complete\"",
+    "install-global": "npm link"
+  },
+  "keywords": [
+    "ai",
+    "prompt",
+    "enhancement",
+    "cli",
+    "llm",
+    "gpt",
+    "nlp",
+    "template",
+    "optimization"
+  ],
+  "author": "Prompt Enhancer Team",
+  "license": "ISC",
+  "description": "A comprehensive prompt enhancement tool for better AI interactions with text expansion, context injection, role-based enhancement, templates, and AI optimization.",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^14.0.0",
+    "fs-extra": "^11.3.1",
+    "inquirer": "^8.2.6"
+  }
+}

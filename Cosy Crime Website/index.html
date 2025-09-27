@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Cosy-Crime.com - Rhubarb Press Cosy Crime Imprint</title>
+    <!-- Favicon link (placeholder, replace with your actual logo) -->
+    <link rel="icon" href="https://placehold.co/32x32/2D1B1B/FFFFFF?text=CC" type="image/x-icon">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social media icons (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Force dark theme */
+        html, body {
+            font-family: 'Inter', sans-serif !important;
+            background-color: #000000 !important; /* Pure black background */
+            color: #FFFFFF !important; /* White text */
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        /* Custom styling for book card hover effect */
+        .book-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: #111111 !important; /* Very dark grey background */
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(139, 26, 26, 0.3), 0 4px 6px -2px rgba(139, 26, 26, 0.2);
+        }
+        /* Dark theme overrides */
+        .dark-bg { background-color: #000000 !important; }
+        .dark-grey-bg { background-color: #111111 !important; }
+        .white-text { color: #FFFFFF !important; }
+        .blood-red { color: #8B1A1A !important; }
+        .blood-red-bg { background-color: #8B1A1A !important; }
+        
+        /* Hero section specific */
+        .hero-section {
+            background-color: #000000 !important;
+            color: #FFFFFF !important;
+        }
+        
+        /* Red gradient backgrounds */
+        .red-gradient-bg {
+            background: linear-gradient(to bottom, #000000 0%, #8B1A1A 100%) !important;
+        }
+        
+        /* Navigation overrides */
+        .nav-link {
+            color: #FFFFFF !important;
+        }
+        .nav-link:hover {
+            color: #8B1A1A !important;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-[#111111] shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <!-- Site Logo/Name -->
+            <a href="#" class="text-2xl font-bold text-white rounded-md p-2 hover:bg-[#1A1A1A] transition-colors bg-[#8B1A1A]">
+                Cosy-Crime<span class="text-gray-300">.com</span>
+            </a>
+            <!-- Navigation -->
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="nav-link text-white hover:text-[#8B1A1A] font-medium transition-colors rounded-md p-2">Home</a></li>
+                    <li><a href="about.html" class="nav-link text-white hover:text-[#8B1A1A] font-medium transition-colors rounded-md p-2">About</a></li>
+                    <li><a href="books.html" class="nav-link text-white hover:text-[#8B1A1A] font-medium transition-colors rounded-md p-2">Our Books</a></li>
+                    <li><a href="submissions.html" class="nav-link text-white hover:text-[#8B1A1A] font-medium transition-colors rounded-md p-2">Submissions</a></li>
+                    <li><a href="contact.html" class="nav-link text-white hover:text-[#8B1A1A] font-medium transition-colors rounded-md p-2">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-[#000000] text-white py-20 md:py-32 rounded-b-lg shadow-lg hero-section">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                Cosy Crime
+            </h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-90">
+                The specialist cosy crime imprint of <a href="https://www.rhubarbpress.com" class="text-[#8B1A1A] hover:underline font-semibold">Rhubarb Press</a>, dedicated to traditional mysteries with a modern twist.
+            </p>
+            <a href="books.html" class="red-gradient-bg text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#A52A2A] transition-transform transform hover:scale-105 inline-block">
+                Discover Our Mysteries
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="py-16 md:py-24 bg-[#000000] rounded-lg shadow-md mx-4 md:mx-auto max-w-6xl -mt-10 md:-mt-20 relative z-10 p-6 md:p-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">About Cosy Crime</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+                <div class="w-full md:w-1/2">
+                    <!-- Placeholder image for About Us section -->
+                    <img src="Cosy Crime Logo.jpg" alt="Cosy Crime Logo" class="rounded-lg shadow-md mb-6 w-full h-auto object-cover">
+                </div>
+                <div class="w-full md:w-1/2 text-left">
+                    <p class="text-lg text-white mb-4">
+                        Cosy Crime is the dedicated mystery imprint of <a href="https://www.rhubarbpress.com" class="text-[#8B1A1A] hover:underline font-semibold">Rhubarb Press</a>, specialising in the finest tradition of British crime fiction. We champion stories where wit trumps violence and clever detection solves the day.
+                    </p>
+                    <p class="text-lg text-white">
+                        From village mysteries to country house murders, our carefully curated collection features amateur sleuths, puzzle plots, and that distinctly British charm that makes cosy crime so enduringly popular. Each title promises fair-play detection and satisfying resolutions.
+                    </p>
+                    <a href="about.html" class="inline-block mt-6 text-[#8B1A1A] hover:underline font-semibold">Learn More About Our Imprint &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Call to Action / Contact Section -->
+    <section id="contact" class="bg-[#000000] text-white py-16 md:py-20 text-center rounded-t-lg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Join Our Mystery Community</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 opacity-90">
+                Have a cosy crime manuscript? Ready to become part of our growing collection of traditional mysteries?
+            </p>
+            <a href="contact.html" class="red-gradient-bg text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#A52A2A] transition-transform transform hover:scale-105 inline-block">
+                Submit Your Mystery
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#000000] text-white py-10 rounded-t-md">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 space-y-6 md:space-y-0">
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold mb-2">Cosy-Crime.com</h3>
+                <p class="text-gray-400">&copy; 2025 A <a href="https://www.rhubarbpress.com" class="text-[#8B1A1A] hover:underline">Rhubarb Press</a> Imprint. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                <a href="sitemap.html" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+            </div>
+            <div class="flex space-x-4">
+                <!-- Social Media Icons (Font Awesome classes) -->
+                <a href="#" class="text-gray-400 hover:text-white text-2xl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/rhubarbpressltd" class="text-gray-400 hover:text-white text-2xl" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

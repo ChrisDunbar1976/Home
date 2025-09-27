@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>RhubarbPress.com - Independent Publishing House</title>
+    <!-- Favicon link (placeholder, replace with your actual logo) -->
+    <link rel="icon" href="https://placehold.co/32x32/454E3F/EADCD2?text=RP" type="image/x-icon">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social media icons (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Force cache refresh with timestamp */
+        html, body {
+            font-family: 'Inter', sans-serif !important;
+            background: linear-gradient(to bottom, #0b6623 0%, #b43757 100%) !important; /* Green to rhubarb gradient background */
+            background-attachment: fixed !important; /* Keep gradient fixed while scrolling */
+            color: #F5F0E8 !important; /* Cream text for readability */
+            margin: 0 !important;
+            padding: 0 !important;
+            min-height: 100vh !important;
+        }
+        /* Override any cached styles */
+        * {
+            box-sizing: border-box;
+        }
+        /* Custom styling for book card hover effect */
+        .book-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: #F5F0E8 !important;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Force color palette to match logo */
+        .brand-bg { background-color: #4A5542 !important; }
+        .brand-text { color: #F5F0E8 !important; }
+        .brand-bg-light { background-color: #F5F0E8 !important; }
+        .brand-text-dark { color: #4A5542 !important; }
+        
+        /* Main landing area specific overrides */
+        .hero-section {
+            background: transparent !important;
+            color: #F5F0E8 !important;
+        }
+        
+        /* Contact section */
+        .contact-section {
+            background: transparent !important;
+        }
+        
+        /* Navigation overrides */
+        .nav-link {
+            color: #4A5542 !important;
+        }
+        .nav-link:hover {
+            color: #4A5542 !important;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-[#F5F0E8] shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <!-- Site Logo/Name -->
+            <a href="#" class="text-2xl font-bold text-[#F5F0E8] rounded-md p-2 hover:bg-[#F8F5F0] transition-colors bg-[#4A5542]">
+                RhubarbPress<span class="text-gray-300">.com</span>
+            </a>
+            <!-- Navigation -->
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="nav-link text-[#4A5542] hover:text-[#4A5542] font-medium transition-colors rounded-md p-2">Home</a></li>
+                    <li><a href="about.html" class="nav-link text-[#4A5542] hover:text-[#4A5542] font-medium transition-colors rounded-md p-2">About Us</a></li>
+                    <li><a href="books.html" class="nav-link text-[#4A5542] hover:text-[#4A5542] font-medium transition-colors rounded-md p-2">Our Books</a></li>
+                    <li><a href="submissions.html" class="nav-link text-[#4A5542] hover:text-[#4A5542] font-medium transition-colors rounded-md p-2">Submissions</a></li>
+                    <li><a href="contact.html" class="nav-link text-[#4A5542] hover:text-[#4A5542] font-medium transition-colors rounded-md p-2">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="text-[#F5F0E8] py-20 md:py-32 hero-section">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                Rhubarb Press
+            </h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-90">
+                An independent publisher dedicated to bringing compelling narratives and insightful voices to readers worldwide.
+            </p>
+            <a href="books.html" class="bg-[#F5F0E8] text-[#4A5542] font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#F8F5F0] transition-transform transform hover:scale-105 inline-block">
+                Discover Our Books
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="py-16 md:py-24 bg-[#F5F0E8] rounded-lg shadow-md mx-4 md:mx-auto max-w-6xl -mt-10 md:-mt-20 relative z-10 p-6 md:p-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#4A5542] mb-8">About Rhubarb Press</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+                <div class="w-full md:w-1/2">
+                    <!-- Placeholder image for About Us section - adjusted for olive tones -->
+                    <img src="https://placehold.co/600x400/DDE0D8/454E3F?text=Our+Story" alt="RhubarbPress office or team" class="rounded-lg shadow-md mb-6 w-full h-auto object-cover">
+                </div>
+                <div class="w-full md:w-1/2 text-left">
+                    <p class="text-lg text-[#4A5542] mb-4">
+                        Founded with a passion for literature and a commitment to new voices, Rhubarb Press is an independent publishing house that believes in the enduring power of a good story. We champion authors who challenge, inspire, and entertain.
+                    </p>
+                    <p class="text-lg text-[#4A5542]">
+                        Our mission is to cultivate a diverse catalog of high-quality fiction and non-fiction, connecting readers with narratives that leave a lasting impression. We pride ourselves on a collaborative approach, working closely with our authors every step of the way from manuscript to market.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Call to Action / Contact Section -->
+    <section id="contact" class="text-[#F5F0E8] py-16 md:py-20 text-center rounded-t-lg contact-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Partner with Rhubarb Press.</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 opacity-90">
+                Ready to bring your story to life, or just have a question? We'd love to hear from you.
+            </p>
+            <a href="contact.html" class="bg-[#F5F0E8] text-[#4A5542] font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#F8F5F0] transition-transform transform hover:scale-105 inline-block">
+                Contact Us
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#3E4739] text-[#F5F0E8] py-10 rounded-t-md">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 space-y-6 md:space-y-0">
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold mb-2">RhubarbPress.com</h3>
+                <p class="text-gray-400">&copy; 2025 All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="privacy-policy.html" class="text-gray-400 hover:text-[#F5F0E8] transition-colors">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-gray-400 hover:text-[#F5F0E8] transition-colors">Terms of Service</a>
+                <a href="sitemap.html" class="text-gray-400 hover:text-[#F5F0E8] transition-colors">Sitemap</a>
+            </div>
+            <div class="flex space-x-4">
+                <!-- Social Media Icons (Font Awesome classes) -->
+                <a href="#" class="text-gray-400 hover:text-[#F5F0E8] text-2xl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/rhubarbpressltd" class="text-gray-400 hover:text-[#F5F0E8] text-2xl" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-[#F5F0E8] text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-[#F5F0E8] text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

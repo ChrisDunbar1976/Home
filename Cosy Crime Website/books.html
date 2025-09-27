@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Books - Cosy-Crime.com - Rhubarb Press Cosy Crime Imprint</title>
+    <!-- Favicon link (placeholder, replace with your actual logo) -->
+    <link rel="icon" href="https://placehold.co/32x32/2D1B1B/FFFFFF?text=CC" type="image/x-icon">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social media icons (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Force dark theme */
+        html, body {
+            font-family: 'Inter', sans-serif !important;
+            background-color: #000000 !important; /* Pure black background */
+            color: #FFFFFF !important; /* White text */
+            margin: 0 !important;
+            padding: 0 !important;
+            min-height: 100vh !important;
+        }
+        /* Override any cached styles */
+        * {
+            box-sizing: border-box;
+        }
+        /* Custom styling for book card hover effect */
+        .book-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: #000000 !important; /* Pure black background */
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(139, 26, 26, 0.3), 0 4px 6px -2px rgba(139, 26, 26, 0.2);
+        }
+        /* Red gradient backgrounds */
+        .red-gradient-bg {
+            background: linear-gradient(to bottom, #000000 0%, #8B1A1A 100%) !important;
+        }
+        
+        /* Hero section */
+        .hero-section {
+            background: transparent !important;
+            color: #FFFFFF !important;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-[#111111] shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <!-- Site Logo/Name -->
+            <a href="index.html" class="text-2xl font-bold text-white rounded-md p-2 hover:bg-[#1A1A1A] transition-colors bg-[#8B1A1A]">
+                Cosy-Crime<span class="text-gray-300">.com</span>
+            </a>
+            <!-- Navigation -->
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="text-white hover:text-[#8B1A1A] font-medium transition-colors rounded-md p-2">Home</a></li>
+                    <li><a href="about.html" class="text-white hover:text-[#8B1A1A] font-medium transition-colors rounded-md p-2">About</a></li>
+                    <li><a href="books.html" class="text-white hover:text-[#8B1A1A] font-bold transition-colors rounded-md p-2 bg-[#1A1A1A]">Our Books</a></li>
+                    <li><a href="submissions.html" class="text-white hover:text-[#8B1A1A] font-medium transition-colors rounded-md p-2">Submissions</a></li>
+                    <li><a href="contact.html" class="text-white hover:text-[#8B1A1A] font-medium transition-colors rounded-md p-2">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="text-white py-16 md:py-20 text-center hero-section">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+                Our Mystery Collection
+            </h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90">
+                Discover our carefully curated collection of traditional cosy crime mysteries
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Books Section -->
+    <section class="py-16 md:py-24 bg-[#000000]">
+        <div class="container mx-auto px-4 text-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Book Card 1 -->
+                <div class="bg-[#000000] p-6 rounded-lg shadow-lg book-card">
+                    <img src="https://placehold.co/300x450/2D1B1B/FFFFFF?text=Coming+Soon" alt="Book Cover: Murder at Millfield Manor" class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                    <h3 class="text-xl font-semibold text-white mb-2">Murder at Millfield Manor</h3>
+                    <p class="text-gray-300 text-sm mb-3">By Eleanor Hartwell</p>
+                    <p class="text-white text-sm mb-4 line-clamp-3">
+                        When the lord of the manor is found dead in his locked study, amateur sleuth Miss Pembroke must unravel a web of family secrets before the killer strikes again.
+                    </p>
+                    <a href="#" class="inline-block red-gradient-bg text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-[#A52A2A] transition-colors">Coming Soon</a>
+                </div>
+
+                <!-- Book Card 2 -->
+                <div class="bg-[#000000] p-6 rounded-lg shadow-lg book-card">
+                    <img src="https://placehold.co/300x450/2D1B1B/FFFFFF?text=Coming+Soon" alt="Book Cover: The Vicarage Vendetta" class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                    <h3 class="text-xl font-semibold text-white mb-2">The Vicarage Vendetta</h3>
+                    <p class="text-gray-300 text-sm mb-3">By James Thornfield</p>
+                    <p class="text-white text-sm mb-4 line-clamp-3">
+                        A quiet village is shaken when the new vicar receives threatening letters. Can Inspector Blackwood solve the mystery before Sunday service becomes a scene of crime?
+                    </p>
+                    <a href="#" class="inline-block red-gradient-bg text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-[#A52A2A] transition-colors">Coming Soon</a>
+                </div>
+
+                <!-- Book Card 3 -->
+                <div class="bg-[#000000] p-6 rounded-lg shadow-lg book-card">
+                    <img src="https://placehold.co/300x450/2D1B1B/FFFFFF?text=Coming+Soon" alt="Book Cover: Death at the Duck and Drake" class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                    <h3 class="text-xl font-semibold text-white mb-2">Death at the Duck and Drake</h3>
+                    <p class="text-gray-300 text-sm mb-3">By Margaret Ashford</p>
+                    <p class="text-white text-sm mb-4 line-clamp-3">
+                        The annual darts championship takes a deadly turn when the reigning champion is found poisoned. Publican-turned-detective Sarah Mills must find the killer among the regulars.
+                    </p>
+                    <a href="#" class="inline-block red-gradient-bg text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-[#A52A2A] transition-colors">Coming Soon</a>
+                </div>
+
+                <!-- Book Card 4 -->
+                <div class="bg-[#000000] p-6 rounded-lg shadow-lg book-card">
+                    <img src="https://placehold.co/300x450/2D1B1B/FFFFFF?text=Coming+Soon" alt="Book Cover: The Library Murders" class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                    <h3 class="text-xl font-semibold text-white mb-2">The Library Murders</h3>
+                    <p class="text-gray-300 text-sm mb-3">By Victoria Penrose</p>
+                    <p class="text-white text-sm mb-4 line-clamp-3">
+                        A series of mysterious deaths plague the village library. Librarian-detective Agnes Fletcher must solve the puzzle before she becomes the next victim among the stacks.
+                    </p>
+                    <a href="#" class="inline-block red-gradient-bg text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-[#A52A2A] transition-colors">Coming Soon</a>
+                </div>
+
+                <!-- Book Card 5 -->
+                <div class="bg-[#000000] p-6 rounded-lg shadow-lg book-card">
+                    <img src="https://placehold.co/300x450/2D1B1B/FFFFFF?text=Coming+Soon" alt="Book Cover: Murder on the Moorland Express" class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                    <h3 class="text-xl font-semibold text-white mb-2">Murder on the Moorland Express</h3>
+                    <p class="text-gray-300 text-sm mb-3">By Charles Wickham</p>
+                    <p class="text-white text-sm mb-4 line-clamp-3">
+                        When a passenger is found dead in a locked train compartment, retired detective Inspector Morrison must solve the case before the train reaches its final destination.
+                    </p>
+                    <a href="#" class="inline-block red-gradient-bg text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-[#A52A2A] transition-colors">Coming Soon</a>
+                </div>
+
+                <!-- Book Card 6 -->
+                <div class="bg-[#000000] p-6 rounded-lg shadow-lg book-card">
+                    <img src="https://placehold.co/300x450/2D1B1B/FFFFFF?text=Coming+Soon" alt="Book Cover: The Garden Party Killer" class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                    <h3 class="text-xl font-semibold text-white mb-2">The Garden Party Killer</h3>
+                    <p class="text-gray-300 text-sm mb-3">By Rosalind Blackwood</p>
+                    <p class="text-white text-sm mb-4 line-clamp-3">
+                        A summer garden party turns deadly when a guest collapses during afternoon tea. Amateur sleuth Lady Catherine Hartley must unmask the killer hiding among high society.
+                    </p>
+                    <a href="#" class="inline-block red-gradient-bg text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-[#A52A2A] transition-colors">Coming Soon</a>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <a href="#" class="red-gradient-bg text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#A52A2A] transition-transform transform hover:scale-105 inline-block">
+                    View All Our Mysteries
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#000000] text-white py-10 rounded-t-md mt-16">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 space-y-6 md:space-y-0">
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold mb-2">Cosy-Crime.com</h3>
+                <p class="text-gray-400">&copy; 2025 A <a href="https://www.rhubarbpress.com" class="text-[#8B1A1A] hover:underline">Rhubarb Press</a> Imprint. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                <a href="sitemap.html" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+            </div>
+            <div class="flex space-x-4">
+                <!-- Social Media Icons (Font Awesome classes) -->
+                <a href="#" class="text-gray-400 hover:text-white text-2xl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/rhubarbpressltd" class="text-gray-400 hover:text-white text-2xl" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

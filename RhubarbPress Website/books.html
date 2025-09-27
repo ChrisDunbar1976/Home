@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Books - RhubarbPress.com - Independent Publishing House</title>
+    <!-- Favicon link (placeholder, replace with your actual logo) -->
+    <link rel="icon" href="https://placehold.co/32x32/454E3F/EADCD2?text=RP" type="image/x-icon">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social media icons (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html, body {
+            font-family: 'Inter', sans-serif !important;
+            background: linear-gradient(to bottom, #0b6623 0%, #b43757 100%) !important; /* Green to rhubarb gradient background */
+            background-attachment: fixed !important; /* Keep gradient fixed while scrolling */
+            color: #F5F0E8 !important; /* Cream text for readability */
+            margin: 0 !important;
+            padding: 0 !important;
+            min-height: 100vh !important;
+        }
+        /* Override any cached styles */
+        * {
+            box-sizing: border-box;
+        }
+        /* Hero section */
+        .hero-section {
+            background: transparent !important;
+            color: #F5F0E8 !important;
+        }
+        /* Custom styling for book card hover effect */
+        .book-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: #F5F0E8 !important;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-[#F5F0E8] shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <!-- Site Logo/Name -->
+            <a href="index.html" class="text-2xl font-bold text-[#F5F0E8] rounded-md p-2 hover:bg-[#F8F5F0] transition-colors bg-[#4A5542]">
+                RhubarbPress<span class="text-gray-300">.com</span>
+            </a>
+            <!-- Navigation -->
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="text-[#4A5542] hover:text-[#4A5542] font-medium transition-colors rounded-md p-2">Home</a></li>
+                    <li><a href="about.html" class="text-[#4A5542] hover:text-[#4A5542] font-medium transition-colors rounded-md p-2">About Us</a></li>
+                    <li><a href="books.html" class="text-[#4A5542] hover:text-[#4A5542] font-bold transition-colors rounded-md p-2 bg-gray-100">Our Books</a></li>
+                    <li><a href="submissions.html" class="text-[#4A5542] hover:text-[#4A5542] font-medium transition-colors rounded-md p-2">Submissions</a></li>
+                    <li><a href="contact.html" class="text-[#4A5542] hover:text-[#4A5542] font-medium transition-colors rounded-md p-2">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="text-[#F5F0E8] py-16 md:py-20 text-center hero-section">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+                Our Books
+            </h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90">
+                Discover our collection of compelling narratives and captivating mysteries
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Books Section -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Book Card 1 -->
+                <div class="bg-[#F5F0E8] p-6 rounded-lg shadow-lg book-card">
+                    <img src="https://placehold.co/300x450/454E3F/EADCD2?text=Coming+Soon" alt="Book Cover: Book One" class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                    <h3 class="text-xl font-semibold text-[#4A5542] mb-2">Book One</h3>
+                    <p class="text-[#6B7566] text-sm mb-3">By You</p>
+                    <p class="text-[#4A5542] text-sm mb-4 line-clamp-3">
+                        The new company was thrilled to launch itself into the world of publishing. This inaugural cosy crime mystery promises to captivate readers with its charming village setting and intriguing puzzle.
+                    </p>
+                    <a href="#" class="inline-block bg-[#4A5542] text-[#F5F0E8] font-bold py-2 px-4 rounded-full text-sm hover:bg-[#3E4739] transition-colors">Coming Soon</a>
+                </div>
+
+                <!-- Book Card 2 -->
+                <div class="bg-[#F5F0E8] p-6 rounded-lg shadow-lg book-card">
+                    <img src="https://placehold.co/300x450/454E3F/EADCD2?text=Coming+Soon" alt="Book Cover: Book Two" class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                    <h3 class="text-xl font-semibold text-[#4A5542] mb-2">Book Two</h3>
+                    <p class="text-[#6B7566] text-sm mb-3">And You</p>
+                    <p class="text-[#4A5542] text-sm mb-4 line-clamp-3">
+                        When elderly Mrs. Pemberton disappeared from the morning market, nobody expected to find her prize-winning jam recipe at the centre of a decades-old vendetta that threatens to tear the community apart.
+                    </p>
+                    <a href="#" class="inline-block bg-[#4A5542] text-[#F5F0E8] font-bold py-2 px-4 rounded-full text-sm hover:bg-[#3E4739] transition-colors">Coming Soon</a>
+                </div>
+
+                <!-- Book Card 3 -->
+                <div class="bg-[#F5F0E8] p-6 rounded-lg shadow-lg book-card">
+                    <img src="https://placehold.co/300x450/454E3F/EADCD2?text=Coming+Soon" alt="Book Cover: Book Three" class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                    <h3 class="text-xl font-semibold text-[#4A5542] mb-2">Book Three</h3>
+                    <p class="text-[#6B7566] text-sm mb-3">And You</p>
+                    <p class="text-[#4A5542] text-sm mb-4 line-clamp-3">
+                        ...marketplace secrets begin to unravel as our amateur sleuth discovers that the morning's fresh produce isn't the only thing being traded. Hidden beneath the cheerful stalls lies a web of deceit.
+                    </p>
+                    <a href="#" class="inline-block bg-[#4A5542] text-[#F5F0E8] font-bold py-2 px-4 rounded-full text-sm hover:bg-[#3E4739] transition-colors">Coming Soon</a>
+                </div>
+
+                <!-- Book Card 4 -->
+                <div class="bg-[#F5F0E8] p-6 rounded-lg shadow-lg book-card">
+                    <img src="https://placehold.co/300x450/454E3F/EADCD2?text=Coming+Soon" alt="Book Cover: Book Four" class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                    <h3 class="text-xl font-semibold text-[#4A5542] mb-2">Book Four</h3>
+                    <p class="text-[#6B7566] text-sm mb-3">And You</p>
+                    <p class="text-[#4A5542] text-sm mb-4 line-clamp-3">
+                        The trail leads to an abandoned warehouse where strange lights flicker at midnight. Our protagonist must brave the darkness to uncover who's been manipulating the town's food supply.
+                    </p>
+                    <a href="#" class="inline-block bg-[#4A5542] text-[#F5F0E8] font-bold py-2 px-4 rounded-full text-sm hover:bg-[#3E4739] transition-colors">Coming Soon</a>
+                </div>
+
+                <!-- Book Card 5 -->
+                <div class="bg-[#F5F0E8] p-6 rounded-lg shadow-lg book-card">
+                    <img src="https://placehold.co/300x450/454E3F/EADCD2?text=Coming+Soon" alt="Book Cover: Book Five" class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                    <h3 class="text-xl font-semibold text-[#4A5542] mb-2">Book Five</h3>
+                    <p class="text-[#6B7566] text-sm mb-3">And You</p>
+                    <p class="text-[#4A5542] text-sm mb-4 line-clamp-3">
+                        The investigation takes an unexpected turn when our sleuth discovers a century-old recipe book containing more than cooking instructions. Each page reveals clues to a family fortune long thought lost.
+                    </p>
+                    <a href="#" class="inline-block bg-[#4A5542] text-[#F5F0E8] font-bold py-2 px-4 rounded-full text-sm hover:bg-[#3E4739] transition-colors">Coming Soon</a>
+                </div>
+
+                <!-- Book Card 6 -->
+                <div class="bg-[#F5F0E8] p-6 rounded-lg shadow-lg book-card">
+                    <img src="https://placehold.co/300x450/454E3F/EADCD2?text=Coming+Soon" alt="Book Cover: Book Six" class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                    <h3 class="text-xl font-semibold text-[#4A5542] mb-2">Book Six</h3>
+                    <p class="text-[#6B7566] text-sm mb-3">And You</p>
+                    <p class="text-[#4A5542] text-sm mb-4 line-clamp-3">
+                        In the thrilling conclusion, all secrets converge at the annual harvest festival. With the entire town watching, our amateur detective must solve the puzzle before the real culprit disappears forever.
+                    </p>
+                    <a href="#" class="inline-block bg-[#4A5542] text-[#F5F0E8] font-bold py-2 px-4 rounded-full text-sm hover:bg-[#3E4739] transition-colors">Coming Soon</a>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <a href="#" class="bg-[#F5F0E8] text-[#4A5542] font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#F8F5F0] transition-transform transform hover:scale-105 inline-block">
+                    View All Our Publications
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#3A4235] text-[#F5F0E8] py-10 rounded-t-md mt-16">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 space-y-6 md:space-y-0">
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold mb-2">RhubarbPress.com</h3>
+                <p class="text-gray-400">&copy; 2025 All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="privacy-policy.html" class="text-gray-400 hover:text-[#F5F0E8] transition-colors">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-gray-400 hover:text-[#F5F0E8] transition-colors">Terms of Service</a>
+                <a href="sitemap.html" class="text-gray-400 hover:text-[#F5F0E8] transition-colors">Sitemap</a>
+            </div>
+            <div class="flex space-x-4">
+                <!-- Social Media Icons (Font Awesome classes) -->
+                <a href="#" class="text-gray-400 hover:text-[#F5F0E8] text-2xl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/rhubarbpressltd" class="text-gray-400 hover:text-[#F5F0E8] text-2xl" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-[#F5F0E8] text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-[#F5F0E8] text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
