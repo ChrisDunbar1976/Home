@@ -1,0 +1,30 @@
+{
+  "name": "puppeteer-mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol server for Puppeteer browser automation",
+  "main": "index.js",
+  "bin": {
+    "puppeteer-mcp": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "puppeteer",
+    "browser-automation",
+    "web-scraping",
+    "screenshot"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.3",
+    "puppeteer": "^24.16.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
