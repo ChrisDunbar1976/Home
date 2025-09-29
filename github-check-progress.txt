@@ -1,0 +1,12 @@
+Progress summary for GitHub app check (2025-09-29)
+
+Completed
+- Searched common install directories (Program Files, Program Files (x86), AppData Local/Programs) and found no folders matching GitHub.
+- Ran WMIC uninstall registry query for entries containing "GitHub"; no instances returned.
+
+Pending
+- Need to verify VS Code extensions. `code --list-extensions` is unavailable; next step is to locate the VS Code CLI or inspect the extensions folder manually.
+
+Next session notes
+- Try running "code" from its installation directory or use `%LocalAppData%\Programs\Microsoft VS Code\bin\code.cmd` if present.
+- Alternatively, check `%UserProfile%\.vscode\extensions` for GitHub-related extensions.
