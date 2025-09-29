@@ -180,7 +180,7 @@ CREATE INDEX IX_ProductionCosts_Book ON ProductionCosts(BookID);
 -- =============================================
 
 -- Book Profitability View
-CREATE VIEW BookProfitability AS
+CREATE VIEW vw_BookProfitability AS
 SELECT
     b.BookID,
     b.Title,
@@ -200,7 +200,7 @@ LEFT JOIN ProductionCosts pc ON b.BookID = pc.BookID
 GROUP BY b.BookID, b.Title, c.FirstName, c.LastName, b.RetailPrice;
 
 -- Author Performance View
-CREATE VIEW AuthorPerformance AS
+CREATE VIEW vw_AuthorPerformance AS
 SELECT
     a.AuthorID,
     CONCAT(c.FirstName, ' ', c.LastName) as AuthorName,
