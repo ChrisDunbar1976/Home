@@ -1,12 +1,26 @@
-Progress summary for GitHub app check (2025-09-29)
+Progress summary for GitHub app check (2025-09-30)
+
+Checkpoint: checkpoint3
+
+Summary
+- All GitHub desktop traces removed (extensions, bundles, cached VSIX, stored credentials).
+- Claude Code 2.0.0 reinstalled; VS Code now lists only desired extensions.
+- Scheduled tasks/services clean; ready to verify in next GUI session.
 
 Completed
-- Searched common install directories (Program Files, Program Files (x86), AppData Local/Programs) and found no folders matching GitHub.
-- Ran WMIC uninstall registry query for entries containing "GitHub"; no instances returned.
+- Removed GitHub VS Code extensions github.copilot-1.372.0 and github.copilot-chat-0.31.3 from C:\Users\cdunbar\.vscode\extensions.
+- Removed bundled GitHub extension folders from the extracted VS Code archive at C:\Users\cdunbar\Desktop\VSCode-win32-x64-1.104.2\resources\app\extensions.
+- Deleted GitHub extension bundles from the portable VS Code archive at C:\Users\cdunbar\Downloads\VSCode-win32-x64-1.104.2\resources\app\extensions.
+- Purged stored GitHub credentials via `cmdkey /delete` for git:https://github.com.
+- Cleared GitHub Copilot cache under %APPDATA%\Code\User\globalStorage.
+- Reinstalled Claude Code extension (anthropic.claude-code-2.0.0) and confirmed the `.vscode\extensions` listing shows only desired extensions.
+- Re-ran `Get-ScheduledTask` and `Get-Service` checks; no GitHub-related entries.
 
 Pending
-- Need to verify VS Code extensions. `code --list-extensions` is unavailable; next step is to locate the VS Code CLI or inspect the extensions folder manually.
+- Validate that VS Code launches with Claude Code active and no GitHub prompts during normal use.
+- Monitor for residual GitHub folders that might reappear after future installs or updates.
 
 Next session notes
-- Try running "code" from its installation directory or use `%LocalAppData%\Programs\Microsoft VS Code\bin\code.cmd` if present.
-- Alternatively, check `%UserProfile%\.vscode\extensions` for GitHub-related extensions.
+- On next VS Code launch, confirm Claude Code works and no GitHub extensions auto-install.
+- Recheck credential stores if any GitHub prompts reoccur.
+- Update this log with any additional cleanup findings.
