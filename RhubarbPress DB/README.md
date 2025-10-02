@@ -57,7 +57,7 @@ Creates bank balance tracking:
 Adds transaction categorization:
 - TransactionGroup lookup table
 - Enhances Transactions table with BankDate, ReconciliationStatus, TransactionGroupID
-- sp_ImportBankTransaction_v2 procedure
+- sp_ImportBankTransaction procedure
 - Transaction group helper procedures
 
 ### 7. Enhanced Views (07-Enhanced-Views.sql)
@@ -69,6 +69,11 @@ Creates comprehensive reporting views:
 - vw_TransactionDetails
 - vw_TransactionGroupAnalysis
 - vw_CashFlowSummary
+
+### 8. Sample Transactions (08-Sample-Transactions.sql)
+Seeds initial bank activity using the new transaction import procedure:
+- Initializes bank balance for chart account 1001 if required
+- Inserts a small set of September 2025 example transactions via `sp_ImportBankTransaction`
 
 ## Post-Deployment Steps
 
@@ -85,7 +90,7 @@ Creates comprehensive reporting views:
 
 3. Import transactions using:
    ```sql
-   EXEC sp_ImportBankTransaction_v2
+   EXEC sp_ImportBankTransaction
        @ActualDate = '2025-01-01',
        @Description = 'Sample transaction',
        @TransactionGroupID = 1,

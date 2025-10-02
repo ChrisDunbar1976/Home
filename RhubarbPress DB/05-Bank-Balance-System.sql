@@ -42,6 +42,8 @@ GO
 -- Unique constraint - one balance record per account
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE name = 'UX_BankBalance_Account' AND object_id = OBJECT_ID('BankBalance'))
 BEGIN
+    SET ANSI_NULLS ON;
+    SET QUOTED_IDENTIFIER ON;
     CREATE UNIQUE INDEX UX_BankBalance_Account ON BankBalance(AccountID) WHERE IsActive = 1;
     PRINT 'Created unique index UX_BankBalance_Account';
 END

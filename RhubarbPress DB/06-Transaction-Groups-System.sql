@@ -144,7 +144,7 @@ GO
 PRINT 'Creating enhanced bank import procedure...';
 GO
 
-CREATE OR ALTER PROCEDURE sp_ImportBankTransaction_v2
+CREATE OR ALTER PROCEDURE sp_ImportBankTransaction
     @ActualDate DATE,
     @BankDate DATE = NULL,
     @Description NVARCHAR(255),
@@ -313,41 +313,12 @@ GO
 -- =============================================
 -- Backward Compatibility Wrapper
 -- =============================================
-PRINT 'Creating backward compatibility procedure...';
-GO
-
-CREATE OR ALTER PROCEDURE sp_ImportBankTransaction_Legacy
-    @ActualDate DATE,
-    @BankDate DATE = NULL,
-    @Description NVARCHAR(255),
-    @Category NVARCHAR(50),
-    @AmountIn MONEY = 0,
-    @AmountOut MONEY = 0,
-    @RunningBalance MONEY = NULL,
-    @CreatedBy NVARCHAR(50) = 'CSV Import'
-AS
-BEGIN
-    DECLARE @TransactionGroupID INT;
-
-    -- Map old category names to IDs
-    EXEC sp_GetTransactionGroupID @Category, @TransactionGroupID OUTPUT;
-
-    -- Call new version
-    EXEC sp_ImportBankTransaction_v2
-        @ActualDate, @BankDate, @Description, @TransactionGroupID,
-        @AmountIn, @AmountOut, @RunningBalance, @CreatedBy;
-END
-GO
-
-PRINT '';
-PRINT '=== Transaction Groups System Created Successfully ===';
 PRINT 'Tables created/enhanced:';
 PRINT '  - TransactionGroup: Category lookup table';
 PRINT '  - Transactions: Enhanced with BankDate, ReconciliationStatus, TransactionGroupID';
 PRINT '';
 PRINT 'Procedures created:';
-PRINT '  - sp_ImportBankTransaction_v2: Enhanced import with transaction groups';
-PRINT '  - sp_ImportBankTransaction_Legacy: Backward compatible import';
+PRINT '  - sp_ImportBankTransaction: Enhanced import with transaction groups';
 PRINT '  - sp_GetTransactionGroupID: Helper for category lookup';
 PRINT '';
 PRINT 'Available transaction groups:';

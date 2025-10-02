@@ -254,7 +254,7 @@ BEGIN
                 ''Transactions'',
                 ''DELETE'',
                 TransactionID,
-                CONCAT(''TransactionID:'', CAST(TransactionID AS NVARCHAR), '',Date:'', CAST(TransactionDate AS NVARCHAR), ',Ref:'', Reference, '',Amount:'', CAST(TotalAmount AS NVARCHAR)),
+                CONCAT(''TransactionID:'', CAST(TransactionID AS NVARCHAR), '',Date:'', CAST(TransactionDate AS NVARCHAR), '',Ref:'', Reference, '',Amount:'', CAST(TotalAmount AS NVARCHAR)),
                 ''SYSTEM''
             FROM deleted;
         END
@@ -427,4 +427,3 @@ PRINT '  - sp_CalculateVATReturn: Calculate VAT return for period';
 PRINT '';
 PRINT 'Audit trail trigger created for transaction tracking';
 PRINT 'UK compliance schema is ready for tax operations';
-GO
