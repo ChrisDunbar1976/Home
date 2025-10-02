@@ -20,6 +20,7 @@ import { ListTableTool } from "./tools/ListTableTool.js";
 import { DropTableTool } from "./tools/DropTableTool.js";
 import { DefaultAzureCredential, InteractiveBrowserCredential } from "@azure/identity";
 import { DescribeTableTool } from "./tools/DescribeTableTool.js";
+import { writeFileSync, appendFileSync } from "fs";
 
 // MSSQL Database connection configuration
 // const credential = new DefaultAzureCredential();
@@ -31,34 +32,69 @@ let globalTokenExpiresOn: Date | null = null;
 
 // Function to create SQL config with fresh access token, returns token and expiry
 export async function createSqlConfig(): Promise<{ config: sql.config, token: string, expiresOn: Date }> {
-  const credential = new InteractiveBrowserCredential({
-    redirectUri: 'http://localhost'
-    // disableAutomaticAuthentication : true
-  });
-  const accessToken = await credential.getToken('https://database.windows.net/.default');
-
   const trustServerCertificate = process.env.TRUST_SERVER_CERTIFICATE?.toLowerCase() === 'true';
   const connectionTimeout = process.env.CONNECTION_TIMEOUT ? parseInt(process.env.CONNECTION_TIMEOUT, 10) : 30;
 
-  return {
-    config: {
-      server: process.env.SERVER_NAME!,
-      database: process.env.DATABASE_NAME!,
-      options: {
-        encrypt: true,
-        trustServerCertificate
-      },
-      authentication: {
-        type: 'azure-active-directory-access-token',
+  // Check if SQL authentication credentials are provided
+  const username = process.env.MSSQL_USERNAME;
+  const password = process.env.MSSQL_PASSWORD;
+
+  // Debug logging - log ALL environment variables
+  const allEnvVars = Object.keys(process.env).filter(key =>
+    key.includes('MSSQL') || key.includes('SERVER') || key.includes('DATABASE') || key.includes('USERNAME') || key.includes('PASSWORD')
+  ).map(key => `${key}=${process.env[key]}`).join(', ');
+
+  const debugMsg = `[${new Date().toISOString()}] MSSQL_USERNAME: ${username ? 'SET' : 'NOT SET'}, MSSQL_PASSWORD: ${password ? 'SET' : 'NOT SET'}, Will use: ${username && password ? 'SQL AUTH' : 'AZURE AD AUTH'}\nAll relevant env vars: ${allEnvVars}\n\n`;
+  appendFileSync('/tmp/mcp-debug.log', debugMsg);
+  console.error(`[MCP Debug] MSSQL_USERNAME: ${username ? 'SET' : 'NOT SET'}`);
+  console.error(`[MCP Debug] MSSQL_PASSWORD: ${password ? 'SET' : 'NOT SET'}`);
+  console.error(`[MCP Debug] Will use: ${username && password ? 'SQL AUTH' : 'AZURE AD AUTH'}`);
+
+  if (username && password) {
+    // Use SQL authentication
+    return {
+      config: {
+        server: process.env.SERVER_NAME!,
+        database: process.env.DATABASE_NAME!,
+        user: username,
+        password: password,
         options: {
-          token: accessToken?.token!,
+          encrypt: true,
+          trustServerCertificate
         },
+        connectionTimeout: connectionTimeout * 1000, // convert seconds to milliseconds
       },
-      connectionTimeout: connectionTimeout * 1000, // convert seconds to milliseconds
-    },
-    token: accessToken?.token!,
-    expiresOn: accessToken?.expiresOnTimestamp ? new Date(accessToken.expiresOnTimestamp) : new Date(Date.now() + 30 * 60 * 1000)
-  };
+      token: '', // No token for SQL auth
+      expiresOn: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) // Far future date for SQL auth
+    };
+  } else {
+    // Use Azure AD authentication
+    const credential = new InteractiveBrowserCredential({
+      redirectUri: 'http://localhost'
+      // disableAutomaticAuthentication : true
+    });
+    const accessToken = await credential.getToken('https://database.windows.net/.default');
+
+    return {
+      config: {
+        server: process.env.SERVER_NAME!,
+        database: process.env.DATABASE_NAME!,
+        options: {
+          encrypt: true,
+          trustServerCertificate
+        },
+        authentication: {
+          type: 'azure-active-directory-access-token',
+          options: {
+            token: accessToken?.token!,
+          },
+        },
+        connectionTimeout: connectionTimeout * 1000, // convert seconds to milliseconds
+      },
+      token: accessToken?.token!,
+      expiresOn: accessToken?.expiresOnTimestamp ? new Date(accessToken.expiresOnTimestamp) : new Date(Date.now() + 30 * 60 * 1000)
+    };
+  }
 }
 
 const updateDataTool = new UpdateDataTool();
