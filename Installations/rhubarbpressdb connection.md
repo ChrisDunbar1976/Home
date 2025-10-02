@@ -781,6 +781,68 @@ chmod +x "/Users/dunbar/Tech Projects/SQL-AI-samples/MssqlMcp/Node/start-mcp.sh"
 
 ---
 
+## Codex CLI Configuration Fix (2025-10-02, 09:42 BST)
+
+### Issue Identified
+After reviewing the VM documentation, discovered that the Windows VM successfully connected to the database using the codex CLI with the same credentials. However, the macOS codex CLI configuration had an empty `env` object, preventing SQL authentication.
+
+### Root Cause
+The codex CLI uses a different configuration file (`~/.claude.json`) than Claude Code (which uses `/Users/dunbar/Library/Application Support/Claude/config.json`). The codex CLI configuration was missing the SQL authentication credentials in the `env` object.
+
+### Solution Applied
+Updated the codex CLI configuration file to match the working VM setup:
+
+**File Modified**: `~/.claude.json`
+
+**Changed FROM**:
+```json
+"mssql": {
+  "type": "stdio",
+  "command": "node",
+  "args": [
+    "/Users/dunbar/Tech Projects/SQL-AI-samples/MssqlMcp/Node/dist/index.js"
+  ],
+  "env": {}
+}
+```
+
+**Changed TO**:
+```json
+"mssql": {
+  "type": "stdio",
+  "command": "node",
+  "args": [
+    "/Users/dunbar/Tech Projects/SQL-AI-samples/MssqlMcp/Node/dist/index.js"
+  ],
+  "env": {
+    "SERVER_NAME": "rhubarbpress-sqlsrv.database.windows.net",
+    "DATABASE_NAME": "rhubarbpressdb",
+    "USER_NAME": "mcp_user",
+    "PASSWORD": "Sc0tsCup2!May!994!",
+    "READONLY": "false"
+  }
+}
+```
+
+### Key Changes
+- Added SQL authentication credentials to the `env` object
+- Used `USER_NAME` variable name (matching VM configuration)
+- Configuration now matches the working Windows VM setup
+
+### Next Steps
+1. Exit the current codex CLI session (type `exit` or Ctrl+D)
+2. Start a new codex session with `claude`
+3. Test connection with database queries (e.g., "Show me all tables in rhubarbpressdb")
+4. Verify no Azure AD browser popup appears
+5. Begin working with the database
+
+### Current Status
+- ✅ Codex CLI configuration updated with SQL credentials
+- ⏳ Awaiting session restart to test connection
+- ⏳ Should connect using SQL authentication without browser popup
+
+---
+
 ## Bash Command Wrapper Fix (2025-10-01, 14:18 BST)
 
 ### Issue
@@ -847,3 +909,41 @@ Updated the configuration to explicitly use `bash` with the script path as an ar
 - ✅ Configuration updated to use `bash` command with script argument
 - ⏳ Awaiting full Claude Code restart
 - ⏳ This should properly execute the shell script with environment variables exported
+
+---
+
+## Successful Connection from macOS (2025-10-02, 09:53 BST)
+
+### Issue Encountered
+After bash wrapper configuration, connection attempt resulted in firewall error:
+```
+ConnectionError: Cannot open server 'rhubarbpress-sqlsrv' requested by the login. Client with IP address '2.97.64.68' is not allowed to access the server.
+```
+
+### Root Cause
+The macOS connection attempt was from IP address `2.97.64.68`, which was not in the Azure SQL Server firewall rules. The VM connection worked previously because the VM's IP was already whitelisted.
+
+### Solution Applied
+Added firewall rule in Azure Portal for IP address `2.97.64.68`:
+1. Navigated to SQL Server: `rhubarbpress-sqlsrv` in Azure Portal
+2. Went to "Networking" / "Firewalls and virtual networks"
+3. Added new firewall rule for IP: `2.97.64.68`
+4. Waited for changes to take effect
+
+### Connection Test Result
+Successfully connected to Azure SQL Database from macOS. Connection test returned 24 tables:
+- AuditLog, Authors, BankBalance, BankBalanceHistory, BookCategories, Books, BookSales
+- CapitalAllowances, ChartOfAccounts, ComplianceDocuments, Contacts, CorporationTaxCalculations
+- InvoiceLines, Invoices, ProductionCosts, RoyaltyCalculationDetails, RoyaltyCalculations
+- SalesChannels, TransactionGroup, TransactionLines, Transactions, VATRates, VATReturns, VATTransactionMapping
+
+### Authentication Method Confirmed
+- ✅ SQL authentication working correctly (no Azure AD browser popup)
+- ✅ Using `mcp_user` credentials from bash wrapper script
+- ✅ Environment variables properly exported via shell script
+
+### Current Status
+- ✅ macOS successfully connected to rhubarbpressdb
+- ✅ Firewall rule configured for macOS IP address
+- ✅ All 24 database tables accessible
+- ✅ Ready for database operations and Rhubarb Press project development
