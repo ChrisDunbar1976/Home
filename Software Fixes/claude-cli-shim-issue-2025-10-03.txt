@@ -1,0 +1,21 @@
+Issue Summary
+-------------
+When: 2025-10-03 11:01:01 +00:00
+Where: C:\Users\cdunbar\AppData\Roaming\npm (global npm bin)
+
+What Happened:
+- The `claude` CLI command stopped working and reported `CommandNotFoundException` and `Cannot find module './yoga.wasm'.`
+
+Why It Happened:
+- An auto-update attempted around 09:52 UK time, but the installer left temporary shim files (`.claude*`) instead of the final `claude` wrappers and did not move `yoga.wasm` into the active package directory.
+
+Resolution Steps Performed:
+1. Renamed the temporary shim files back to `claude`, `claude.cmd`, and `claude.ps1` in `C:\Users\cdunbar\AppData\Roaming\npm`.
+2. Copied `yoga.wasm` from the staged folder `C:\Users\cdunbar\AppData\Roaming\npm\node_modules\@anthropic-ai\.claude-code-7q2IfVpu` into the live package folder `C:\Users\cdunbar\AppData\Roaming\npm\node_modules\@anthropic-ai\claude-code`.
+3. Confirmed the CLI works with `claude --version` (now 2.0.5) and disabled future auto-updates by setting `"autoUpdates": false` in `C:\Users\cdunbar\.claude.json`.
+
+If It Happens Again:
+- Check for `.claude*` shim files and rename them back.
+- Ensure `yoga.wasm` exists in the active package directory; copy it from the staging folder if missing.
+- If issues persist, reinstall with `npm install -g @anthropic-ai/claude-code` and rerun `claude --version`.
+
